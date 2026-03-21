@@ -18,51 +18,45 @@ Build a modern, sleek marketing portfolio website for a recent marketing graduat
 │   ├── Footer.jsx
 │   ├── HomePage.jsx
 │   ├── Navbar.jsx
-│   ├── ProjectDetail.jsx   ← Image gallery + lightbox + native video + YouTube + Tools Used
+│   ├── ProjectDetail.jsx   ← Gallery, lightbox, video, Instagram embeds, Tools, Deliverables
 │   └── WorkSection.jsx
 ├── data/
-│   └── mock.js              ← Central content file (all projects, tools, deliverables)
-├── App.js                    ← Router setup
+│   └── mock.js              ← All project data (7 projects, ordered by strength)
+├── App.js
 ├── App.css
 └── index.css
 ```
 
-## What's Been Implemented
+## Projects (in display order)
+1. **Sports Marketing & Media Production Experience** — real UH photo, 7 images, 3 videos
+2. **Marketing Communications | Springtime Pediatrics** — 2 Instagram reel embeds
+3. **Fifth Ward Library Documentary** — YouTube embed, role: Director & Project Lead
+4. **Nike Marketing Strategy** — PDF deliverable + supporting work bullets
+5. **REACH Research — Gulf Coast Foodways** — historical photo, PDF deliverable
+6. **INK Collective** — leadership, no deliverables
+7. **International Market Analysis — Denmark** — Danish flag, PDF deliverable
 
-### Completed Features
-- Homepage hero section with name, title, CTA buttons
-- About section — two-column layout (bio left, professional background/education/honors right)
-- Core Capabilities grid
-- Work & Projects section — filterable project card grid
-- Project Detail pages — full case study format:
-  - Overview, Key Contributions, Deliverables & Work Samples, Photo Gallery, Video
-  - Sidebar: Skills Demonstrated, Tools Used, Project Info (Category, Role)
+## Completed Features
+- Homepage hero, About section (two-column), Core Capabilities grid
+- Work section with category filters, reordered by professional strength
+- "View Project" CTAs (not "View Case Study")
+- Project detail pages with standardized structure:
+  - Overview, Key Contributions
+  - Deliverables (only real files, clickable)
+  - Supporting Work (plain text bullets, not clickable)
+  - Photo Gallery + Lightbox, Native Video, YouTube, Instagram embeds
+  - Sidebar: Skills Demonstrated, Tools Used, Project Info
+- Professional case-study tone across all content
+- HEART Program project removed
+- Instagram reel embeds with "View on Instagram" buttons
 - Contact & Footer sections
-- Navbar with profile photo, navigation links, and Resume download button
-- Lightbox image viewer with navigation
-
-### Content & Thumbnails (Updated Feb 2026)
-- **Nike Marketing Strategy**: Glowing Nike swoosh thumbnail, PDF deliverable + text deliverables
-- **Denmark Country Market Analysis**: Danish flag thumbnail, PDF deliverable
-- **Sports Marketing & Media Operations**: Real UH Football thumbnail, 7-image gallery, 3 native videos
-- **Springtime Pediatrics Marketing**: Pediatric healthcare thumbnail, descriptive deliverables
-- **Fifth Ward Library Documentary**: Library thumbnail, YouTube embed
-- **REACH Research — Gulf Coast Foodways**: Historical B&W photo thumbnail, PDF deliverable
-- **INK Collective**: Stacked books thumbnail
-- **H.E.A.R.T. Program — Social Media Strategy**: Laptop/desk thumbnail, descriptive deliverables
-
-### Case Study Enhancement (Feb 2026)
-- All project descriptions rewritten with professional case-study tone
-- Added `tools` field to data model (rendered in sidebar)
-- Deliverables section now supports both downloadable PDFs and descriptive text items
-- Section renamed to "Deliverables & Work Samples"
-- Tools Used section added to sidebar with wrench icon badges
+- Navbar with profile photo, navigation, Resume download
 
 ## Backlog
 
 ### P0 — Awaiting User Content
-- Additional images/videos for Sports Marketing project (user may send more)
-- Springtime Pediatrics content (screenshots, video thumbnails — Instagram blocked)
+- Additional images/videos for Sports Marketing
+- Springtime Pediatrics screenshots/marketing materials (user may provide)
 
 ### P2 — Future
-- Backend development (CMS-style admin) — only if user requests
+- Backend CMS (only if user requests)
