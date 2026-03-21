@@ -7,8 +7,6 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/tasneemmonib",
   resumeUrl:
     "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/6eqlbgf1_Tasneem_Monib_Resume.pdf",
-  resumeSummary:
-    "Marketing graduate with experience in content production, marketing communications, and event operations. BBA in Marketing from the University of Houston with a minor in Journalism. GPA 3.7, Dean's List all semesters.",
   profilePhoto:
     "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/ram015gf_Screenshot%202026-03-21%20at%203.56.46%E2%80%AFPM.png",
   aboutBio: [
@@ -19,19 +17,15 @@ export const personalInfo = {
   ],
 };
 
-export const credibilityItems = [
-  { label: "Marketing Strategy", icon: "Target" },
-  { label: "Content Production", icon: "Film" },
-  { label: "Event Marketing", icon: "Calendar" },
-  { label: "Brand Communications", icon: "MessageSquare" },
-];
-
-export const skills = [
+export const capabilities = [
+  { name: "Marketing Communications", icon: "MessageSquare" },
   { name: "Marketing Strategy", icon: "Target" },
-  { name: "Content Creation", icon: "PenTool" },
   { name: "Event Marketing", icon: "Calendar" },
-  { name: "Social Media", icon: "Share2" },
+  { name: "Content Creation", icon: "PenTool" },
+  { name: "Social Media Marketing", icon: "Share2" },
   { name: "Video Production", icon: "Video" },
+  { name: "Market Research", icon: "Search" },
+  { name: "Professional Writing", icon: "FileText" },
 ];
 
 export const experience = [
@@ -53,6 +47,19 @@ export const experience = [
     summary:
       "Supported logistics and media coordination for a multi-day sports and entertainment event.",
   },
+];
+
+export const education = {
+  school: "University of Houston, C.T. Bauer College of Business",
+  degree: "BBA in Marketing, Minor in Journalism",
+  gpa: "3.7",
+  dates: "Aug 2022 – May 2026",
+  studyAbroad: "University of Granada, Spain — Spring 2024",
+};
+
+export const honors = [
+  "REACH Scholar",
+  "Dean's List — All Semesters",
 ];
 
 export const categories = [

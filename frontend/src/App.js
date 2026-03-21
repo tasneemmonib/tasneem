@@ -6,7 +6,6 @@ import HomePage from "./components/HomePage";
 import AboutSection from "./components/AboutSection";
 import WorkSection from "./components/WorkSection";
 import ProjectDetail from "./components/ProjectDetail";
-import ResumeSection from "./components/ResumeSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
@@ -16,7 +15,6 @@ const MainPage = () => {
       <HomePage />
       <AboutSection />
       <WorkSection />
-      <ResumeSection />
       <ContactSection />
       <Footer />
     </>

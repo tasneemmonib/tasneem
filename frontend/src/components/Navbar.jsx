@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { personalInfo } from '../data/mock';
 
@@ -13,7 +13,6 @@ const Navbar = () => {
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Work', href: '#work' },
-    { label: 'Resume', href: '#resume' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -61,7 +60,7 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Left: Profile photo + Name */}
+            {/* Left: Profile photo + Name + Resume button */}
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setShowPhotoModal(true)}
@@ -95,6 +94,37 @@ const Navbar = () => {
               >
                 Tasneem Monib
               </button>
+
+              {/* Resume download — left side */}
+              <a
+                href={personalInfo.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:flex items-center gap-1.5 ml-3 px-3 py-1.5 rounded-md text-xs font-medium"
+                style={{
+                  backgroundColor: showDarkText
+                    ? 'rgba(11,11,11,0.06)'
+                    : 'rgba(255,255,255,0.12)',
+                  color: showDarkText
+                    ? '#555'
+                    : 'rgba(255,255,255,0.8)',
+                  fontFamily: 'Roboto, sans-serif',
+                  transition: 'background-color 0.2s ease',
+                }}
+                onMouseOver={(e) =>
+                  (e.currentTarget.style.backgroundColor = showDarkText
+                    ? 'rgba(11,11,11,0.1)'
+                    : 'rgba(255,255,255,0.2)')
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.style.backgroundColor = showDarkText
+                    ? 'rgba(11,11,11,0.06)'
+                    : 'rgba(255,255,255,0.12)')
+                }
+              >
+                <Download size={12} />
+                Resume
+              </a>
             </div>
 
             {/* Desktop Nav */}
@@ -153,6 +183,19 @@ const Navbar = () => {
                 {link.label}
               </button>
             ))}
+            <a
+              href={personalInfo.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm font-medium py-3"
+              style={{
+                color: '#C8102E',
+                fontFamily: 'Roboto, sans-serif',
+              }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Download size={14} /> Download Resume
+            </a>
           </div>
         </div>
       </nav>
@@ -199,7 +242,7 @@ const Navbar = () => {
                   fontFamily: 'Roboto, sans-serif',
                 }}
               >
-                Marketing & Content Strategy
+                Marketing Communications
               </p>
             </div>
           </div>
