@@ -60,7 +60,7 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Left: Profile photo + Name + Resume button */}
+            {/* Left: Profile photo + Name */}
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setShowPhotoModal(true)}
@@ -94,40 +94,9 @@ const Navbar = () => {
               >
                 Tasneem Monib
               </button>
-
-              {/* Resume download — left side */}
-              <a
-                href={personalInfo.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:flex items-center gap-1.5 ml-3 px-3 py-1.5 rounded-md text-xs font-medium"
-                style={{
-                  backgroundColor: showDarkText
-                    ? 'rgba(11,11,11,0.06)'
-                    : 'rgba(255,255,255,0.12)',
-                  color: showDarkText
-                    ? '#555'
-                    : 'rgba(255,255,255,0.8)',
-                  fontFamily: 'Roboto, sans-serif',
-                  transition: 'background-color 0.2s ease',
-                }}
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.backgroundColor = showDarkText
-                    ? 'rgba(11,11,11,0.1)'
-                    : 'rgba(255,255,255,0.2)')
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.backgroundColor = showDarkText
-                    ? 'rgba(11,11,11,0.06)'
-                    : 'rgba(255,255,255,0.12)')
-                }
-              >
-                <Download size={12} />
-                Resume
-              </a>
             </div>
 
-            {/* Desktop Nav */}
+            {/* Right: Nav links + Resume download */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
@@ -142,6 +111,41 @@ const Navbar = () => {
                   {link.label}
                 </button>
               ))}
+              <a
+                href={personalInfo.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-md text-xs font-medium"
+                style={{
+                  backgroundColor: showDarkText
+                    ? '#0B0B0B'
+                    : 'rgba(255,255,255,0.15)',
+                  color: showDarkText
+                    ? '#FFFFFF'
+                    : 'rgba(255,255,255,0.9)',
+                  fontFamily: 'Roboto, sans-serif',
+                  transition: 'background-color 0.2s ease, transform 0.2s ease',
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.02)';
+                  if (showDarkText) {
+                    e.currentTarget.style.backgroundColor = '#222';
+                  } else {
+                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.25)';
+                  }
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  if (showDarkText) {
+                    e.currentTarget.style.backgroundColor = '#0B0B0B';
+                  } else {
+                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.15)';
+                  }
+                }}
+              >
+                <Download size={12} />
+                Resume
+              </a>
             </div>
 
             {/* Mobile Menu Button */}

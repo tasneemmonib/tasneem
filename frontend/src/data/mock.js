@@ -57,10 +57,7 @@ export const education = {
   studyAbroad: "University of Granada, Spain — Spring 2024",
 };
 
-export const honors = [
-  "REACH Scholar",
-  "Dean's List — All Semesters",
-];
+export const honors = ["REACH Scholar", "Dean's List — All Semesters"];
 
 export const categories = [
   "All",
@@ -137,37 +134,33 @@ export const projects = [
     media: [],
   },
   {
-    id: "uh-athletics-media",
-    title: "University of Houston Athletics Media",
+    id: "sports-marketing-operations",
+    title: "Sports Marketing & Media Operations",
     category: "Content Production",
-    tags: ["Content Production", "Professional Experience"],
+    tags: ["Content Production", "Event Marketing", "Professional Experience"],
     image:
       "https://images.unsplash.com/photo-1520470082789-e347ad8b1944?w=800&q=80",
     overview:
-      "As Sports Head Editor at UH CoogTV, lead end-to-end sports video production for the university's student-run television network. Responsible for covering live games, producing highlight packages, directing documentary-style features, and delivering broadcast-ready content under tight turnaround schedules.",
-    role: "Sports Head Editor, CoogTV",
+      "Marketing, media production, and event operations experience supporting university athletics and sports entertainment events. Work included content production, gameday marketing execution, and event coordination across multiple roles with UH Athletics and United Sports & Entertainment.",
+    role: "Sports Head Editor (CoogTV) · Marketing & Gameday Operations (UH Athletics) · Event Operations (Battleground 2K24)",
     contributions: [
-      "Lead sports video production covering live games and events for digital distribution",
-      "Produce highlight packages and promotional video content for athletics programs",
-      "Direct and edit documentary-style features including the 5th Ward Library ShastaDocs piece",
-      "Manage projects from raw footage through final cut using Adobe Premiere Pro and Lightroom",
-      "Deliver broadcast-ready content on tight turnaround schedules",
+      "Lead sports video production at UH CoogTV covering live games, highlight packages, and promotional content",
+      "Managed projects from raw footage through final cut using Adobe Premiere Pro and Lightroom",
+      "Supported gameday marketing operations including on-field promotions, fan engagement activations, and halftime coordination for UH baseball",
+      "Prepared teleprompter-ready speech summaries and media scripts for press conference speakers at Battleground 2K24",
+      "Managed on-site media check-in, credentialing, and staff coordination across simultaneous event venues",
+      "Delivered broadcast-ready content on tight turnaround schedules for digital distribution",
     ],
     skills: [
+      "Sports Marketing",
       "Video Production",
+      "Event Operations",
       "Adobe Premiere Pro",
-      "Content Marketing",
-      "Storytelling",
-      "Photography",
+      "Gameday Marketing",
+      "Media Relations",
     ],
     deliverables: [],
-    media: [
-      {
-        type: "youtube",
-        url: "https://www.youtube.com/embed/mTX2G7go8Cs",
-        title: "5th Ward Library | ShastaDocs — Directed by Tasneem Monib",
-      },
-    ],
+    media: [],
   },
   {
     id: "springtime-pediatrics",
@@ -195,32 +188,40 @@ export const projects = [
     ],
     deliverables: [],
     media: [],
+    socialLink: "https://www.instagram.com/springtimepediatrics",
   },
   {
-    id: "battleground-sports",
-    title: "Battleground 2K24 Event Operations",
-    category: "Event Marketing",
-    tags: ["Event Marketing", "Professional Experience"],
+    id: "fifth-ward-documentary",
+    title: "Fifth Ward Library Documentary",
+    category: "Content Production",
+    tags: ["Content & Media Production"],
     image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+      "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
     overview:
-      "Supported production logistics for a multi-day sports and entertainment event series at United Sports & Entertainment. Managed on-site media operations, prepared press conference materials, and coordinated staff across simultaneous event venues.",
-    role: "Event Operations Intern, United Sports & Entertainment",
+      "Directed a documentary short film exploring the Fifth Ward Library as part of the ShastaDocs series at UH CoogTV. Managed end-to-end production from research and interviews through editing and final delivery, creating a narrative-driven piece highlighting the library's role in the community.",
+    role: "Director & Editor",
     contributions: [
-      "Supported production logistics for a multi-day sports and entertainment event series including press conferences and college basketball games",
-      "Prepared teleprompter-ready speech summaries for press conference speakers under tight deadlines",
-      "Distilled complex talking points into clear, concise scripts for live delivery",
-      "Managed on-site media check-in, credentialing, and staff coordination across venues",
-      "Ensured smooth operations across simultaneous event venues and production setups",
+      "Directed the complete documentary production from concept development through final cut",
+      "Conducted research and coordinated interview subjects for the narrative",
+      "Managed filming logistics, camera work, and on-location production",
+      "Edited the final piece using Adobe Premiere Pro for broadcast and digital delivery",
+      "Delivered a polished documentary short as part of the ShastaDocs series",
     ],
     skills: [
-      "Event Operations",
-      "Media Relations",
-      "Production Logistics",
-      "Staff Coordination",
+      "Documentary Production",
+      "Video Editing",
+      "Adobe Premiere Pro",
+      "Storytelling",
+      "Project Management",
     ],
     deliverables: [],
-    media: [],
+    media: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/embed/mTX2G7go8Cs",
+        title: "5th Ward Library | ShastaDocs — Directed by Tasneem Monib",
+      },
+    ],
   },
   {
     id: "reach-research",
@@ -244,7 +245,13 @@ export const projects = [
       "Academic Presentation",
       "Writing",
     ],
-    deliverables: [],
+    deliverables: [
+      {
+        type: "pdf",
+        label: "Gulf Coast Foodways Research Paper",
+        url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/uc8m34cb_Monib-Tasneem_Gulf%20Coast%20Foodways.pdf",
+      },
+    ],
     media: [],
   },
   {
