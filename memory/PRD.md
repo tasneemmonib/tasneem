@@ -37,7 +37,9 @@ Build a modern, sleek marketing portfolio website for a recent marketing graduat
 7. **International Market Analysis — Denmark** — Danish flag, PDF deliverable
 
 ## Completed Features
-- Homepage hero, About section (two-column), Core Capabilities grid
+- Homepage hero section — tighter spacing (65vh, pt-12), larger subtitle
+- About section — Core Capabilities in left column under bio, right column: Professional Background/Education/Honors
+- Education: Study Abroad label added
 - Work section with category filters, reordered by professional strength
 - "View Project" CTAs (not "View Case Study")
 - Project detail pages with standardized structure:
