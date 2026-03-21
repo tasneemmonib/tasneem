@@ -6,8 +6,9 @@ import {
   Share2,
   Video,
   Film,
-  ImageIcon,
+  Camera,
   Palette,
+  Sparkles,
 } from 'lucide-react';
 import { skills } from '../data/mock';
 
@@ -18,8 +19,9 @@ const iconMap = {
   Share2,
   Video,
   Film,
-  Image: ImageIcon,
+  Camera,
   Palette,
+  Sparkles,
 };
 
 const AboutSection = () => {

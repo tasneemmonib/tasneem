@@ -112,7 +112,9 @@ const HomePage = () => {
                 View Work <ArrowRight className="ml-2" size={16} />
               </Button>
               <Button
-                onClick={() => scrollTo('#resume')}
+                onClick={() => {
+                  window.open(personalInfo.resumeUrl, '_blank');
+                }}
                 variant="outline"
                 className="h-12 px-8 text-sm font-medium rounded-lg border-white/20 hover:bg-white/10 transition-transform duration-200"
                 style={{

@@ -1,19 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Linkedin, Globe, Send } from 'lucide-react';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Label } from './ui/label';
+import React, { useEffect, useRef } from 'react';
+import { Mail, Linkedin } from 'lucide-react';
 import { personalInfo } from '../data/mock';
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -31,17 +20,6 @@ const ContactSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Mock form submission — saves to localStorage
-    const msgs = JSON.parse(localStorage.getItem('contactMessages') || '[]');
-    msgs.push({ ...formData, timestamp: new Date().toISOString() });
-    localStorage.setItem('contactMessages', JSON.stringify(msgs));
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setSubmitted(false), 4000);
-  };
-
   const contactLinks = [
     {
       icon: Mail,
@@ -54,12 +32,6 @@ const ContactSection = () => {
       label: 'LinkedIn',
       value: 'linkedin.com/in/tasneemmonib',
       href: personalInfo.linkedin,
-    },
-    {
-      icon: Globe,
-      label: 'Portfolio',
-      value: 'tasneemmonib.com',
-      href: '#',
     },
   ];
 
@@ -92,161 +64,58 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
-          <Card className="border-0 shadow-sm rounded-xl">
-            <CardContent className="p-8 lg:p-10">
-              {/* Contact Links */}
-              <div className="grid sm:grid-cols-3 gap-4 mb-10">
-                {contactLinks.map((link, i) => {
-                  const Icon = link.icon;
-                  return (
-                    <a
-                      key={i}
-                      href={link.href}
-                      target={link.href.startsWith('http') ? '_blank' : undefined}
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center text-center p-4 rounded-xl"
-                      style={{
-                        backgroundColor: '#F5F5F5',
-                        transition: 'background-color 0.2s ease',
-                      }}
-                      onMouseOver={(e) =>
-                        (e.currentTarget.style.backgroundColor = '#EBEBEB')
-                      }
-                      onMouseOut={(e) =>
-                        (e.currentTarget.style.backgroundColor = '#F5F5F5')
-                      }
-                    >
-                      <Icon size={20} color="#C8102E" className="mb-2" />
-                      <span
-                        className="text-xs font-medium"
-                        style={{
-                          color: '#0B0B0B',
-                          fontFamily: 'Roboto, sans-serif',
-                        }}
-                      >
-                        {link.label}
-                      </span>
-                      <span
-                        className="text-xs mt-0.5"
-                        style={{
-                          color: '#999',
-                          fontFamily: 'Roboto, sans-serif',
-                        }}
-                      >
-                        {link.value}
-                      </span>
-                    </a>
-                  );
-                })}
-              </div>
-
-              {/* Contact Form */}
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <Label
-                    htmlFor="name"
-                    className="text-sm font-medium mb-1.5 block"
-                    style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Roboto, sans-serif',
-                    }}
-                  >
-                    Name
-                  </Label>
-                  <Input
-                    id="name"
-                    required
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    className="h-11 rounded-lg"
-                    style={{ fontFamily: 'Roboto, sans-serif' }}
-                  />
-                </div>
-                <div>
-                  <Label
-                    htmlFor="email"
-                    className="text-sm font-medium mb-1.5 block"
-                    style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Roboto, sans-serif',
-                    }}
-                  >
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    required
-                    placeholder="your@email.com"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    className="h-11 rounded-lg"
-                    style={{ fontFamily: 'Roboto, sans-serif' }}
-                  />
-                </div>
-                <div>
-                  <Label
-                    htmlFor="message"
-                    className="text-sm font-medium mb-1.5 block"
-                    style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Roboto, sans-serif',
-                    }}
-                  >
-                    Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    required
-                    rows={4}
-                    placeholder="Tell me about your project or opportunity..."
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
-                    className="rounded-lg resize-none"
-                    style={{ fontFamily: 'Roboto, sans-serif' }}
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full h-11 text-sm font-medium rounded-lg border-0"
+        <div className="max-w-md mx-auto">
+          <div className="grid grid-cols-2 gap-4">
+            {contactLinks.map((link, i) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={i}
+                  href={link.href}
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center text-center p-6 rounded-xl group"
                   style={{
-                    backgroundColor: '#0B0B0B',
-                    color: '#FFFFFF',
-                    fontFamily: 'Roboto, sans-serif',
-                    transition: 'transform 0.2s ease',
+                    backgroundColor: '#F5F5F5',
+                    transition: 'background-color 0.2s ease, transform 0.2s ease',
                   }}
-                  onMouseOver={(e) =>
-                    (e.currentTarget.style.transform = 'scale(1.01)')
-                  }
-                  onMouseOut={(e) =>
-                    (e.currentTarget.style.transform = 'scale(1)')
-                  }
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.backgroundColor = '#EBEBEB';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.backgroundColor = '#F5F5F5';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
                 >
-                  <Send size={16} className="mr-2" /> Send Message
-                </Button>
-
-                {submitted && (
-                  <p
-                    className="text-center text-sm font-medium"
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mb-3"
+                    style={{ backgroundColor: 'rgba(200,16,46,0.07)' }}
+                  >
+                    <Icon size={20} color="#C8102E" />
+                  </div>
+                  <span
+                    className="text-sm font-semibold mb-1"
                     style={{
-                      color: '#16a34a',
+                      color: '#0B0B0B',
                       fontFamily: 'Roboto, sans-serif',
                     }}
                   >
-                    Message sent successfully! I'll be in touch soon.
-                  </p>
-                )}
-              </form>
-            </CardContent>
-          </Card>
+                    {link.label}
+                  </span>
+                  <span
+                    className="text-xs"
+                    style={{
+                      color: '#999',
+                      fontFamily: 'Roboto, sans-serif',
+                    }}
+                  >
+                    {link.value}
+                  </span>
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
