@@ -11,7 +11,7 @@ const HomePage = () => {
 
   return (
     <section
-      className="min-h-screen flex items-center relative overflow-hidden"
+      className="min-h-[65vh] flex items-center relative overflow-hidden"
       style={{ background: '#0B0B0B' }}
     >
       {/* Subtle dot pattern */}
@@ -31,10 +31,10 @@ const HomePage = () => {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10 pt-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10 pt-12">
         <div className="max-w-3xl">
           <h1
-            className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight mb-6"
+            className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight mb-4"
             style={{
               color: '#FFFFFF',
               fontFamily: 'Poppins, sans-serif',
@@ -44,7 +44,7 @@ const HomePage = () => {
             {personalInfo.name}
           </h1>
           <p
-            className="text-base md:text-lg font-medium mb-5"
+            className="text-lg md:text-xl font-medium mb-3"
             style={{
               color: 'rgba(255,255,255,0.7)',
               fontFamily: 'Roboto, sans-serif',
@@ -54,7 +54,7 @@ const HomePage = () => {
             {personalInfo.title}
           </p>
           <p
-            className="text-base md:text-lg leading-relaxed mb-12 max-w-2xl"
+            className="text-base md:text-lg leading-relaxed mb-8 max-w-2xl"
             style={{
               color: 'rgba(255,255,255,0.45)',
               fontFamily: 'Roboto, sans-serif',

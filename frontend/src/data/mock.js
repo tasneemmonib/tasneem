@@ -139,11 +139,6 @@ export const projects = [
       },
       {
         type: "video",
-        url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/bzst6jla_IMG_6881.MOV",
-        title: "UH Baseball — Gameday at Schaefer Park",
-      },
-      {
-        type: "video",
         url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/cqrw4faw_Sequence%2006_1.MP4",
         title: "UH Football — Game Highlights",
       },
@@ -151,6 +146,11 @@ export const projects = [
         type: "video",
         url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/qqgy5frm_uh%20hofstra%20touch%20the%20sky.MP4",
         title: "UH Basketball vs. Hofstra — Game Highlights",
+      },
+      {
+        type: "video",
+        url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/bzst6jla_IMG_6881.MOV",
+        title: "UH Baseball — Gameday at Schaefer Park",
       },
     ],
   },

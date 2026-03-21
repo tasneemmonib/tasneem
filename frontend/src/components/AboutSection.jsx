@@ -34,7 +34,6 @@ const iconMap = {
 
 const AboutSection = () => {
   const sectionRef = useRef(null);
-  const capRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -48,17 +47,15 @@ const AboutSection = () => {
       { threshold: 0.1 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
-    if (capRef.current) observer.observe(capRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
     <section id="about" style={{ backgroundColor: '#FFFFFF' }}>
-      {/* About + Professional Background */}
       <div className="py-20 lg:py-28" ref={sectionRef}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 fade-section">
           <div className="grid lg:grid-cols-5 gap-14 lg:gap-20">
-            {/* Left Column — About */}
+            {/* Left Column — About + Core Capabilities */}
             <div className="lg:col-span-3">
               <p
                 className="text-sm font-medium tracking-[0.15em] uppercase mb-3"
@@ -79,7 +76,7 @@ const AboutSection = () => {
                 Strategy Meets Execution
               </h2>
 
-              <div className="space-y-5">
+              <div className="space-y-5 mb-14">
                 {personalInfo.aboutBio.map((paragraph, i) => (
                   <p
                     key={i}
@@ -92,6 +89,56 @@ const AboutSection = () => {
                     {paragraph}
                   </p>
                 ))}
+              </div>
+
+              {/* Core Capabilities — inside left column */}
+              <div
+                className="border-t pt-10"
+                style={{ borderColor: '#F0F0F0' }}
+              >
+                <p
+                  className="text-xs font-medium tracking-[0.15em] uppercase mb-6"
+                  style={{ color: '#999', fontFamily: 'Roboto, sans-serif' }}
+                >
+                  Core Capabilities
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {capabilities.map((cap, i) => {
+                    const Icon = iconMap[cap.icon];
+                    return (
+                      <div
+                        key={i}
+                        className="flex items-center gap-3 px-4 py-3.5 rounded-lg"
+                        style={{
+                          backgroundColor: '#FAFAFA',
+                          border: '1px solid #F0F0F0',
+                          transition:
+                            'background-color 0.2s ease, box-shadow 0.2s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = '#F5F5F5';
+                          e.currentTarget.style.boxShadow =
+                            '0 2px 8px rgba(0,0,0,0.04)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '#FAFAFA';
+                          e.currentTarget.style.boxShadow = 'none';
+                        }}
+                      >
+                        {Icon && <Icon size={16} color="#C8102E" />}
+                        <span
+                          className="text-sm font-medium"
+                          style={{
+                            color: '#0B0B0B',
+                            fontFamily: 'Roboto, sans-serif',
+                          }}
+                        >
+                          {cap.name}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
@@ -216,7 +263,7 @@ const AboutSection = () => {
                       fontFamily: 'Roboto, sans-serif',
                     }}
                   >
-                    {education.studyAbroad}
+                    University of Granada, Spain — Study Abroad Program (Spring 2024)
                   </p>
                 </div>
 
@@ -255,63 +302,6 @@ const AboutSection = () => {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Core Capabilities — below both columns */}
-      <div
-        className="pb-20 lg:pb-28"
-        ref={capRef}
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 fade-section">
-          <div
-            className="border-t pt-14"
-            style={{ borderColor: '#F0F0F0' }}
-          >
-            <p
-              className="text-xs font-medium tracking-[0.15em] uppercase mb-8"
-              style={{ color: '#999', fontFamily: 'Roboto, sans-serif' }}
-            >
-              Core Capabilities
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {capabilities.map((cap, i) => {
-                const Icon = iconMap[cap.icon];
-                return (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 px-4 py-3.5 rounded-lg"
-                    style={{
-                      backgroundColor: '#FAFAFA',
-                      border: '1px solid #F0F0F0',
-                      transition:
-                        'background-color 0.2s ease, box-shadow 0.2s ease',
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = '#F5F5F5';
-                      e.currentTarget.style.boxShadow =
-                        '0 2px 8px rgba(0,0,0,0.04)';
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = '#FAFAFA';
-                      e.currentTarget.style.boxShadow = 'none';
-                    }}
-                  >
-                    {Icon && <Icon size={16} color="#C8102E" />}
-                    <span
-                      className="text-sm font-medium"
-                      style={{
-                        color: '#0B0B0B',
-                        fontFamily: 'Roboto, sans-serif',
-                      }}
-                    >
-                      {cap.name}
-                    </span>
-                  </div>
-                );
-              })}
             </div>
           </div>
         </div>
