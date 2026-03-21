@@ -39,8 +39,10 @@ Build a modern, sleek marketing portfolio website for a recent marketing graduat
 - Navbar with profile photo, navigation links, and Resume download button
 - Resume PDF, Nike Marketing Plan, Denmark Analysis, Gulf Coast Foodways research paper — all linked
 - Fifth Ward Library Documentary — YouTube embed
-- **Sports Marketing & Media Operations — 7-image photo gallery with lightbox** (Feb 2026)
-  - UH Baseball gameday, Basketball (3 shots), Football, Track & Field (2 shots)
+- **Sports Marketing & Media Operations — 7-image photo gallery with lightbox + 3 native videos** (Feb 2026)
+  - Photos: UH Baseball gameday, Basketball (3 shots), Football, Track & Field (2 shots)
+  - Videos: UH Baseball gameday, UH Football highlights, UH Basketball vs Hofstra highlights
+  - Thumbnail: Replaced stock image with real UH Football photo (DSCF3531.JPG)
 
 ### Content-Populated Projects
 1. Nike Marketing Strategy (PDF)

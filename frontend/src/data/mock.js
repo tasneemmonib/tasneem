@@ -139,7 +139,7 @@ export const projects = [
     category: "Content Production",
     tags: ["Content Production", "Event Marketing", "Professional Experience"],
     image:
-      "https://images.unsplash.com/photo-1520470082789-e347ad8b1944?w=800&q=80",
+      "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/yck7oeeq_DSCF3531.JPG",
     overview:
       "Marketing, media production, and event operations experience supporting university athletics and sports entertainment events. Work included content production, gameday marketing execution, and event coordination across multiple roles with UH Athletics and United Sports & Entertainment.",
     role: "Sports Head Editor (CoogTV) · Marketing & Gameday Operations (UH Athletics) · Event Operations (Battleground 2K24)",
@@ -195,6 +195,21 @@ export const projects = [
         type: "image",
         url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/d6nnmckp_Untitled387_20260114234525.JPG",
         title: "UH Track & Field — Motion Action Shot",
+      },
+      {
+        type: "video",
+        url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/bzst6jla_IMG_6881.MOV",
+        title: "UH Baseball — Gameday at Schaefer Park",
+      },
+      {
+        type: "video",
+        url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/cqrw4faw_Sequence%2006_1.MP4",
+        title: "UH Football — Game Highlights",
+      },
+      {
+        type: "video",
+        url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/qqgy5frm_uh%20hofstra%20touch%20the%20sky.MP4",
+        title: "UH Basketball vs. Hofstra — Game Highlights",
       },
     ],
   },

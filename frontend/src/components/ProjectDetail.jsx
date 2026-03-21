@@ -24,7 +24,8 @@ const ProjectDetail = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const imageMedia = project ? project.media.filter((m) => m.type === 'image') : [];
-  const videoMedia = project ? project.media.filter((m) => m.type === 'youtube') : [];
+  const youtubeMedia = project ? project.media.filter((m) => m.type === 'youtube') : [];
+  const nativeVideoMedia = project ? project.media.filter((m) => m.type === 'video') : [];
 
   const openLightbox = (index) => {
     setLightboxIndex(index);
@@ -326,7 +327,7 @@ const ProjectDetail = () => {
             )}
 
             {/* Media Section — Videos */}
-            {videoMedia.length > 0 && (
+            {(youtubeMedia.length > 0 || nativeVideoMedia.length > 0) && (
               <>
                 <Separator />
                 <div>
@@ -337,12 +338,41 @@ const ProjectDetail = () => {
                       fontFamily: 'Poppins, sans-serif',
                     }}
                   >
-                    Media
+                    Video
                   </h2>
                   <div className="space-y-6">
-                    {videoMedia.map((item, i) => (
+                    {nativeVideoMedia.map((item, i) => (
                       <div
-                        key={i}
+                        key={`native-${i}`}
+                        data-testid={`native-video-${i}`}
+                        className="rounded-xl overflow-hidden"
+                        style={{ backgroundColor: '#0B0B0B' }}
+                      >
+                        <div className="aspect-video">
+                          <video
+                            src={item.url}
+                            controls
+                            preload="metadata"
+                            className="w-full h-full object-contain"
+                            style={{ backgroundColor: '#000' }}
+                          />
+                        </div>
+                        <div className="p-4">
+                          <p
+                            className="text-sm font-medium"
+                            style={{
+                              color: '#FFFFFF',
+                              fontFamily: 'Roboto, sans-serif',
+                            }}
+                          >
+                            {item.title}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                    {youtubeMedia.map((item, i) => (
+                      <div
+                        key={`yt-${i}`}
                         className="rounded-xl overflow-hidden"
                         style={{ backgroundColor: '#0B0B0B' }}
                       >
