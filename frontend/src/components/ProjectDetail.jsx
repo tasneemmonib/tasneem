@@ -1,10 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft,
   CheckCircle2,
   FileText,
   ExternalLink,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -17,6 +20,30 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const project = projects.find((p) => p.id === id);
   const sectionRef = useRef(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const imageMedia = project ? project.media.filter((m) => m.type === 'image') : [];
+  const videoMedia = project ? project.media.filter((m) => m.type === 'youtube') : [];
+
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    document.body.style.overflow = '';
+  };
+
+  const nextImage = () => {
+    setLightboxIndex((prev) => (prev + 1) % imageMedia.length);
+  };
+
+  const prevImage = () => {
+    setLightboxIndex((prev) => (prev - 1 + imageMedia.length) % imageMedia.length);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -250,8 +277,56 @@ const ProjectDetail = () => {
               </>
             )}
 
-            {/* Media Section */}
-            {project.media.length > 0 && (
+            {/* Media Section — Photo Gallery */}
+            {imageMedia.length > 0 && (
+              <>
+                <Separator />
+                <div>
+                  <h2
+                    className="text-2xl font-bold mb-6"
+                    style={{
+                      color: '#0B0B0B',
+                      fontFamily: 'Poppins, sans-serif',
+                    }}
+                  >
+                    Photo Gallery
+                  </h2>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {imageMedia.map((item, i) => (
+                      <div
+                        key={i}
+                        data-testid={`gallery-image-${i}`}
+                        className="relative group cursor-pointer rounded-lg overflow-hidden aspect-square"
+                        onClick={() => openLightbox(i)}
+                      >
+                        <img
+                          src={item.url}
+                          alt={item.title}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                        <div
+                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
+                          style={{
+                            background: 'linear-gradient(to top, rgba(11,11,11,0.7) 0%, transparent 50%)',
+                          }}
+                        >
+                          <p
+                            className="p-3 text-xs font-medium"
+                            style={{ color: '#FFFFFF', fontFamily: 'Roboto, sans-serif' }}
+                          >
+                            {item.title}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
+
+            {/* Media Section — Videos */}
+            {videoMedia.length > 0 && (
               <>
                 <Separator />
                 <div>
@@ -265,23 +340,21 @@ const ProjectDetail = () => {
                     Media
                   </h2>
                   <div className="space-y-6">
-                    {project.media.map((item, i) => (
+                    {videoMedia.map((item, i) => (
                       <div
                         key={i}
                         className="rounded-xl overflow-hidden"
                         style={{ backgroundColor: '#0B0B0B' }}
                       >
-                        {item.type === 'youtube' && (
-                          <div className="aspect-video">
-                            <iframe
-                              src={item.url}
-                              title={item.title}
-                              className="w-full h-full"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                            />
-                          </div>
-                        )}
+                        <div className="aspect-video">
+                          <iframe
+                            src={item.url}
+                            title={item.title}
+                            className="w-full h-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
                         <div className="p-4">
                           <p
                             className="text-sm font-medium"
@@ -388,6 +461,74 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && imageMedia.length > 0 && (
+        <div
+          data-testid="lightbox-modal"
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          style={{ backgroundColor: 'rgba(0,0,0,0.92)' }}
+          onClick={closeLightbox}
+        >
+          {/* Close button */}
+          <button
+            data-testid="lightbox-close"
+            onClick={closeLightbox}
+            className="absolute top-6 right-6 p-2 rounded-full transition-colors duration-200"
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)')}
+            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')}
+          >
+            <X size={24} color="#FFFFFF" />
+          </button>
+
+          {/* Previous button */}
+          <button
+            data-testid="lightbox-prev"
+            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+            className="absolute left-4 md:left-8 p-2 rounded-full transition-colors duration-200"
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)')}
+            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')}
+          >
+            <ChevronLeft size={28} color="#FFFFFF" />
+          </button>
+
+          {/* Image */}
+          <div
+            className="max-w-5xl max-h-[85vh] px-16"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={imageMedia[lightboxIndex].url}
+              alt={imageMedia[lightboxIndex].title}
+              className="max-w-full max-h-[80vh] object-contain rounded-lg"
+              style={{ margin: '0 auto', display: 'block' }}
+            />
+            <p
+              className="text-center mt-4 text-sm"
+              style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'Roboto, sans-serif' }}
+            >
+              {imageMedia[lightboxIndex].title}
+              <span style={{ color: 'rgba(255,255,255,0.4)' }}>
+                {' '}— {lightboxIndex + 1} / {imageMedia.length}
+              </span>
+            </p>
+          </div>
+
+          {/* Next button */}
+          <button
+            data-testid="lightbox-next"
+            onClick={(e) => { e.stopPropagation(); nextImage(); }}
+            className="absolute right-4 md:right-8 p-2 rounded-full transition-colors duration-200"
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)')}
+            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')}
+          >
+            <ChevronRight size={28} color="#FFFFFF" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -160,7 +160,43 @@ export const projects = [
       "Media Relations",
     ],
     deliverables: [],
-    media: [],
+    media: [
+      {
+        type: "image",
+        url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/612o9jhh_IMG_6880.jpeg",
+        title: "UH Baseball — Gameday Fan Engagement at Schaefer Park",
+      },
+      {
+        type: "image",
+        url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/tv90cx4m_IMG_0238.JPEG",
+        title: "UH Basketball — Game Action at Fertitta Center",
+      },
+      {
+        type: "image",
+        url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/3kyxsi8r_Untitled387_20260120174344.JPG",
+        title: "UH Basketball — Rebound Contest vs. Arizona State",
+      },
+      {
+        type: "image",
+        url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/yck7oeeq_DSCF3531.JPG",
+        title: "UH Football — Gameday at TDECU Stadium",
+      },
+      {
+        type: "image",
+        url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/538cfw9b_IMG_9898.JPEG",
+        title: "UH Basketball — Fast Break Action",
+      },
+      {
+        type: "image",
+        url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/as0fpva0_Monib_Action.jpeg",
+        title: "UH Track & Field — Sprint Coverage",
+      },
+      {
+        type: "image",
+        url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/d6nnmckp_Untitled387_20260114234525.JPG",
+        title: "UH Track & Field — Motion Action Shot",
+      },
+    ],
   },
   {
     id: "springtime-pediatrics",
