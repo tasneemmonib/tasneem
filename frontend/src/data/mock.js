@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Tasneem Monib",
-  title: "Marketing & Content Strategy",
+  title: "Marketing Communications | Brand & Product Marketing | Event Marketing",
   subtitle:
-    "Marketing graduate focused on brand storytelling, digital content, and event marketing. Experience supporting campaigns, producing media, and building audience engagement through strategic marketing initiatives.",
+    "Marketing graduate supporting campaigns, producing content, and building audience engagement through strategic marketing initiatives.",
   email: "tasneemmonib@gmail.com",
   linkedin: "https://linkedin.com/in/tasneemmonib",
   resumeUrl:
@@ -12,9 +12,10 @@ export const personalInfo = {
   profilePhoto:
     "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/ram015gf_Screenshot%202026-03-21%20at%203.56.46%E2%80%AFPM.png",
   aboutBio: [
-    "I am a marketing graduate from the University of Houston focused on marketing communications, content strategy, and brand storytelling. My experience includes supporting marketing campaigns, producing digital content, and helping execute event marketing initiatives.",
-    "I have worked on marketing communications for healthcare organizations, sports media production for university athletics, and strategic marketing research projects. I enjoy working at the intersection of strategy and creative execution.",
-    "I am seeking early career opportunities where I can contribute to marketing campaigns, brand growth, and audience engagement.",
+    "I am a marketing graduate from the University of Houston with experience supporting marketing communications, brand initiatives, and event marketing programs. My work includes helping execute campaigns, producing marketing content, and supporting audience engagement initiatives.",
+    "I have supported marketing and outreach efforts for a pediatric medical practice, contributed to sports media production through university athletics, and completed strategic marketing and research projects focused on brand growth and market analysis.",
+    "I am especially interested in downstream marketing and marketing communications roles where I can help support product launches, campaigns, and brand growth initiatives. I am open to opportunities across industries including healthcare, consumer brands, and sports.",
+    "I enjoy working where marketing strategy and execution meet, particularly in roles that allow me to contribute to campaigns, storytelling, and customer engagement.",
   ],
 };
 
@@ -33,6 +34,27 @@ export const skills = [
   { name: "Video Production", icon: "Video" },
 ];
 
+export const experience = [
+  {
+    company: "Springtime Pediatrics",
+    role: "Marketing Communications Coordinator",
+    summary:
+      "Supported marketing communications and community outreach initiatives for a pediatric medical practice including marketing materials, social content, and event support.",
+  },
+  {
+    company: "University of Houston Athletics",
+    role: "Marketing & Gameday Operations",
+    summary:
+      "Supported gameday marketing operations including promotions, fan engagement, and event execution.",
+  },
+  {
+    company: "United Sports & Entertainment",
+    role: "Event Operations Intern",
+    summary:
+      "Supported logistics and media coordination for a multi-day sports and entertainment event.",
+  },
+];
+
 export const categories = [
   "All",
   "Marketing Strategy",
@@ -46,7 +68,7 @@ export const projects = [
     id: "nike-marketing-strategy",
     title: "Nike Marketing Strategy",
     category: "Marketing Strategy",
-    featured: true,
+    tags: ["Marketing Strategy"],
     image:
       "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80",
     overview:
@@ -74,13 +96,12 @@ export const projects = [
       },
     ],
     media: [],
-    links: [],
   },
   {
     id: "denmark-market-analysis",
     title: "Denmark Country Market Analysis",
     category: "Marketing Strategy",
-    featured: false,
+    tags: ["Marketing Strategy"],
     image:
       "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
     overview:
@@ -107,24 +128,23 @@ export const projects = [
       },
     ],
     media: [],
-    links: [],
   },
   {
     id: "uh-athletics-media",
     title: "University of Houston Athletics Media",
     category: "Content Production",
-    featured: true,
+    tags: ["Content Production", "Professional Experience"],
     image:
       "https://images.unsplash.com/photo-1520470082789-e347ad8b1944?w=800&q=80",
     overview:
       "As Sports Head Editor at UH CoogTV, lead end-to-end sports video production for the university's student-run television network. Responsible for covering live games, producing highlight packages, directing documentary-style features, and delivering broadcast-ready content under tight turnaround schedules.",
     role: "Sports Head Editor, CoogTV",
     contributions: [
-      "Lead sports video production for UH's student-run television network covering live games and events",
+      "Lead sports video production covering live games and events for digital distribution",
       "Produce highlight packages and promotional video content for athletics programs",
       "Direct and edit documentary-style features including the 5th Ward Library ShastaDocs piece",
       "Manage projects from raw footage through final cut using Adobe Premiere Pro and Lightroom",
-      "Deliver broadcast-ready content on tight turnaround schedules for digital distribution",
+      "Deliver broadcast-ready content on tight turnaround schedules",
     ],
     skills: [
       "Video Production",
@@ -141,13 +161,12 @@ export const projects = [
         title: "5th Ward Library | ShastaDocs — Directed by Tasneem Monib",
       },
     ],
-    links: [],
   },
   {
     id: "springtime-pediatrics",
     title: "Springtime Pediatrics Marketing",
     category: "Event Marketing",
-    featured: true,
+    tags: ["Event Marketing", "Professional Experience"],
     image:
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
     overview:
@@ -169,13 +188,12 @@ export const projects = [
     ],
     deliverables: [],
     media: [],
-    links: [],
   },
   {
     id: "battleground-sports",
     title: "Battleground 2K24 Event Operations",
     category: "Event Marketing",
-    featured: false,
+    tags: ["Event Marketing", "Professional Experience"],
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
     overview:
@@ -196,13 +214,12 @@ export const projects = [
     ],
     deliverables: [],
     media: [],
-    links: [],
   },
   {
     id: "reach-research",
     title: "REACH Research — Gulf Coast Foodways",
     category: "Research & Leadership",
-    featured: false,
+    tags: ["Research Project"],
     image:
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
     overview:
@@ -222,13 +239,12 @@ export const projects = [
     ],
     deliverables: [],
     media: [],
-    links: [],
   },
   {
     id: "ink-collective",
     title: "INK Collective",
     category: "Research & Leadership",
-    featured: false,
+    tags: ["Leadership"],
     image:
       "https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=600&q=80",
     overview:
@@ -248,18 +264,17 @@ export const projects = [
     ],
     deliverables: [],
     media: [],
-    links: [],
   },
   {
     id: "heart-program",
     title: "The H.E.A.R.T. Program — Social Media Strategy",
     category: "Marketing Strategy",
-    featured: false,
+    tags: ["Marketing Strategy"],
     image:
       "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=600&q=80",
     overview:
-      "Developed a comprehensive social media strategy for a nonprofit organization as part of a student consulting engagement. Conducted a full social media audit, analyzed content performance and audience demographics, and delivered a strategic plan with branded templates and platform-specific recommendations.",
-    role: "Student Consultant",
+      "Developed a comprehensive social media strategy for a nonprofit organization as part of a consulting engagement. Conducted a full social media audit, analyzed content performance and audience demographics, and delivered a strategic plan with branded templates and platform-specific recommendations.",
+    role: "Marketing Consultant",
     contributions: [
       "Conducted a comprehensive social media audit analyzing content performance and audience demographics",
       "Evaluated competitive positioning and identified growth opportunities across platforms",
@@ -275,6 +290,5 @@ export const projects = [
     ],
     deliverables: [],
     media: [],
-    links: [],
   },
 ];

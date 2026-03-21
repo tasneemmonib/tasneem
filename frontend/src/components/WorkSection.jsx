@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { projects, categories } from '../data/mock';
 import { useNavigate } from 'react-router-dom';
@@ -30,6 +29,12 @@ const WorkSection = () => {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
+  const handleProjectClick = (projectId) => {
+    // Save scroll position so we can return to Work section
+    sessionStorage.setItem('returnToWork', 'true');
+    navigate(`/project/${projectId}`);
+  };
 
   return (
     <section
@@ -89,8 +94,10 @@ const WorkSection = () => {
             <Card
               key={project.id}
               className="group cursor-pointer overflow-hidden border-0 shadow-sm bg-white rounded-xl"
-              style={{ transition: 'box-shadow 0.3s ease, transform 0.3s ease' }}
-              onClick={() => navigate(`/project/${project.id}`)}
+              style={{
+                transition: 'box-shadow 0.3s ease, transform 0.3s ease',
+              }}
+              onClick={() => handleProjectClick(project.id)}
               onMouseOver={(e) => {
                 e.currentTarget.style.boxShadow =
                   '0 20px 40px rgba(0,0,0,0.08)';
@@ -128,16 +135,22 @@ const WorkSection = () => {
                 </div>
               </div>
               <CardContent className="p-6">
-                <Badge
-                  variant="secondary"
-                  className="text-xs font-medium mb-3"
-                  style={{
-                    backgroundColor: 'rgba(200,16,46,0.07)',
-                    color: '#C8102E',
-                  }}
-                >
-                  {project.category}
-                </Badge>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="text-[10px] font-medium tracking-wide uppercase px-2.5 py-1 rounded-full"
+                      style={{
+                        backgroundColor: '#F0F0F0',
+                        color: '#777',
+                        fontFamily: 'Roboto, sans-serif',
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
                 <h3
                   className="text-xl font-semibold mb-2"
                   style={{
@@ -148,16 +161,20 @@ const WorkSection = () => {
                   {project.title}
                 </h3>
                 <p
-                  className="text-sm leading-relaxed mb-4"
+                  className="text-sm leading-relaxed mb-4 line-clamp-2"
                   style={{ color: '#666', fontFamily: 'Roboto, sans-serif' }}
                 >
                   {project.overview}
                 </p>
                 <div
                   className="flex items-center text-sm font-medium"
-                  style={{ color: '#C8102E', fontFamily: 'Roboto, sans-serif' }}
+                  style={{
+                    color: '#C8102E',
+                    fontFamily: 'Roboto, sans-serif',
+                  }}
                 >
-                  View Case Study <ArrowUpRight size={14} className="ml-1" />
+                  View Case Study{' '}
+                  <ArrowUpRight size={14} className="ml-1" />
                 </div>
               </CardContent>
             </Card>

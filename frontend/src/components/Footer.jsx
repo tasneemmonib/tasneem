@@ -26,7 +26,7 @@ const Footer = () => {
                 fontFamily: 'Roboto, sans-serif',
               }}
             >
-              Marketing & Content Strategy
+              Marketing Communications | Brand & Product Marketing
             </p>
           </div>
 

@@ -37,6 +37,17 @@ const ProjectDetail = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleBack = () => {
+    // Navigate to home and scroll to work section
+    navigate('/');
+    setTimeout(() => {
+      const workSection = document.querySelector('#work');
+      if (workSection) {
+        workSection.scrollIntoView({ behavior: 'instant' });
+      }
+    }, 100);
+  };
+
   if (!project) {
     return (
       <div
@@ -73,15 +84,22 @@ const ProjectDetail = () => {
           }}
         />
         <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-12 max-w-7xl mx-auto">
-          <Badge
-            className="mb-4 text-xs font-medium"
-            style={{
-              backgroundColor: '#C8102E',
-              color: '#FFFFFF',
-            }}
-          >
-            {project.category}
-          </Badge>
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((tag, i) => (
+              <span
+                key={i}
+                className="text-[10px] font-medium tracking-wide uppercase px-3 py-1 rounded-full"
+                style={{
+                  backgroundColor: 'rgba(255,255,255,0.15)',
+                  color: 'rgba(255,255,255,0.8)',
+                  fontFamily: 'Roboto, sans-serif',
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
           <h1
             className="text-3xl md:text-5xl font-bold mb-2"
             style={{
@@ -106,12 +124,12 @@ const ProjectDetail = () => {
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-8">
         <Button
-          onClick={() => navigate('/')}
+          onClick={handleBack}
           variant="ghost"
           className="text-sm font-medium hover:bg-gray-50"
           style={{ color: '#666', fontFamily: 'Roboto, sans-serif' }}
         >
-          <ArrowLeft size={16} className="mr-2" /> Back to Portfolio
+          <ArrowLeft size={16} className="mr-2" /> Back to Work
         </Button>
       </div>
 
@@ -177,105 +195,109 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            <Separator />
-
-            {/* Media Section */}
-            {project.media.length > 0 && (
-              <div>
-                <h2
-                  className="text-2xl font-bold mb-6"
-                  style={{
-                    color: '#0B0B0B',
-                    fontFamily: 'Poppins, sans-serif',
-                  }}
-                >
-                  Media
-                </h2>
-                <div className="space-y-6">
-                  {project.media.map((item, i) => (
-                    <div
-                      key={i}
-                      className="rounded-xl overflow-hidden"
-                      style={{ backgroundColor: '#0B0B0B' }}
-                    >
-                      {item.type === 'youtube' && (
-                        <div className="aspect-video">
-                          <iframe
-                            src={item.url}
-                            title={item.title}
-                            className="w-full h-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          />
-                        </div>
-                      )}
-                      <div className="p-4">
-                        <p
+            {/* Deliverables */}
+            {project.deliverables.length > 0 && (
+              <>
+                <Separator />
+                <div>
+                  <h2
+                    className="text-2xl font-bold mb-6"
+                    style={{
+                      color: '#0B0B0B',
+                      fontFamily: 'Poppins, sans-serif',
+                    }}
+                  >
+                    Deliverables
+                  </h2>
+                  <div className="space-y-3">
+                    {project.deliverables.map((d, i) => (
+                      <a
+                        key={i}
+                        href={d.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 p-4 rounded-lg"
+                        style={{
+                          backgroundColor: '#F5F5F5',
+                          transition: 'background-color 0.2s ease',
+                        }}
+                        onMouseOver={(e) =>
+                          (e.currentTarget.style.backgroundColor = '#EBEBEB')
+                        }
+                        onMouseOut={(e) =>
+                          (e.currentTarget.style.backgroundColor = '#F5F5F5')
+                        }
+                      >
+                        <FileText size={18} color="#C8102E" />
+                        <span
                           className="text-sm font-medium"
                           style={{
-                            color: '#FFFFFF',
+                            color: '#0B0B0B',
                             fontFamily: 'Roboto, sans-serif',
                           }}
                         >
-                          {item.title}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+                          {d.label}
+                        </span>
+                        <ExternalLink
+                          size={14}
+                          color="#999"
+                          className="ml-auto"
+                        />
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </>
             )}
 
-            {/* Deliverables */}
-            {project.deliverables.length > 0 && (
-              <div>
-                <h2
-                  className="text-2xl font-bold mb-6"
-                  style={{
-                    color: '#0B0B0B',
-                    fontFamily: 'Poppins, sans-serif',
-                  }}
-                >
-                  Deliverables
-                </h2>
-                <div className="space-y-3">
-                  {project.deliverables.map((d, i) => (
-                    <a
-                      key={i}
-                      href={d.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-4 rounded-lg"
-                      style={{
-                        backgroundColor: '#F5F5F5',
-                        transition: 'background-color 0.2s ease',
-                      }}
-                      onMouseOver={(e) =>
-                        (e.currentTarget.style.backgroundColor = '#EBEBEB')
-                      }
-                      onMouseOut={(e) =>
-                        (e.currentTarget.style.backgroundColor = '#F5F5F5')
-                      }
-                    >
-                      <FileText size={18} color="#C8102E" />
-                      <span
-                        className="text-sm font-medium"
-                        style={{
-                          color: '#0B0B0B',
-                          fontFamily: 'Roboto, sans-serif',
-                        }}
+            {/* Media Section */}
+            {project.media.length > 0 && (
+              <>
+                <Separator />
+                <div>
+                  <h2
+                    className="text-2xl font-bold mb-6"
+                    style={{
+                      color: '#0B0B0B',
+                      fontFamily: 'Poppins, sans-serif',
+                    }}
+                  >
+                    Media
+                  </h2>
+                  <div className="space-y-6">
+                    {project.media.map((item, i) => (
+                      <div
+                        key={i}
+                        className="rounded-xl overflow-hidden"
+                        style={{ backgroundColor: '#0B0B0B' }}
                       >
-                        {d.label}
-                      </span>
-                      <ExternalLink
-                        size={14}
-                        color="#999"
-                        className="ml-auto"
-                      />
-                    </a>
-                  ))}
+                        {item.type === 'youtube' && (
+                          <div className="aspect-video">
+                            <iframe
+                              src={item.url}
+                              title={item.title}
+                              className="w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          </div>
+                        )}
+                        <div className="p-4">
+                          <p
+                            className="text-sm font-medium"
+                            style={{
+                              color: '#FFFFFF',
+                              fontFamily: 'Roboto, sans-serif',
+                            }}
+                          >
+                            {item.title}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </>
             )}
           </div>
 

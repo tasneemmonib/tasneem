@@ -8,15 +8,11 @@ import {
   MessageSquare,
 } from 'lucide-react';
 import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import { personalInfo, credibilityItems, projects } from '../data/mock';
-import { useNavigate } from 'react-router-dom';
+import { personalInfo, credibilityItems } from '../data/mock';
 
 const iconMap = { Target, Film, Calendar, MessageSquare };
 
 const HomePage = () => {
-  const navigate = useNavigate();
-  const featuredProjects = projects.filter((p) => p.featured);
   const sectionsRef = useRef([]);
 
   useEffect(() => {
@@ -60,17 +56,13 @@ const HomePage = () => {
         {/* Decorative accent line */}
         <div
           className="absolute top-0 left-0 w-1 h-full"
-          style={{ background: 'linear-gradient(to bottom, #C8102E, transparent)' }}
+          style={{
+            background: 'linear-gradient(to bottom, #C8102E, transparent)',
+          }}
         />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10 pt-20">
           <div className="max-w-3xl">
-            <p
-              className="text-sm font-medium tracking-[0.25em] uppercase mb-8"
-              style={{ color: '#C8102E', fontFamily: 'Roboto, sans-serif' }}
-            >
-              Portfolio
-            </p>
             <h1
               className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight mb-6"
               style={{
@@ -82,10 +74,11 @@ const HomePage = () => {
               {personalInfo.name}
             </h1>
             <p
-              className="text-xl md:text-2xl font-light mb-4"
+              className="text-base md:text-lg font-medium mb-5"
               style={{
-                color: 'rgba(255,255,255,0.9)',
-                fontFamily: 'Poppins, sans-serif',
+                color: 'rgba(255,255,255,0.7)',
+                fontFamily: 'Roboto, sans-serif',
+                letterSpacing: '0.02em',
               }}
             >
               {personalInfo.title}
@@ -93,7 +86,7 @@ const HomePage = () => {
             <p
               className="text-base md:text-lg leading-relaxed mb-12 max-w-2xl"
               style={{
-                color: 'rgba(255,255,255,0.5)',
+                color: 'rgba(255,255,255,0.45)',
                 fontFamily: 'Roboto, sans-serif',
               }}
             >
@@ -102,12 +95,19 @@ const HomePage = () => {
             <div className="flex flex-wrap gap-4">
               <Button
                 onClick={() => scrollTo('#work')}
-                className="h-12 px-8 text-sm font-medium rounded-lg transition-transform duration-200 hover:scale-[1.02] border-0"
+                className="h-12 px-8 text-sm font-medium rounded-lg border-0"
                 style={{
                   backgroundColor: '#C8102E',
                   color: '#FFFFFF',
                   fontFamily: 'Roboto, sans-serif',
+                  transition: 'transform 0.2s ease',
                 }}
+                onMouseOver={(e) =>
+                  (e.currentTarget.style.transform = 'scale(1.02)')
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.style.transform = 'scale(1)')
+                }
               >
                 View Work <ArrowRight className="ml-2" size={16} />
               </Button>
@@ -116,11 +116,18 @@ const HomePage = () => {
                   window.open(personalInfo.resumeUrl, '_blank');
                 }}
                 variant="outline"
-                className="h-12 px-8 text-sm font-medium rounded-lg border-white/20 hover:bg-white/10 transition-transform duration-200"
+                className="h-12 px-8 text-sm font-medium rounded-lg border-white/20 hover:bg-white/10"
                 style={{
                   color: '#FFFFFF',
                   fontFamily: 'Roboto, sans-serif',
+                  transition: 'transform 0.2s ease',
                 }}
+                onMouseOver={(e) =>
+                  (e.currentTarget.style.transform = 'scale(1.02)')
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.style.transform = 'scale(1)')
+                }
               >
                 <Download className="mr-2" size={16} /> Resume
               </Button>
@@ -131,7 +138,7 @@ const HomePage = () => {
 
       {/* Credibility Strip */}
       <section
-        className="py-16 lg:py-20 border-b border-gray-100"
+        className="py-14 lg:py-16 border-b border-gray-100"
         style={{ backgroundColor: '#FFFFFF' }}
         ref={(el) => (sectionsRef.current[0] = el)}
       >
@@ -159,86 +166,6 @@ const HomePage = () => {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Projects */}
-      <section
-        className="py-20 lg:py-28"
-        style={{ backgroundColor: '#F5F5F5' }}
-        ref={(el) => (sectionsRef.current[1] = el)}
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 fade-section">
-          <div className="mb-14">
-            <p
-              className="text-sm font-medium tracking-[0.15em] uppercase mb-3"
-              style={{ color: '#C8102E', fontFamily: 'Roboto, sans-serif' }}
-            >
-              Featured Work
-            </p>
-            <h2
-              className="text-3xl md:text-4xl font-bold"
-              style={{ color: '#0B0B0B', fontFamily: 'Poppins, sans-serif' }}
-            >
-              Selected Projects
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {featuredProjects.map((project) => (
-              <Card
-                key={project.id}
-                className="group cursor-pointer overflow-hidden border-0 shadow-sm hover:shadow-lg bg-white rounded-xl"
-                style={{ transition: 'box-shadow 0.3s ease' }}
-                onClick={() => navigate(`/project/${project.id}`)}
-              >
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                    style={{ transition: 'transform 0.5s ease' }}
-                    onMouseOver={(e) =>
-                      (e.currentTarget.style.transform = 'scale(1.05)')
-                    }
-                    onMouseOut={(e) =>
-                      (e.currentTarget.style.transform = 'scale(1)')
-                    }
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <span
-                    className="text-xs font-medium tracking-wider uppercase"
-                    style={{
-                      color: '#C8102E',
-                      fontFamily: 'Roboto, sans-serif',
-                    }}
-                  >
-                    {project.category}
-                  </span>
-                  <h3
-                    className="text-lg font-semibold mt-2 mb-2"
-                    style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Poppins, sans-serif',
-                      transition: 'color 0.2s ease',
-                    }}
-                  >
-                    {project.title}
-                  </h3>
-                  <p
-                    className="text-sm leading-relaxed line-clamp-2"
-                    style={{
-                      color: '#666',
-                      fontFamily: 'Roboto, sans-serif',
-                    }}
-                  >
-                    {project.overview}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
