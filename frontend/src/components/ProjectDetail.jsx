@@ -8,6 +8,7 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  Wrench,
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -235,44 +236,63 @@ const ProjectDetail = () => {
                       fontFamily: 'Poppins, sans-serif',
                     }}
                   >
-                    Deliverables
+                    Deliverables & Work Samples
                   </h2>
                   <div className="space-y-3">
-                    {project.deliverables.map((d, i) => (
-                      <a
-                        key={i}
-                        href={d.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 p-4 rounded-lg"
-                        style={{
-                          backgroundColor: '#F5F5F5',
-                          transition: 'background-color 0.2s ease',
-                        }}
-                        onMouseOver={(e) =>
-                          (e.currentTarget.style.backgroundColor = '#EBEBEB')
-                        }
-                        onMouseOut={(e) =>
-                          (e.currentTarget.style.backgroundColor = '#F5F5F5')
-                        }
-                      >
-                        <FileText size={18} color="#C8102E" />
-                        <span
-                          className="text-sm font-medium"
+                    {project.deliverables.map((d, i) =>
+                      d.url ? (
+                        <a
+                          key={i}
+                          href={d.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 p-4 rounded-lg"
                           style={{
-                            color: '#0B0B0B',
-                            fontFamily: 'Roboto, sans-serif',
+                            backgroundColor: '#F5F5F5',
+                            transition: 'background-color 0.2s ease',
                           }}
+                          onMouseOver={(e) =>
+                            (e.currentTarget.style.backgroundColor = '#EBEBEB')
+                          }
+                          onMouseOut={(e) =>
+                            (e.currentTarget.style.backgroundColor = '#F5F5F5')
+                          }
                         >
-                          {d.label}
-                        </span>
-                        <ExternalLink
-                          size={14}
-                          color="#999"
-                          className="ml-auto"
-                        />
-                      </a>
-                    ))}
+                          <FileText size={18} color="#C8102E" />
+                          <span
+                            className="text-sm font-medium"
+                            style={{
+                              color: '#0B0B0B',
+                              fontFamily: 'Roboto, sans-serif',
+                            }}
+                          >
+                            {d.label}
+                          </span>
+                          <ExternalLink
+                            size={14}
+                            color="#999"
+                            className="ml-auto flex-shrink-0"
+                          />
+                        </a>
+                      ) : (
+                        <div
+                          key={i}
+                          className="flex items-center gap-3 p-4 rounded-lg"
+                          style={{ backgroundColor: '#F5F5F5' }}
+                        >
+                          <CheckCircle2 size={16} color="#C8102E" className="flex-shrink-0" />
+                          <span
+                            className="text-sm"
+                            style={{
+                              color: '#444',
+                              fontFamily: 'Roboto, sans-serif',
+                            }}
+                          >
+                            {d.label}
+                          </span>
+                        </div>
+                      )
+                    )}
                   </div>
                 </div>
               </>
@@ -432,6 +452,38 @@ const ProjectDetail = () => {
                     </Badge>
                   ))}
                 </div>
+
+                {/* Tools Used */}
+                {project.tools && project.tools.length > 0 && (
+                  <>
+                    <Separator className="my-6" />
+                    <h3
+                      className="text-lg font-semibold mb-4"
+                      style={{
+                        color: '#0B0B0B',
+                        fontFamily: 'Poppins, sans-serif',
+                      }}
+                    >
+                      Tools Used
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tools.map((tool, i) => (
+                        <Badge
+                          key={i}
+                          variant="outline"
+                          className="text-xs font-medium"
+                          style={{
+                            borderColor: '#E0E0E0',
+                            color: '#555',
+                          }}
+                        >
+                          <Wrench size={10} className="mr-1" />
+                          {tool}
+                        </Badge>
+                      ))}
+                    </div>
+                  </>
+                )}
 
                 <Separator className="my-6" />
 
