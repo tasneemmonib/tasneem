@@ -284,21 +284,21 @@ const ProjectDetail = () => {
               </>
             )}
 
-            {/* Supporting Work — plain text bullets, not clickable */}
+            {/* Supporting Work */}
             {supportingWork.length > 0 && (
               <>
-                {fileDeliverables.length === 0 && <Separator />}
-                <div className={fileDeliverables.length > 0 ? 'mt-8' : ''}>
-                  <h3
-                    className="text-lg font-semibold mb-4"
+                <Separator />
+                <div>
+                  <h2
+                    className="text-2xl font-bold mb-6"
                     style={{
                       color: '#0B0B0B',
                       fontFamily: 'Poppins, sans-serif',
                     }}
                   >
                     Supporting Work
-                  </h3>
-                  <ul className="space-y-2 pl-1">
+                  </h2>
+                  <ul className="space-y-3 pl-1">
                     {supportingWork.map((item, i) => (
                       <li
                         key={i}
@@ -309,9 +309,9 @@ const ProjectDetail = () => {
                           style={{ backgroundColor: '#C8102E' }}
                         />
                         <span
-                          className="text-sm"
+                          className="text-base"
                           style={{
-                            color: '#555',
+                            color: '#444',
                             fontFamily: 'Roboto, sans-serif',
                           }}
                         >
