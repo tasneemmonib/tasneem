@@ -18,10 +18,10 @@ Build a modern, sleek marketing portfolio website for a recent marketing graduat
 │   ├── Footer.jsx
 │   ├── HomePage.jsx
 │   ├── Navbar.jsx
-│   ├── ProjectDetail.jsx   ← Image gallery + lightbox + YouTube support
+│   ├── ProjectDetail.jsx   ← Image gallery + lightbox + native video + YouTube + Tools Used
 │   └── WorkSection.jsx
 ├── data/
-│   └── mock.js              ← Central content file
+│   └── mock.js              ← Central content file (all projects, tools, deliverables)
 ├── App.js                    ← Router setup
 ├── App.css
 └── index.css
@@ -34,25 +34,29 @@ Build a modern, sleek marketing portfolio website for a recent marketing graduat
 - About section — two-column layout (bio left, professional background/education/honors right)
 - Core Capabilities grid
 - Work & Projects section — filterable project card grid
-- Project Detail pages — case study format (overview, contributions, skills, deliverables, media)
+- Project Detail pages — full case study format:
+  - Overview, Key Contributions, Deliverables & Work Samples, Photo Gallery, Video
+  - Sidebar: Skills Demonstrated, Tools Used, Project Info (Category, Role)
 - Contact & Footer sections
 - Navbar with profile photo, navigation links, and Resume download button
-- Resume PDF, Nike Marketing Plan, Denmark Analysis, Gulf Coast Foodways research paper — all linked
-- Fifth Ward Library Documentary — YouTube embed
-- **Sports Marketing & Media Operations — 7-image photo gallery with lightbox + 3 native videos** (Feb 2026)
-  - Photos: UH Baseball gameday, Basketball (3 shots), Football, Track & Field (2 shots)
-  - Videos: UH Baseball gameday, UH Football highlights, UH Basketball vs Hofstra highlights
-  - Thumbnail: Replaced stock image with real UH Football photo (DSCF3531.JPG)
+- Lightbox image viewer with navigation
 
-### Content-Populated Projects
-1. Nike Marketing Strategy (PDF)
-2. Denmark Country Market Analysis (PDF)
-3. Sports Marketing & Media Operations (7 photos)
-4. Springtime Pediatrics Marketing (pending media)
-5. Fifth Ward Library Documentary (YouTube video)
-6. REACH Research — Gulf Coast Foodways (PDF)
-7. INK Collective
-8. The H.E.A.R.T. Program — Social Media Strategy
+### Content & Thumbnails (Updated Feb 2026)
+- **Nike Marketing Strategy**: Glowing Nike swoosh thumbnail, PDF deliverable + text deliverables
+- **Denmark Country Market Analysis**: Danish flag thumbnail, PDF deliverable
+- **Sports Marketing & Media Operations**: Real UH Football thumbnail, 7-image gallery, 3 native videos
+- **Springtime Pediatrics Marketing**: Pediatric healthcare thumbnail, descriptive deliverables
+- **Fifth Ward Library Documentary**: Library thumbnail, YouTube embed
+- **REACH Research — Gulf Coast Foodways**: Historical B&W photo thumbnail, PDF deliverable
+- **INK Collective**: Stacked books thumbnail
+- **H.E.A.R.T. Program — Social Media Strategy**: Laptop/desk thumbnail, descriptive deliverables
+
+### Case Study Enhancement (Feb 2026)
+- All project descriptions rewritten with professional case-study tone
+- Added `tools` field to data model (rendered in sidebar)
+- Deliverables section now supports both downloadable PDFs and descriptive text items
+- Section renamed to "Deliverables & Work Samples"
+- Tools Used section added to sidebar with wrench icon badges
 
 ## Backlog
 
