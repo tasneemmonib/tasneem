@@ -9,6 +9,13 @@ export const personalInfo = {
     "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/6eqlbgf1_Tasneem_Monib_Resume.pdf",
   resumeSummary:
     "Marketing graduate with experience in content production, marketing communications, and event operations. BBA in Marketing from the University of Houston with a minor in Journalism. GPA 3.7, Dean's List all semesters.",
+  profilePhoto:
+    "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/ram015gf_Screenshot%202026-03-21%20at%203.56.46%E2%80%AFPM.png",
+  aboutBio: [
+    "I am a marketing graduate from the University of Houston focused on marketing communications, content strategy, and brand storytelling. My experience includes supporting marketing campaigns, producing digital content, and helping execute event marketing initiatives.",
+    "I have worked on marketing communications for healthcare organizations, sports media production for university athletics, and strategic marketing research projects. I enjoy working at the intersection of strategy and creative execution.",
+    "I am seeking early career opportunities where I can contribute to marketing campaigns, brand growth, and audience engagement.",
+  ],
 };
 
 export const credibilityItems = [
@@ -19,14 +26,11 @@ export const credibilityItems = [
 ];
 
 export const skills = [
-  { name: "Social Media Marketing", icon: "Share2" },
-  { name: "Content Strategy", icon: "Target" },
-  { name: "Brand Activation", icon: "Sparkles" },
+  { name: "Marketing Strategy", icon: "Target" },
+  { name: "Content Creation", icon: "PenTool" },
   { name: "Event Marketing", icon: "Calendar" },
+  { name: "Social Media", icon: "Share2" },
   { name: "Video Production", icon: "Video" },
-  { name: "Adobe Premiere Pro", icon: "Film" },
-  { name: "Photography", icon: "Camera" },
-  { name: "Canva", icon: "Palette" },
 ];
 
 export const categories = [
@@ -46,20 +50,21 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80",
     overview:
-      "Developed a comprehensive marketing strategy addressing brand positioning, customer loyalty, and cultural relevance for Nike.",
+      "Developed a comprehensive marketing strategy for Nike addressing brand positioning challenges, customer loyalty retention, and cultural relevance with emerging audiences. The project analyzed competitive dynamics in the athletic wear market and proposed actionable campaign strategies targeting Gen Z consumers.",
     role: "Marketing Strategist",
     contributions: [
-      "Market research and competitive analysis",
-      "SWOT analysis of Nike's brand positioning",
-      "Campaign concept development for Gen Z audiences",
-      "Gen Z targeting strategy and recommendations",
-      "Brand positioning and cultural relevance strategy",
+      "Conducted in-depth market research and competitive analysis across the athletic brand landscape",
+      "Performed a SWOT analysis identifying key brand positioning opportunities for Nike",
+      "Developed campaign concepts specifically designed for Gen Z audience engagement",
+      "Created a targeting strategy addressing cultural relevance and brand loyalty challenges",
+      "Delivered brand positioning recommendations backed by consumer behavior research",
     ],
     skills: [
       "Marketing Strategy",
       "Market Research",
       "Brand Positioning",
       "Campaign Planning",
+      "Consumer Analysis",
     ],
     deliverables: [
       {
@@ -79,14 +84,14 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
     overview:
-      "Evaluated Denmark as a potential expansion market for US companies through analysis of legal, economic, and cultural factors.",
+      "Evaluated Denmark as a potential expansion market for US-based companies through comprehensive analysis of the legal, economic, and cultural business environment. The project delivered strategic recommendations for market entry positioning and risk mitigation.",
     role: "Market Analyst",
     contributions: [
-      "Market entry research and feasibility analysis",
-      "Business environment and regulatory assessment",
-      "Economic and cultural factor evaluation",
-      "Strategic recommendations for US market entry",
-      "International market comparison and positioning",
+      "Conducted market entry research assessing Denmark's business environment feasibility",
+      "Analyzed legal and regulatory frameworks affecting US company operations",
+      "Evaluated economic indicators and consumer behavior patterns in the Danish market",
+      "Assessed cultural factors and their impact on marketing strategy localization",
+      "Delivered strategic recommendations for market entry positioning and timing",
     ],
     skills: [
       "Market Research",
@@ -112,27 +117,28 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1520470082789-e347ad8b1944?w=800&q=80",
     overview:
-      "As Sports Head Editor at UH CoogTV, lead sports video production for the university's student-run television network, covering live games, producing highlight packages, and editing documentary content.",
+      "As Sports Head Editor at UH CoogTV, lead end-to-end sports video production for the university's student-run television network. Responsible for covering live games, producing highlight packages, directing documentary-style features, and delivering broadcast-ready content under tight turnaround schedules.",
     role: "Sports Head Editor, CoogTV",
     contributions: [
-      "Lead sports video production for UH's student-run television network",
-      "Cover live games and produce highlight packages",
-      "Edit documentary content and long-form features",
-      "Manage projects from raw footage through final cut using Adobe Premiere Pro",
-      "Deliver broadcast-ready content on tight turnaround schedules",
+      "Lead sports video production for UH's student-run television network covering live games and events",
+      "Produce highlight packages and promotional video content for athletics programs",
+      "Direct and edit documentary-style features including the 5th Ward Library ShastaDocs piece",
+      "Manage projects from raw footage through final cut using Adobe Premiere Pro and Lightroom",
+      "Deliver broadcast-ready content on tight turnaround schedules for digital distribution",
     ],
     skills: [
       "Video Production",
       "Adobe Premiere Pro",
       "Content Marketing",
       "Storytelling",
+      "Photography",
     ],
     deliverables: [],
     media: [
       {
         type: "youtube",
         url: "https://www.youtube.com/embed/mTX2G7go8Cs",
-        title: "UH Athletics — Directed by Tasneem Monib",
+        title: "5th Ward Library | ShastaDocs — Directed by Tasneem Monib",
       },
     ],
     links: [],
@@ -145,20 +151,21 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
     overview:
-      "Serve as Marketing Communications Coordinator supporting community events, designing marketing materials, producing social media content, and building physician referral relationships.",
+      "Serve as Marketing Communications Coordinator for a pediatric healthcare organization, managing community outreach initiatives, designing patient-facing marketing materials, producing social media video content, and supporting physician referral relationship development.",
     role: "Marketing Communications Coordinator",
     contributions: [
-      "Assist with community events including educational classes, ribbon-cutting ceremonies, and grand openings",
-      "Design marketing materials — flyers, signage, rack cards, and digital graphics for patient outreach",
+      "Coordinate community events including educational classes, ribbon-cutting ceremonies, and grand opening activations",
+      "Design marketing materials — flyers, signage, rack cards, and digital graphics for patient outreach campaigns",
       "Film and edit short-form video content for social media platforms",
-      "Draft and edit promotional communications and social content",
-      "Support outreach visits to specialist offices for physician referral relationship building",
+      "Draft and edit promotional communications supporting patient acquisition goals",
+      "Accompany outreach visits to specialist offices to support physician referral relationships",
     ],
     skills: [
       "Marketing Communications",
       "Content Creation",
       "Event Marketing",
       "Social Media",
+      "Video Production",
     ],
     deliverables: [],
     media: [],
@@ -172,14 +179,14 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
     overview:
-      "Supported production logistics for a multi-day sports and entertainment event series at United Sports & Entertainment, including press conferences, volunteer events, and college basketball games.",
+      "Supported production logistics for a multi-day sports and entertainment event series at United Sports & Entertainment. Managed on-site media operations, prepared press conference materials, and coordinated staff across simultaneous event venues.",
     role: "Event Operations Intern, United Sports & Entertainment",
     contributions: [
-      "Supported production logistics for multi-day sports and entertainment event series",
-      "Prepared teleprompter-ready speech summaries for press conference speakers",
-      "Distilled key talking points into clear, concise scripts under tight deadlines",
-      "Managed on-site media check-in, credentialing, and staff coordination",
-      "Ensured smooth operations across simultaneous event venues",
+      "Supported production logistics for a multi-day sports and entertainment event series including press conferences and college basketball games",
+      "Prepared teleprompter-ready speech summaries for press conference speakers under tight deadlines",
+      "Distilled complex talking points into clear, concise scripts for live delivery",
+      "Managed on-site media check-in, credentialing, and staff coordination across venues",
+      "Ensured smooth operations across simultaneous event venues and production setups",
     ],
     skills: [
       "Event Operations",
@@ -193,20 +200,26 @@ export const projects = [
   },
   {
     id: "reach-research",
-    title: "REACH Research Project",
+    title: "REACH Research — Gulf Coast Foodways",
     category: "Research & Leadership",
     featured: false,
     image:
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
     overview:
-      "Undergraduate research project — La Louisiane en Tejas: Gulf Coast Foodways in Southeast Texas — analyzing cultural foodways through archival research and source analysis under faculty supervision.",
+      "Conducted undergraduate research through the REACH Program on Gulf Coast foodways in Southeast Texas. Developed a focused case study on Arab contributions to regional cuisine through archival research and source analysis, presenting findings at the University of Houston Undergraduate Research Day.",
     role: "Undergraduate Researcher, REACH Program",
     contributions: [
-      "Assisted with qualitative research on Gulf Coast foodways through archival research",
-      "Developed a focused case study on Arab contributions to regional cuisine",
+      "Assisted with qualitative research on Gulf Coast foodways through archival research and source analysis",
+      "Developed a focused case study examining Arab contributions to regional cuisine in Southeast Texas",
+      "Conducted source analysis under faculty supervision to build research narrative",
       "Presented findings at University of Houston Undergraduate Research Day",
     ],
-    skills: ["Qualitative Research", "Analysis", "Academic Presentation"],
+    skills: [
+      "Qualitative Research",
+      "Analysis",
+      "Academic Presentation",
+      "Writing",
+    ],
     deliverables: [],
     media: [],
     links: [],
@@ -219,15 +232,20 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=600&q=80",
     overview:
-      "Co-founded and lead an on-campus book club promoting underrepresented and minority authors, growing membership through event programming and campus outreach.",
+      "Co-founded and lead an on-campus book club at the University of Houston promoting underrepresented and minority authors. Grew membership through strategic event programming and campus outreach while coordinating partnerships supporting literacy initiatives across Houston.",
     role: "Co-Founder & Co-President",
     contributions: [
-      "Founded and lead an on-campus book club promoting underrepresented and minority authors",
-      "Grew membership through event programming and campus outreach",
-      "Coordinate programming and partnerships supporting literacy initiatives",
-      "Collaborate with a Houston library access project",
+      "Founded and lead an on-campus organization promoting underrepresented and minority authors",
+      "Grew membership through strategic event programming and campus outreach initiatives",
+      "Coordinate programming and partnerships supporting literacy initiatives in Houston",
+      "Collaborate with a Houston library access project to expand community impact",
     ],
-    skills: ["Leadership", "Program Management", "Community Engagement"],
+    skills: [
+      "Leadership",
+      "Program Management",
+      "Community Engagement",
+      "Marketing Promotion",
+    ],
     deliverables: [],
     media: [],
     links: [],
@@ -240,13 +258,14 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=600&q=80",
     overview:
-      "Conducted a social media audit of a nonprofit organization, analyzing content performance, audience demographics, and competitive positioning as part of a student consulting team.",
+      "Developed a comprehensive social media strategy for a nonprofit organization as part of a student consulting engagement. Conducted a full social media audit, analyzed content performance and audience demographics, and delivered a strategic plan with branded templates and platform-specific recommendations.",
     role: "Student Consultant",
     contributions: [
-      "Conducted social media audit analyzing content performance and audience demographics",
-      "Developed strategic social media plan including branded templates and content calendar",
-      "Created platform-specific recommendations for audience growth",
-      "Presented final strategy and recommendations to organization's marketing leadership",
+      "Conducted a comprehensive social media audit analyzing content performance and audience demographics",
+      "Evaluated competitive positioning and identified growth opportunities across platforms",
+      "Developed a strategic social media plan including branded templates and content calendar",
+      "Created platform-specific recommendations tailored to audience behavior and engagement patterns",
+      "Presented final strategy and recommendations to the organization's marketing leadership",
     ],
     skills: [
       "Social Media Strategy",
@@ -258,88 +277,4 @@ export const projects = [
     media: [],
     links: [],
   },
-];
-
-export const mediaItems = [
-  {
-    id: 1,
-    type: "image",
-    category: "Sports Content",
-    title: "UH Game Day Coverage",
-    image:
-      "https://images.unsplash.com/photo-1520470082789-e347ad8b1944?w=600&q=80",
-  },
-  {
-    id: 2,
-    type: "image",
-    category: "Sports Content",
-    title: "Athletics Media Production",
-    image:
-      "https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=600&q=80",
-  },
-  {
-    id: 3,
-    type: "video",
-    category: "Video Work",
-    title: "Highlight Reel",
-    image:
-      "https://images.unsplash.com/photo-1520470082789-e347ad8b1944?w=600&q=80",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    id: 4,
-    type: "image",
-    category: "Marketing Content",
-    title: "Campaign Visuals",
-    image:
-      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&q=80",
-  },
-  {
-    id: 5,
-    type: "image",
-    category: "Marketing Content",
-    title: "Brand Strategy Materials",
-    image:
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
-  },
-  {
-    id: 6,
-    type: "image",
-    category: "Sports Content",
-    title: "Event Coverage",
-    image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80",
-  },
-  {
-    id: 7,
-    type: "video",
-    category: "Video Work",
-    title: "Documentary Feature",
-    image:
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    id: 8,
-    type: "image",
-    category: "Marketing Content",
-    title: "Social Media Content",
-    image:
-      "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=600&q=80",
-  },
-  {
-    id: 9,
-    type: "image",
-    category: "Sports Content",
-    title: "Press & Media Relations",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=80",
-  },
-];
-
-export const mediaCategories = [
-  "All",
-  "Sports Content",
-  "Video Work",
-  "Marketing Content",
 ];

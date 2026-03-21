@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { personalInfo } from '../data/mock';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showPhotoModal, setShowPhotoModal] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Work', href: '#work' },
-    { label: 'Media', href: '#media' },
     { label: 'Resume', href: '#resume' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -50,33 +51,100 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        showDarkText
-          ? 'bg-white/95 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          <button
-            onClick={handleLogoClick}
-            className="text-lg font-semibold tracking-tight transition-colors duration-200"
-            style={{
-              color: showDarkText ? '#0B0B0B' : '#FFFFFF',
-              fontFamily: 'Poppins, sans-serif',
-            }}
-          >
-            Tasneem Monib
-          </button>
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          showDarkText
+            ? 'bg-white/95 backdrop-blur-md shadow-sm'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 lg:h-20">
+            {/* Left: Profile photo + Name */}
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setShowPhotoModal(true)}
+                className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0"
+                style={{
+                  boxShadow: showDarkText
+                    ? '0 0 0 2px rgba(11,11,11,0.1)'
+                    : '0 0 0 2px rgba(255,255,255,0.25)',
+                  transition: 'transform 0.2s ease',
+                }}
+                onMouseOver={(e) =>
+                  (e.currentTarget.style.transform = 'scale(1.05)')
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.style.transform = 'scale(1)')
+                }
+              >
+                <img
+                  src={personalInfo.profilePhoto}
+                  alt="Tasneem Monib"
+                  className="w-full h-full object-cover"
+                />
+              </button>
+              <button
+                onClick={handleLogoClick}
+                className="text-lg font-semibold tracking-tight transition-colors duration-200"
+                style={{
+                  color: showDarkText ? '#0B0B0B' : '#FFFFFF',
+                  fontFamily: 'Poppins, sans-serif',
+                }}
+              >
+                Tasneem Monib
+              </button>
+            </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <button
+                  key={link.label}
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-sm font-medium transition-colors duration-200 hover:opacity-70"
+                  style={{
+                    color: showDarkText ? '#0B0B0B' : '#FFFFFF',
+                    fontFamily: 'Roboto, sans-serif',
+                  }}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-1"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X size={24} color={showDarkText ? '#0B0B0B' : '#FFFFFF'} />
+              ) : (
+                <Menu size={24} color={showDarkText ? '#0B0B0B' : '#FFFFFF'} />
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            isMobileMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+          style={{
+            backgroundColor: showDarkText
+              ? '#FFFFFF'
+              : 'rgba(11,11,11,0.95)',
+          }}
+        >
+          <div className="px-6 py-4 space-y-1">
             {navLinks.map((link) => (
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
-                className="text-sm font-medium transition-colors duration-200 hover:opacity-70"
+                className="block w-full text-left text-sm font-medium py-3 transition-colors duration-200"
                 style={{
                   color: showDarkText ? '#0B0B0B' : '#FFFFFF',
                   fontFamily: 'Roboto, sans-serif',
@@ -86,45 +154,58 @@ const Navbar = () => {
               </button>
             ))}
           </div>
+        </div>
+      </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-1"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      {/* Profile Photo Modal */}
+      {showPhotoModal && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center p-6"
+          style={{ backgroundColor: 'rgba(0,0,0,0.85)' }}
+          onClick={() => setShowPhotoModal(false)}
+        >
+          <div
+            className="relative max-w-sm w-full"
+            onClick={(e) => e.stopPropagation()}
           >
-            {isMobileMenuOpen ? (
-              <X size={24} color={showDarkText ? '#0B0B0B' : '#FFFFFF'} />
-            ) : (
-              <Menu size={24} color={showDarkText ? '#0B0B0B' : '#FFFFFF'} />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          isMobileMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-        style={{ backgroundColor: showDarkText ? '#FFFFFF' : 'rgba(11,11,11,0.95)' }}
-      >
-        <div className="px-6 py-4 space-y-1">
-          {navLinks.map((link) => (
             <button
-              key={link.label}
-              onClick={() => handleNavClick(link.href)}
-              className="block w-full text-left text-sm font-medium py-3 transition-colors duration-200"
-              style={{
-                color: showDarkText ? '#0B0B0B' : '#FFFFFF',
-                fontFamily: 'Roboto, sans-serif',
-              }}
+              onClick={() => setShowPhotoModal(false)}
+              className="absolute -top-10 right-0 text-white/70 hover:text-white text-sm font-medium"
+              style={{ fontFamily: 'Roboto, sans-serif' }}
             >
-              {link.label}
+              Close
             </button>
-          ))}
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={personalInfo.profilePhoto}
+                alt="Tasneem Monib"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <p
+                className="text-lg font-semibold"
+                style={{
+                  color: '#FFFFFF',
+                  fontFamily: 'Poppins, sans-serif',
+                }}
+              >
+                Tasneem Monib
+              </p>
+              <p
+                className="text-sm"
+                style={{
+                  color: 'rgba(255,255,255,0.6)',
+                  fontFamily: 'Roboto, sans-serif',
+                }}
+              >
+                Marketing & Content Strategy
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </>
   );
 };
 
