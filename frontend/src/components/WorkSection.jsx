@@ -173,7 +173,7 @@ const WorkSection = () => {
                     fontFamily: 'Roboto, sans-serif',
                   }}
                 >
-                  View Case Study{' '}
+                  View Project{' '}
                   <ArrowUpRight size={14} className="ml-1" />
                 </div>
               </CardContent>

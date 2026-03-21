@@ -27,6 +27,10 @@ const ProjectDetail = () => {
   const imageMedia = project ? project.media.filter((m) => m.type === 'image') : [];
   const youtubeMedia = project ? project.media.filter((m) => m.type === 'youtube') : [];
   const nativeVideoMedia = project ? project.media.filter((m) => m.type === 'video') : [];
+  const instagramMedia = project ? project.media.filter((m) => m.type === 'instagram') : [];
+
+  const fileDeliverables = project ? (project.deliverables || []).filter((d) => d.url) : [];
+  const supportingWork = project ? (project.supportingWork || []) : [];
 
   const openLightbox = (index) => {
     setLightboxIndex(index);
@@ -224,8 +228,8 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            {/* Deliverables */}
-            {project.deliverables.length > 0 && (
+            {/* Deliverables — only when real files exist */}
+            {fileDeliverables.length > 0 && (
               <>
                 <Separator />
                 <div>
@@ -236,64 +240,86 @@ const ProjectDetail = () => {
                       fontFamily: 'Poppins, sans-serif',
                     }}
                   >
-                    Deliverables & Work Samples
+                    Deliverables
                   </h2>
                   <div className="space-y-3">
-                    {project.deliverables.map((d, i) =>
-                      d.url ? (
-                        <a
-                          key={i}
-                          href={d.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-3 p-4 rounded-lg"
+                    {fileDeliverables.map((d, i) => (
+                      <a
+                        key={i}
+                        href={d.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`deliverable-file-${i}`}
+                        className="flex items-center gap-3 p-4 rounded-lg"
+                        style={{
+                          backgroundColor: '#F5F5F5',
+                          transition: 'background-color 0.2s ease',
+                        }}
+                        onMouseOver={(e) =>
+                          (e.currentTarget.style.backgroundColor = '#EBEBEB')
+                        }
+                        onMouseOut={(e) =>
+                          (e.currentTarget.style.backgroundColor = '#F5F5F5')
+                        }
+                      >
+                        <FileText size={18} color="#C8102E" />
+                        <span
+                          className="text-sm font-medium"
                           style={{
-                            backgroundColor: '#F5F5F5',
-                            transition: 'background-color 0.2s ease',
+                            color: '#0B0B0B',
+                            fontFamily: 'Roboto, sans-serif',
                           }}
-                          onMouseOver={(e) =>
-                            (e.currentTarget.style.backgroundColor = '#EBEBEB')
-                          }
-                          onMouseOut={(e) =>
-                            (e.currentTarget.style.backgroundColor = '#F5F5F5')
-                          }
                         >
-                          <FileText size={18} color="#C8102E" />
-                          <span
-                            className="text-sm font-medium"
-                            style={{
-                              color: '#0B0B0B',
-                              fontFamily: 'Roboto, sans-serif',
-                            }}
-                          >
-                            {d.label}
-                          </span>
-                          <ExternalLink
-                            size={14}
-                            color="#999"
-                            className="ml-auto flex-shrink-0"
-                          />
-                        </a>
-                      ) : (
-                        <div
-                          key={i}
-                          className="flex items-center gap-3 p-4 rounded-lg"
-                          style={{ backgroundColor: '#F5F5F5' }}
-                        >
-                          <CheckCircle2 size={16} color="#C8102E" className="flex-shrink-0" />
-                          <span
-                            className="text-sm"
-                            style={{
-                              color: '#444',
-                              fontFamily: 'Roboto, sans-serif',
-                            }}
-                          >
-                            {d.label}
-                          </span>
-                        </div>
-                      )
-                    )}
+                          {d.label}
+                        </span>
+                        <ExternalLink
+                          size={14}
+                          color="#999"
+                          className="ml-auto flex-shrink-0"
+                        />
+                      </a>
+                    ))}
                   </div>
+                </div>
+              </>
+            )}
+
+            {/* Supporting Work — plain text bullets, not clickable */}
+            {supportingWork.length > 0 && (
+              <>
+                {fileDeliverables.length === 0 && <Separator />}
+                <div className={fileDeliverables.length > 0 ? 'mt-8' : ''}>
+                  <h3
+                    className="text-lg font-semibold mb-4"
+                    style={{
+                      color: '#0B0B0B',
+                      fontFamily: 'Poppins, sans-serif',
+                    }}
+                  >
+                    Supporting Work
+                  </h3>
+                  <ul className="space-y-2 pl-1">
+                    {supportingWork.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2.5"
+                      >
+                        <span
+                          className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                          style={{ backgroundColor: '#C8102E' }}
+                        />
+                        <span
+                          className="text-sm"
+                          style={{
+                            color: '#555',
+                            fontFamily: 'Roboto, sans-serif',
+                          }}
+                        >
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </>
             )}
@@ -416,6 +442,79 @@ const ProjectDetail = () => {
                             {item.title}
                           </p>
                         </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
+
+            {/* Instagram Reels */}
+            {instagramMedia.length > 0 && (
+              <>
+                <Separator />
+                <div>
+                  <h2
+                    className="text-2xl font-bold mb-6"
+                    style={{
+                      color: '#0B0B0B',
+                      fontFamily: 'Poppins, sans-serif',
+                    }}
+                  >
+                    Social Media Content
+                  </h2>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {instagramMedia.map((item, i) => (
+                      <div
+                        key={`ig-${i}`}
+                        data-testid={`instagram-reel-${i}`}
+                        className="rounded-xl overflow-hidden border"
+                        style={{ borderColor: '#E5E5E5' }}
+                      >
+                        <div style={{ height: '480px' }}>
+                          <iframe
+                            src={item.url}
+                            title={item.title}
+                            className="w-full h-full"
+                            frameBorder="0"
+                            scrolling="no"
+                            allowTransparency="true"
+                            allow="encrypted-media"
+                          />
+                        </div>
+                        {item.link && (
+                          <div className="p-3 flex items-center justify-between" style={{ backgroundColor: '#FAFAFA' }}>
+                            <p
+                              className="text-xs"
+                              style={{ color: '#555', fontFamily: 'Roboto, sans-serif' }}
+                            >
+                              {item.title}
+                            </p>
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-full"
+                              style={{
+                                color: '#C8102E',
+                                backgroundColor: '#FFF',
+                                border: '1px solid #E5E5E5',
+                                transition: 'all 0.2s ease',
+                                whiteSpace: 'nowrap',
+                              }}
+                              onMouseOver={(e) => {
+                                e.currentTarget.style.backgroundColor = '#C8102E';
+                                e.currentTarget.style.color = '#FFF';
+                              }}
+                              onMouseOut={(e) => {
+                                e.currentTarget.style.backgroundColor = '#FFF';
+                                e.currentTarget.style.color = '#C8102E';
+                              }}
+                            >
+                              View on Instagram <ExternalLink size={10} />
+                            </a>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>

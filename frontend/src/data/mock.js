@@ -69,92 +69,22 @@ export const categories = [
 
 export const projects = [
   {
-    id: "nike-marketing-strategy",
-    title: "Nike Marketing Strategy",
-    category: "Marketing Strategy",
-    tags: ["Marketing Strategy"],
-    image:
-      "https://images.unsplash.com/photo-1715277998963-7949e2732583?w=800&q=80",
-    overview:
-      "Developed a comprehensive marketing strategy addressing Nike's brand positioning challenges, customer loyalty retention, and cultural relevance with emerging consumer segments. The project delivered an in-depth competitive analysis of the athletic wear market and a strategic campaign framework targeting Gen Z audiences through culturally relevant messaging and digital-first engagement tactics.",
-    role: "Marketing Strategist",
-    contributions: [
-      "Conducted competitive landscape analysis across major athletic and lifestyle brands to identify positioning gaps",
-      "Performed a SWOT analysis surfacing key opportunities for Nike to re-engage younger demographics",
-      "Developed campaign concepts built around cultural relevance, digital engagement, and community-driven storytelling",
-      "Created a segmentation and targeting strategy informed by consumer behavior research and market trends",
-      "Delivered strategic brand positioning recommendations with supporting data and implementation roadmap",
-    ],
-    skills: [
-      "Marketing Strategy",
-      "Market Research",
-      "Brand Positioning",
-      "Campaign Planning",
-      "Consumer Analysis",
-    ],
-    tools: ["Microsoft Office", "Google Workspace"],
-    deliverables: [
-      {
-        type: "pdf",
-        label: "Nike Marketing Plan Paper",
-        url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/5tc21t3u_Nike%20Marketing%20Plan%20Paper.pdf",
-      },
-      { type: "text", label: "Competitive landscape analysis and SWOT framework" },
-      { type: "text", label: "Campaign concept deck with targeting strategy" },
-    ],
-    media: [],
-  },
-  {
-    id: "denmark-market-analysis",
-    title: "Denmark Country Market Analysis",
-    category: "Marketing Strategy",
-    tags: ["Marketing Strategy"],
-    image:
-      "https://images.pexels.com/photos/2862156/pexels-photo-2862156.jpeg?auto=compress&cs=tinysrgb&w=800",
-    overview:
-      "Conducted a comprehensive market entry analysis evaluating Denmark as a potential expansion market for US-based companies. The project assessed the country's legal, economic, and cultural business environment and delivered actionable strategic recommendations for market entry positioning, localization requirements, and risk mitigation for international operations.",
-    role: "Market Analyst",
-    contributions: [
-      "Researched and evaluated Denmark's regulatory and business environment for US market entry feasibility",
-      "Analyzed economic indicators, trade policies, and consumer behavior patterns across the Danish market",
-      "Assessed cultural factors and their implications for marketing strategy localization and brand adaptation",
-      "Identified key market risks and developed mitigation strategies for each entry scenario",
-      "Delivered a strategic recommendations report outlining positioning, timing, and operational considerations",
-    ],
-    skills: [
-      "Market Research",
-      "International Marketing",
-      "Business Strategy",
-      "Strategic Analysis",
-    ],
-    tools: ["Microsoft Office", "Google Workspace"],
-    deliverables: [
-      {
-        type: "pdf",
-        label: "Country Analysis Report — Denmark",
-        url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/dndupe8u_Country%20Analysis%20%28Denmark%29.pdf",
-      },
-      { type: "text", label: "Market entry risk assessment and mitigation framework" },
-    ],
-    media: [],
-  },
-  {
     id: "sports-marketing-operations",
-    title: "Sports Marketing & Media Operations",
+    title: "Sports Marketing & Media Production Experience",
     category: "Content Production",
     tags: ["Content Production", "Event Marketing", "Professional Experience"],
     image:
       "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/yck7oeeq_DSCF3531.JPG",
     overview:
-      "Multi-role marketing, media production, and event operations experience across university athletics and sports entertainment. Responsibilities spanned content production for digital distribution, gameday marketing execution, and on-site event coordination — delivering broadcast-ready assets on tight turnarounds while supporting fan engagement initiatives and media logistics across simultaneous venues.",
+      "Marketing, media production, and event operations experience supporting university athletics and sports entertainment events. Responsibilities included content production for digital distribution, gameday marketing execution, and on-site event coordination while supporting fan engagement initiatives and media logistics across multiple venues.",
     role: "Sports Head Editor (CoogTV) · Marketing & Gameday Operations (UH Athletics) · Event Operations (Battleground 2K24)",
     contributions: [
-      "Led sports video production at UH CoogTV — covering live games, producing highlight packages, and creating promotional content for digital distribution",
-      "Managed end-to-end post-production workflow from raw footage through final cut using professional editing tools",
-      "Executed gameday marketing operations including on-field promotions, fan engagement activations, and halftime coordination for UH Baseball",
+      "Led end-to-end sports video production at UH CoogTV — covering live games, producing highlight packages, and delivering promotional content on tight turnaround schedules",
+      "Managed complete post-production workflow from raw footage through final cut, ensuring broadcast-ready delivery for multi-platform digital distribution",
+      "Executed gameday marketing operations for UH Baseball including on-field promotions, fan engagement activations, and halftime coordination",
       "Prepared teleprompter-ready speech summaries and media scripts for press conference speakers at Battleground 2K24",
-      "Managed on-site media check-in, credentialing, and staff coordination across simultaneous event venues",
-      "Delivered broadcast-ready content on tight turnaround schedules for multi-platform digital distribution",
+      "Coordinated on-site media check-in, credentialing, and staff logistics across simultaneous event venues",
+      "Delivered content under deadline pressure for digital and broadcast distribution channels",
     ],
     skills: [
       "Sports Marketing",
@@ -165,10 +95,11 @@ export const projects = [
       "Media Relations",
     ],
     tools: ["Adobe Premiere Pro", "Adobe Lightroom", "Canva"],
-    deliverables: [
-      { type: "text", label: "Game highlight packages and promotional video content" },
-      { type: "text", label: "Gameday marketing activations and fan engagement programs" },
-      { type: "text", label: "Media scripts, credentialing materials, and event logistics documentation" },
+    deliverables: [],
+    supportingWork: [
+      "Game highlight packages and promotional video content",
+      "Gameday marketing activations and fan engagement programs",
+      "Media scripts, credentialing materials, and event logistics documentation",
     ],
     media: [
       {
@@ -225,20 +156,20 @@ export const projects = [
   },
   {
     id: "springtime-pediatrics",
-    title: "Springtime Pediatrics Marketing",
+    title: "Marketing Communications | Springtime Pediatrics",
     category: "Event Marketing",
     tags: ["Event Marketing", "Professional Experience"],
     image:
       "https://images.pexels.com/photos/5998457/pexels-photo-5998457.jpeg?auto=compress&cs=tinysrgb&w=800",
     overview:
-      "Serve as Marketing Communications Coordinator for a growing pediatric healthcare organization, managing end-to-end marketing communications across community outreach, content production, and referral development. Responsibilities include designing patient-facing marketing materials, producing social media video content, coordinating community engagement events, and supporting physician referral relationship initiatives to drive patient acquisition and brand visibility.",
+      "Supported marketing communications for a growing pediatric medical practice including social media management, marketing collateral development, community outreach events, and referral relationship initiatives. Work contributed to patient engagement, brand visibility, and local awareness efforts across the Houston area.",
     role: "Marketing Communications Coordinator",
     contributions: [
-      "Coordinate community events including educational classes, ribbon-cutting ceremonies, and grand opening activations that drive local brand awareness",
-      "Design marketing collateral — flyers, signage, rack cards, and digital graphics — for patient outreach and acquisition campaigns",
-      "Film and edit short-form video content for social media platforms to increase audience engagement and practice visibility",
-      "Draft and edit promotional communications supporting patient acquisition and retention goals",
-      "Accompany outreach visits to specialist offices to support and strengthen physician referral relationships",
+      "Coordinated community events including educational classes, ribbon-cutting ceremonies, and grand opening activations to drive local brand awareness",
+      "Designed patient-facing marketing collateral — flyers, signage, rack cards, and digital graphics — for outreach and acquisition campaigns",
+      "Filmed and edited short-form video content for social media platforms to increase practice visibility and audience engagement",
+      "Drafted and edited promotional communications supporting patient acquisition and retention goals",
+      "Accompanied outreach visits to specialist offices to support and strengthen physician referral relationships",
     ],
     skills: [
       "Marketing Communications",
@@ -249,13 +180,27 @@ export const projects = [
       "Graphic Design",
     ],
     tools: ["Canva", "Adobe Premiere Pro", "Instagram", "Facebook"],
-    deliverables: [
-      { type: "text", label: "Patient-facing marketing materials (flyers, signage, rack cards, digital graphics)" },
-      { type: "text", label: "Short-form social media video content" },
-      { type: "text", label: "Community event coordination and execution" },
-      { type: "text", label: "Promotional communications and outreach materials" },
+    deliverables: [],
+    supportingWork: [
+      "Patient-facing marketing materials (flyers, signage, rack cards, digital graphics)",
+      "Short-form social media video content",
+      "Community event coordination and execution",
+      "Promotional communications and outreach materials",
     ],
-    media: [],
+    media: [
+      {
+        type: "instagram",
+        url: "https://www.instagram.com/reel/DNOA_UmyFdE/embed/",
+        link: "https://www.instagram.com/reel/DNOA_UmyFdE/",
+        title: "Springtime Pediatrics — Social Media Reel",
+      },
+      {
+        type: "instagram",
+        url: "https://www.instagram.com/reel/DLnBLgMNtCc/embed/",
+        link: "https://www.instagram.com/reel/DLnBLgMNtCc/",
+        title: "Springtime Pediatrics — Social Media Reel",
+      },
+    ],
     socialLink: "https://www.instagram.com/springtimepediatrics",
   },
   {
@@ -266,26 +211,25 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
     overview:
-      "Directed and produced a documentary short film exploring the Fifth Ward Library as part of the ShastaDocs series at UH CoogTV. Managed the complete production lifecycle — from initial research and subject coordination through on-location filming, post-production editing, and final delivery — creating a narrative-driven piece highlighting the library's role as a vital community resource.",
-    role: "Director & Editor",
+      "Directed and produced a documentary highlighting a Houston community initiative, leading the full production lifecycle from concept through delivery including interviews, filming coordination, editing oversight, and storytelling structure. The project was delivered as part of the ShastaDocs series at UH CoogTV for broadcast and digital distribution.",
+    role: "Director & Project Lead",
     contributions: [
-      "Directed the full documentary production from concept development through final delivery",
+      "Led the full documentary production from concept development through final delivery",
       "Conducted background research and coordinated interview subjects to build the narrative arc",
       "Managed filming logistics, camera operation, and on-location production at community sites",
-      "Edited the final piece using professional post-production tools for broadcast and digital delivery",
+      "Oversaw post-production editing and storytelling structure for broadcast-quality delivery",
       "Delivered a polished documentary short as part of the ShastaDocs series for multi-platform distribution",
     ],
     skills: [
-      "Documentary Production",
-      "Video Editing",
+      "Project Leadership",
+      "Production Management",
       "Storytelling",
-      "Project Management",
-      "On-Location Production",
+      "Team Coordination",
+      "Video Editing",
     ],
     tools: ["Adobe Premiere Pro"],
-    deliverables: [
-      { type: "text", label: "Complete documentary short film — broadcast and digital delivery" },
-    ],
+    deliverables: [],
+    supportingWork: [],
     media: [
       {
         type: "youtube",
@@ -295,6 +239,45 @@ export const projects = [
     ],
   },
   {
+    id: "nike-marketing-strategy",
+    title: "Nike Marketing Strategy",
+    category: "Marketing Strategy",
+    tags: ["Marketing Strategy"],
+    image:
+      "https://images.unsplash.com/photo-1715277998963-7949e2732583?w=800&q=80",
+    overview:
+      "Developed a comprehensive marketing strategy addressing Nike's brand positioning challenges, customer loyalty retention, and cultural relevance with emerging consumer segments. The project delivered a competitive landscape analysis and a strategic campaign framework targeting Gen Z audiences through culturally relevant messaging and digital-first engagement.",
+    role: "Marketing Strategist",
+    contributions: [
+      "Conducted competitive landscape analysis across major athletic and lifestyle brands to identify positioning gaps",
+      "Performed a SWOT analysis surfacing key opportunities for Nike to re-engage younger demographics",
+      "Developed campaign concepts built around cultural relevance, digital engagement, and community-driven storytelling",
+      "Created a segmentation and targeting strategy informed by consumer behavior research and market trends",
+      "Delivered strategic brand positioning recommendations with supporting data and implementation roadmap",
+    ],
+    skills: [
+      "Marketing Strategy",
+      "Market Research",
+      "Brand Positioning",
+      "Campaign Planning",
+      "Consumer Analysis",
+    ],
+    tools: ["Microsoft Office", "Google Workspace"],
+    deliverables: [
+      {
+        type: "pdf",
+        label: "Nike Marketing Strategy Document",
+        url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/5tc21t3u_Nike%20Marketing%20Plan%20Paper.pdf",
+      },
+    ],
+    supportingWork: [
+      "Competitive landscape analysis and SWOT framework",
+      "Campaign concept development",
+      "Targeting and segmentation framework",
+    ],
+    media: [],
+  },
+  {
     id: "reach-research",
     title: "REACH Research — Gulf Coast Foodways",
     category: "Research & Leadership",
@@ -302,19 +285,20 @@ export const projects = [
     image:
       "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/7fexjkds_Screenshot%202026-03-21%20at%205.44.25%E2%80%AFPM.png",
     overview:
-      "Conducted undergraduate research through the REACH Program investigating Gulf Coast foodways in Southeast Texas. Developed a focused case study examining Arab contributions to regional cuisine through archival research and qualitative source analysis, culminating in a formal presentation at the University of Houston Undergraduate Research Day.",
+      "Conducted qualitative research through the REACH Program investigating Gulf Coast foodways in Southeast Texas. Developed a focused case study examining Arab contributions to regional cuisine through archival research, historical analysis, and primary source evaluation, culminating in a formal presentation at the University of Houston Undergraduate Research Day.",
     role: "Undergraduate Researcher, REACH Program",
     contributions: [
       "Conducted qualitative research on Gulf Coast foodways through archival research and primary source analysis",
       "Developed a focused case study examining Arab contributions to regional cuisine and culinary traditions in Southeast Texas",
-      "Performed source analysis under faculty supervision to construct a research narrative grounded in historical evidence",
-      "Presented research findings at the University of Houston Undergraduate Research Day",
+      "Performed historical analysis under faculty supervision to construct a research narrative grounded in primary evidence",
+      "Delivered formal research presentation at the University of Houston Undergraduate Research Day",
     ],
     skills: [
       "Qualitative Research",
-      "Source Analysis",
+      "Historical Analysis",
+      "Primary Source Evaluation",
+      "Research Communication",
       "Academic Presentation",
-      "Research Writing",
     ],
     tools: ["Microsoft Office", "Google Workspace"],
     deliverables: [
@@ -323,7 +307,9 @@ export const projects = [
         label: "Gulf Coast Foodways Research Paper",
         url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/uc8m34cb_Monib-Tasneem_Gulf%20Coast%20Foodways.pdf",
       },
-      { type: "text", label: "Formal research presentation at UH Undergraduate Research Day" },
+    ],
+    supportingWork: [
+      "Formal research presentation at UH Undergraduate Research Day",
     ],
     media: [],
   },
@@ -335,57 +321,59 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1610282475397-fa89b00c4d5f?w=800&q=80",
     overview:
-      "Co-founded and lead INK Collective, an on-campus organization at the University of Houston dedicated to promoting underrepresented and minority authors. Grew membership through strategic event programming and campus outreach, while building community partnerships to expand literacy access and impact across Houston.",
+      "Co-founded and lead INK Collective, an on-campus organization at the University of Houston dedicated to promoting underrepresented and minority authors. Built the organization from the ground up, developing programming strategy, growing membership through campus outreach, and establishing community partnerships to expand literacy access across Houston.",
     role: "Co-Founder & Co-President",
     contributions: [
-      "Founded and lead an on-campus organization promoting underrepresented and minority authors",
+      "Founded and built an on-campus organization from the ground up, establishing its mission, structure, and programming",
       "Developed event programming strategy that drove consistent membership growth and engagement",
-      "Coordinate community partnerships supporting literacy access and outreach initiatives across Houston",
-      "Collaborate with a Houston library access project to expand community reach and impact",
+      "Coordinated community partnerships supporting literacy access and outreach initiatives across Houston",
+      "Collaborated with a Houston library access project to expand community reach and impact",
     ],
     skills: [
       "Leadership",
-      "Program Management",
+      "Organization Building",
+      "Program Development",
       "Community Engagement",
       "Event Planning",
-      "Marketing Promotion",
     ],
     tools: [],
-    deliverables: [
-      { type: "text", label: "Event programming and community outreach initiatives" },
-      { type: "text", label: "Membership growth strategy and campus engagement campaigns" },
-    ],
+    deliverables: [],
+    supportingWork: [],
     media: [],
   },
   {
-    id: "heart-program",
-    title: "The H.E.A.R.T. Program — Social Media Strategy",
+    id: "denmark-market-analysis",
+    title: "International Market Analysis — Denmark",
     category: "Marketing Strategy",
     tags: ["Marketing Strategy"],
     image:
-      "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=600&q=80",
+      "https://images.pexels.com/photos/2862156/pexels-photo-2862156.jpeg?auto=compress&cs=tinysrgb&w=800",
     overview:
-      "Developed and delivered a comprehensive social media strategy for a nonprofit organization as part of a marketing consulting engagement. Conducted a full social media audit, analyzed content performance and audience demographics, and produced a strategic plan with branded templates, content calendar, and platform-specific recommendations to improve the organization's digital presence and engagement.",
-    role: "Marketing Consultant",
+      "Conducted a comprehensive market entry analysis evaluating Denmark as a potential expansion market for US-based companies. Assessed the country's legal, economic, and cultural business environment and delivered strategic recommendations for market entry positioning, localization requirements, and risk mitigation for international operations.",
+    role: "Market Analyst",
     contributions: [
-      "Conducted a comprehensive social media audit analyzing content performance metrics and audience demographics",
-      "Evaluated competitive positioning and identified growth opportunities across key social platforms",
-      "Developed a strategic social media plan including branded templates, a content calendar, and posting cadence",
-      "Created platform-specific recommendations tailored to audience behavior and engagement patterns",
-      "Presented final strategy and implementation roadmap to the organization's marketing leadership",
+      "Researched and evaluated Denmark's regulatory and business environment for US market entry feasibility",
+      "Analyzed economic indicators, trade policies, and consumer behavior patterns across the Danish market",
+      "Assessed cultural factors and their implications for marketing strategy localization and brand adaptation",
+      "Identified key market risks and developed mitigation strategies for each entry scenario",
+      "Delivered strategic recommendations outlining positioning, timing, and operational considerations",
     ],
     skills: [
-      "Social Media Strategy",
-      "Content Planning",
-      "Audience Research",
-      "Marketing Consulting",
-      "Competitive Analysis",
+      "Market Research",
+      "International Marketing",
+      "Business Strategy",
+      "Strategic Analysis",
     ],
-    tools: ["Canva", "Meta Business Suite", "Google Analytics"],
+    tools: ["Microsoft Office", "Google Workspace"],
     deliverables: [
-      { type: "text", label: "Social media audit and competitive analysis report" },
-      { type: "text", label: "Branded content templates and content calendar" },
-      { type: "text", label: "Platform-specific strategic recommendations" },
+      {
+        type: "pdf",
+        label: "Country Analysis Report — Denmark",
+        url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/dndupe8u_Country%20Analysis%20%28Denmark%29.pdf",
+      },
+    ],
+    supportingWork: [
+      "Market entry risk assessment and mitigation framework",
     ],
     media: [],
   },
