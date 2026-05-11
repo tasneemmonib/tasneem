@@ -1,6 +1,6 @@
 import React from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./components/HomePage";
 import AboutSection from "./components/AboutSection";
@@ -24,13 +24,13 @@ const MainPage = () => {
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

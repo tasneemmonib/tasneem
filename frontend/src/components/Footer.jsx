@@ -11,23 +11,48 @@ const Footer = () => {
     <footer style={{ backgroundColor: '#0B0B0B' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          {/* Left */}
-          <div>
-            <p
-              className="text-xl font-semibold mb-2"
-              style={{ color: '#FFFFFF', fontFamily: 'Poppins, sans-serif' }}
+          {/* Left — TM monogram + name */}
+          <div className="flex items-center gap-4">
+            <svg
+              width="44"
+              height="44"
+              viewBox="0 0 64 64"
+              aria-hidden="true"
+              role="img"
+              style={{ flexShrink: 0 }}
             >
-              Tasneem Monib
-            </p>
-            <p
-              className="text-sm"
-              style={{
-                color: 'rgba(255,255,255,0.5)',
-                fontFamily: 'Roboto, sans-serif',
-              }}
-            >
-              Marketing Communications | Brand & Product Marketing
-            </p>
+              <rect width="64" height="64" rx="10" fill="#FFFFFF" />
+              <rect x="0" y="54" width="64" height="10" fill="#C8102E" />
+              <text
+                x="50%"
+                y="50%"
+                textAnchor="middle"
+                dominantBaseline="central"
+                fontFamily="Poppins, Helvetica, Arial, sans-serif"
+                fontSize="28"
+                fontWeight="700"
+                fill="#0B0B0B"
+              >
+                TM
+              </text>
+            </svg>
+            <div>
+              <p
+                className="text-xl font-semibold mb-1"
+                style={{ color: '#FFFFFF', fontFamily: 'Poppins, sans-serif' }}
+              >
+                Tasneem Monib
+              </p>
+              <p
+                className="text-sm"
+                style={{
+                  color: 'rgba(255,255,255,0.5)',
+                  fontFamily: 'Roboto, sans-serif',
+                }}
+              >
+                Marketing Communications | Brand & Product Marketing
+              </p>
+            </div>
           </div>
 
           {/* Center links */}
