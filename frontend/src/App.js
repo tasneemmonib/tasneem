@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import HomePage from "./components/HomePage";
 import AboutSection from "./components/AboutSection";
 import WorkSection from "./components/WorkSection";
+import ExperienceSection from "./components/ExperienceSection";
+import ResumeSection from "./components/ResumeSection";
 import ProjectDetail from "./components/ProjectDetail";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
@@ -15,6 +17,8 @@ const MainPage = () => {
       <HomePage />
       <AboutSection />
       <WorkSection />
+      <ExperienceSection />
+      <ResumeSection />
       <ContactSection />
       <Footer />
     </>

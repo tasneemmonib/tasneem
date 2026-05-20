@@ -4,11 +4,10 @@ import {
   Target,
   Calendar,
   PenTool,
-  Share2,
   Video,
-  Search,
-  FileText,
-  Briefcase,
+  Film,
+  Trophy,
+  Image as ImageIcon,
   GraduationCap,
   Award,
   Globe,
@@ -16,7 +15,6 @@ import {
 import {
   personalInfo,
   capabilities,
-  experience,
   education,
   honors,
 } from '../data/mock';
@@ -26,10 +24,10 @@ const iconMap = {
   Target,
   Calendar,
   PenTool,
-  Share2,
   Video,
-  Search,
-  FileText,
+  Film,
+  Trophy,
+  Image: ImageIcon,
 };
 
 const AboutSection = () => {
@@ -51,39 +49,45 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" style={{ backgroundColor: '#FFFFFF' }}>
-      <div className="py-20 lg:py-28" ref={sectionRef}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 fade-section">
+    <section
+      id="about"
+      style={{
+        background: '#FBF7F2',
+      }}
+    >
+      <div className="py-24 lg:py-32" ref={sectionRef}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 fade-section">
           <div className="grid lg:grid-cols-5 gap-14 lg:gap-20">
             {/* Left Column — About + Core Capabilities */}
             <div className="lg:col-span-3">
               <p
-                className="text-sm font-medium tracking-[0.15em] uppercase mb-3"
-                style={{
-                  color: '#C8102E',
-                  fontFamily: 'Roboto, sans-serif',
-                }}
+                className="text-xs font-semibold tracking-[0.32em] uppercase mb-5"
+                style={{ color: '#5A8D62', fontFamily: 'Inter, sans-serif' }}
               >
-                About
+                Section 01
               </p>
               <h2
-                className="text-3xl md:text-4xl font-bold mb-10"
+                className="mb-12"
                 style={{
-                  color: '#0B0B0B',
-                  fontFamily: 'Poppins, sans-serif',
+                  color: '#2F2A2E',
+                  fontFamily: "'Instrument Serif', 'Playfair Display', Georgia, serif",
+                  fontWeight: 400,
+                  letterSpacing: '-0.015em',
+                  lineHeight: 1.02,
+                  fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)',
                 }}
               >
-                Strategy Meets Execution
+                About.
               </h2>
 
-              <div className="space-y-5 mb-14">
+              <div className="space-y-6 mb-14">
                 {personalInfo.aboutBio.map((paragraph, i) => (
                   <p
                     key={i}
-                    className="text-base leading-[1.75]"
+                    className="text-[15px] md:text-base leading-[1.85]"
                     style={{
-                      color: '#444',
-                      fontFamily: 'Roboto, sans-serif',
+                      color: '#3F3A3E',
+                      fontFamily: 'Inter, sans-serif',
                     }}
                   >
                     {paragraph}
@@ -91,16 +95,13 @@ const AboutSection = () => {
                 ))}
               </div>
 
-              {/* Core Capabilities — inside left column */}
-              <div
-                className="border-t pt-10"
-                style={{ borderColor: '#F0F0F0' }}
-              >
+              {/* Core Capabilities */}
+              <div className="pt-2">
                 <p
-                  className="text-xs font-medium tracking-[0.15em] uppercase mb-6"
-                  style={{ color: '#999', fontFamily: 'Roboto, sans-serif' }}
+                  className="text-xs font-semibold tracking-[0.32em] uppercase mb-6"
+                  style={{ color: '#6A4B86', fontFamily: 'Inter, sans-serif' }}
                 >
-                  Core Capabilities
+                  Capabilities
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {capabilities.map((cap, i) => {
@@ -108,29 +109,37 @@ const AboutSection = () => {
                     return (
                       <div
                         key={i}
-                        className="flex items-center gap-3 px-4 py-3.5 rounded-lg"
+                        className="flex items-center gap-3 px-4 py-3.5 rounded-xl"
                         style={{
-                          backgroundColor: '#FAFAFA',
-                          border: '1px solid #F0F0F0',
+                          background: '#FFFFFF',
+                          border: '1px solid rgba(47, 42, 46, 0.10)',
                           transition:
-                            'background-color 0.2s ease, box-shadow 0.2s ease',
+                            'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
                         }}
                         onMouseOver={(e) => {
-                          e.currentTarget.style.backgroundColor = '#F5F5F5';
+                          e.currentTarget.style.borderColor = '#9CCB9A';
+                          e.currentTarget.style.transform = 'translateY(-1px)';
                           e.currentTarget.style.boxShadow =
-                            '0 2px 8px rgba(0,0,0,0.04)';
+                            '0 8px 20px -12px rgba(47,42,46,0.18)';
                         }}
                         onMouseOut={(e) => {
-                          e.currentTarget.style.backgroundColor = '#FAFAFA';
+                          e.currentTarget.style.borderColor =
+                            'rgba(47, 42, 46, 0.10)';
+                          e.currentTarget.style.transform = 'translateY(0)';
                           e.currentTarget.style.boxShadow = 'none';
                         }}
                       >
-                        {Icon && <Icon size={16} color="#C8102E" />}
+                        <div
+                          className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                          style={{ background: '#F4ECFB' }}
+                        >
+                          {Icon && <Icon size={15} color="#6A4B86" />}
+                        </div>
                         <span
                           className="text-sm font-medium"
                           style={{
-                            color: '#0B0B0B',
-                            fontFamily: 'Roboto, sans-serif',
+                            color: '#2F2A2E',
+                            fontFamily: 'Inter, sans-serif',
                           }}
                         >
                           {cap.name}
@@ -142,145 +151,97 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Right Column — Professional Background + Education + Honors */}
+            {/* Right Column — Education + Honors */}
             <div className="lg:col-span-2">
               <div
-                className="p-6 lg:p-8 rounded-xl"
-                style={{ backgroundColor: '#FAFAFA' }}
+                className="p-6 lg:p-8 rounded-3xl"
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(47, 42, 46, 0.10)',
+                  boxShadow:
+                    '0 1px 2px rgba(47, 42, 46, 0.04), 0 24px 48px -28px rgba(47, 42, 46, 0.22)',
+                }}
               >
-                {/* Professional Background */}
-                <div className="flex items-center gap-2.5 mb-6">
-                  <Briefcase size={18} color="#C8102E" />
+                {/* Education */}
+                <div className="flex items-center gap-2.5 mb-5">
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center"
+                    style={{ background: 'rgba(156, 203, 154, 0.25)' }}
+                  >
+                    <GraduationCap size={16} color="#5A8D62" />
+                  </div>
                   <h3
                     className="text-lg font-semibold"
                     style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Poppins, sans-serif',
-                    }}
-                  >
-                    Professional Background
-                  </h3>
-                </div>
-
-                <div className="space-y-5 mb-8">
-                  {experience.map((exp, i) => (
-                    <div
-                      key={i}
-                      className={i < experience.length - 1 ? 'pb-5' : ''}
-                      style={
-                        i < experience.length - 1
-                          ? { borderBottom: '1px solid #EBEBEB' }
-                          : {}
-                      }
-                    >
-                      <p
-                        className="text-sm font-semibold mb-0.5"
-                        style={{
-                          color: '#0B0B0B',
-                          fontFamily: 'Roboto, sans-serif',
-                        }}
-                      >
-                        {exp.company}
-                      </p>
-                      <p
-                        className="text-xs font-medium mb-2"
-                        style={{
-                          color: '#C8102E',
-                          fontFamily: 'Roboto, sans-serif',
-                        }}
-                      >
-                        {exp.role}
-                      </p>
-                      <p
-                        className="text-sm leading-relaxed"
-                        style={{
-                          color: '#666',
-                          fontFamily: 'Roboto, sans-serif',
-                        }}
-                      >
-                        {exp.summary}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Divider */}
-                <div
-                  className="mb-6"
-                  style={{ borderTop: '1px solid #E5E5E5' }}
-                />
-
-                {/* Education */}
-                <div className="flex items-center gap-2.5 mb-4">
-                  <GraduationCap size={18} color="#C8102E" />
-                  <h3
-                    className="text-base font-semibold"
-                    style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Poppins, sans-serif',
+                      color: '#2F2A2E',
+                      fontFamily: "'Instrument Serif', 'Playfair Display', serif",
                     }}
                   >
                     Education
                   </h3>
                 </div>
 
-                <div className="mb-4">
+                <div className="mb-6">
                   <p
                     className="text-sm font-semibold"
                     style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Roboto, sans-serif',
+                      color: '#2F2A2E',
+                      fontFamily: 'Inter, sans-serif',
                     }}
                   >
                     {education.school}
                   </p>
                   <p
-                    className="text-xs mt-0.5"
+                    className="text-xs mt-1"
                     style={{
-                      color: '#666',
-                      fontFamily: 'Roboto, sans-serif',
+                      color: '#5A4F58',
+                      fontFamily: 'Inter, sans-serif',
                     }}
                   >
                     {education.degree} · GPA {education.gpa}
                   </p>
                   <p
-                    className="text-xs mt-0.5"
+                    className="text-xs mt-1"
                     style={{
-                      color: '#999',
-                      fontFamily: 'Roboto, sans-serif',
+                      color: '#8A7F88',
+                      fontFamily: 'Inter, sans-serif',
                     }}
                   >
                     {education.dates}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-2 mb-5">
-                  <Globe size={14} color="#999" />
+                <div className="flex items-center gap-2 mb-6">
+                  <Globe size={14} color="#5A8D62" />
                   <p
                     className="text-xs"
                     style={{
-                      color: '#999',
-                      fontFamily: 'Roboto, sans-serif',
+                      color: '#5A4F58',
+                      fontFamily: 'Inter, sans-serif',
                     }}
                   >
-                    University of Granada, Spain — Study Abroad Program (Spring 2024)
+                    University of Granada, Spain — Study Abroad (Spring 2024)
                   </p>
                 </div>
 
-                {/* Divider */}
                 <div
-                  className="mb-5"
-                  style={{ borderTop: '1px solid #E5E5E5' }}
+                  className="mb-6"
+                  style={{ borderTop: '1px solid rgba(47, 42, 46, 0.10)' }}
                 />
 
                 {/* Honors */}
-                <div className="flex items-center gap-2.5 mb-3">
-                  <Award size={18} color="#C8102E" />
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center"
+                    style={{ background: 'rgba(210, 183, 241, 0.45)' }}
+                  >
+                    <Award size={16} color="#6A4B86" />
+                  </div>
                   <h3
                     className="text-base font-semibold"
                     style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Poppins, sans-serif',
+                      color: '#2F2A2E',
+                      fontFamily: "'Instrument Serif', serif",
                     }}
                   >
                     Honors
@@ -292,9 +253,10 @@ const AboutSection = () => {
                       key={i}
                       className="text-xs font-medium px-3 py-1.5 rounded-full"
                       style={{
-                        backgroundColor: '#F0F0F0',
-                        color: '#555',
-                        fontFamily: 'Roboto, sans-serif',
+                        background: '#F4ECFB',
+                        color: '#6A4B86',
+                        border: '1px solid rgba(106, 75, 134, 0.18)',
+                        fontFamily: 'Inter, sans-serif',
                       }}
                     >
                       {honor}

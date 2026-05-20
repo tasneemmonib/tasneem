@@ -11,9 +11,6 @@ import {
   Wrench,
 } from 'lucide-react';
 import { Button } from './ui/button';
-import { Badge } from './ui/badge';
-import { Card, CardContent } from './ui/card';
-import { Separator } from './ui/separator';
 import { projects } from '../data/mock';
 
 const ProjectDetail = () => {
@@ -71,7 +68,6 @@ const ProjectDetail = () => {
   }, []);
 
   const handleBack = () => {
-    // Navigate to home and scroll to work section
     navigate('/');
     setTimeout(() => {
       const workSection = document.querySelector('#work');
@@ -85,25 +81,49 @@ const ProjectDetail = () => {
     return (
       <div
         className="min-h-screen flex flex-col items-center justify-center"
-        style={{ backgroundColor: '#F5F5F5' }}
+        style={{ background: '#F1E9FB' }}
       >
         <h2
           className="text-2xl font-semibold mb-4"
-          style={{ color: '#0B0B0B', fontFamily: 'Poppins, sans-serif' }}
+          style={{ color: '#3B2A52', fontFamily: "'Fraunces', serif" }}
         >
           Project Not Found
         </h2>
-        <Button onClick={() => navigate('/')} variant="outline">
+        <Button
+          onClick={() => navigate('/')}
+          variant="outline"
+          style={{ borderColor: '#6A4B86', color: '#6A4B86' }}
+        >
           <ArrowLeft size={16} className="mr-2" /> Back to Portfolio
         </Button>
       </div>
     );
   }
 
+  const SectionDivider = () => (
+    <div
+      className="my-10 flex items-center gap-3"
+      aria-hidden="true"
+    >
+      <span
+        className="flex-1 h-[1px]"
+        style={{ background: 'rgba(106, 75, 134, 0.18)' }}
+      />
+      <span
+        className="w-2 h-2 rounded-full"
+        style={{ background: '#9CCB9A' }}
+      />
+      <span
+        className="flex-1 h-[1px]"
+        style={{ background: 'rgba(106, 75, 134, 0.18)' }}
+      />
+    </div>
+  );
+
   return (
-    <div style={{ backgroundColor: '#FFFFFF' }}>
+    <div className="tm-paper" style={{ background: '#FBF7F2' }}>
       {/* Hero Banner */}
-      <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+      <div className="relative h-[55vh] md:h-[62vh] overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
@@ -113,20 +133,20 @@ const ProjectDetail = () => {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to top, rgba(11,11,11,0.85) 0%, rgba(11,11,11,0.3) 50%, transparent 100%)',
+              'linear-gradient(to top, rgba(59,42,82,0.92) 0%, rgba(59,42,82,0.45) 45%, rgba(59,42,82,0.15) 100%)',
           }}
         />
         <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-12 max-w-7xl mx-auto">
-          {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
             {project.tags.map((tag, i) => (
               <span
                 key={i}
-                className="text-[10px] font-medium tracking-wide uppercase px-3 py-1 rounded-full"
+                className="text-[10px] font-semibold tracking-widest uppercase px-3 py-1 rounded-full"
                 style={{
-                  backgroundColor: 'rgba(255,255,255,0.15)',
-                  color: 'rgba(255,255,255,0.8)',
-                  fontFamily: 'Roboto, sans-serif',
+                  background: 'rgba(241, 233, 251, 0.95)',
+                  color: '#6A4B86',
+                  fontFamily: 'Inter, sans-serif',
+                  border: '1px solid rgba(106, 75, 134, 0.18)',
                 }}
               >
                 {tag}
@@ -134,36 +154,53 @@ const ProjectDetail = () => {
             ))}
           </div>
           <h1
-            className="text-3xl md:text-5xl font-bold mb-2"
+            className="text-3xl md:text-5xl lg:text-6xl mb-3"
             style={{
               color: '#FFFFFF',
-              fontFamily: 'Poppins, sans-serif',
+              fontFamily: "'Fraunces', Georgia, serif",
+              fontWeight: 600,
+              letterSpacing: '-0.02em',
+              lineHeight: 1.05,
             }}
           >
             {project.title}
           </h1>
           <p
-            className="text-base md:text-lg"
+            className="text-base md:text-lg max-w-3xl"
             style={{
-              color: 'rgba(255,255,255,0.7)',
-              fontFamily: 'Roboto, sans-serif',
+              color: 'rgba(241, 233, 251, 0.85)',
+              fontFamily: 'Inter, sans-serif',
             }}
           >
-            Role: {project.role}
+            <span style={{ color: '#9CCB9A', fontWeight: 600 }}>Role · </span>
+            {project.role}
           </p>
         </div>
       </div>
 
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-8">
-        <Button
+        <button
           onClick={handleBack}
-          variant="ghost"
-          className="text-sm font-medium hover:bg-gray-50"
-          style={{ color: '#666', fontFamily: 'Roboto, sans-serif' }}
+          className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-full"
+          style={{
+            color: '#6A4B86',
+            background: '#FFFFFF',
+            border: '1px solid rgba(106, 75, 134, 0.18)',
+            fontFamily: 'Inter, sans-serif',
+            transition: 'all 0.2s ease',
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.background = '#6A4B86';
+            e.currentTarget.style.color = '#FFFFFF';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.background = '#FFFFFF';
+            e.currentTarget.style.color = '#6A4B86';
+          }}
         >
-          <ArrowLeft size={16} className="mr-2" /> Back to Work
-        </Button>
+          <ArrowLeft size={14} /> Back to Work
+        </button>
       </div>
 
       {/* Content */}
@@ -173,52 +210,68 @@ const ProjectDetail = () => {
       >
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 fade-section">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-10">
+          <div className="lg:col-span-2">
             {/* Overview */}
             <div>
-              <h2
-                className="text-2xl font-bold mb-4"
-                style={{
-                  color: '#0B0B0B',
-                  fontFamily: 'Poppins, sans-serif',
-                }}
-              >
-                Overview
-              </h2>
+              <div className="flex items-center gap-2 mb-3">
+                <span
+                  className="inline-block w-6 h-[2px] rounded-full"
+                  style={{ background: '#9CCB9A' }}
+                />
+                <p
+                  className="text-xs font-semibold tracking-[0.22em] uppercase"
+                  style={{ color: '#6A4B86', fontFamily: 'Inter, sans-serif' }}
+                >
+                  Overview
+                </p>
+              </div>
               <p
-                className="text-base leading-relaxed"
-                style={{ color: '#444', fontFamily: 'Roboto, sans-serif' }}
+                className="text-base md:text-lg leading-relaxed"
+                style={{
+                  color: '#4A3A66',
+                  fontFamily: 'Inter, sans-serif',
+                }}
               >
                 {project.overview}
               </p>
             </div>
 
-            <Separator />
+            <SectionDivider />
 
             {/* Key Contributions */}
             <div>
-              <h2
-                className="text-2xl font-bold mb-6"
-                style={{
-                  color: '#0B0B0B',
-                  fontFamily: 'Poppins, sans-serif',
-                }}
-              >
-                Key Contributions
-              </h2>
+              <div className="flex items-center gap-2 mb-5">
+                <span
+                  className="inline-block w-6 h-[2px] rounded-full"
+                  style={{ background: '#9CCB9A' }}
+                />
+                <p
+                  className="text-xs font-semibold tracking-[0.22em] uppercase"
+                  style={{ color: '#6A4B86', fontFamily: 'Inter, sans-serif' }}
+                >
+                  Contributions
+                </p>
+              </div>
               <div className="space-y-3">
                 {project.contributions.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
+                  <div
+                    key={i}
+                    className="flex items-start gap-3 p-4 rounded-2xl"
+                    style={{
+                      background: '#FFFFFF',
+                      border: '1px solid rgba(106, 75, 134, 0.08)',
+                    }}
+                  >
                     <CheckCircle2
                       size={18}
-                      color="#C8102E"
+                      color="#5A8D62"
                       className="mt-0.5 flex-shrink-0"
                     />
                     <span
-                      className="text-base"
+                      className="text-[15px] leading-relaxed"
                       style={{
-                        color: '#444',
-                        fontFamily: 'Roboto, sans-serif',
+                        color: '#4A3A66',
+                        fontFamily: 'Inter, sans-serif',
                       }}
                     >
                       {item}
@@ -228,20 +281,23 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            {/* Deliverables — only when real files exist */}
+            {/* Deliverables */}
             {fileDeliverables.length > 0 && (
               <>
-                <Separator />
+                <SectionDivider />
                 <div>
-                  <h2
-                    className="text-2xl font-bold mb-6"
-                    style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Poppins, sans-serif',
-                    }}
-                  >
-                    Deliverables
-                  </h2>
+                  <div className="flex items-center gap-2 mb-5">
+                    <span
+                      className="inline-block w-6 h-[2px] rounded-full"
+                      style={{ background: '#9CCB9A' }}
+                    />
+                    <p
+                      className="text-xs font-semibold tracking-[0.22em] uppercase"
+                      style={{ color: '#6A4B86', fontFamily: 'Inter, sans-serif' }}
+                    >
+                      Deliverables
+                    </p>
+                  </div>
                   <div className="space-y-3">
                     {fileDeliverables.map((d, i) => (
                       <a
@@ -250,32 +306,41 @@ const ProjectDetail = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid={`deliverable-file-${i}`}
-                        className="flex items-center gap-3 p-4 rounded-lg"
+                        className="flex items-center gap-3 p-4 rounded-2xl group"
                         style={{
-                          backgroundColor: '#F5F5F5',
-                          transition: 'background-color 0.2s ease',
+                          background: '#FFFFFF',
+                          border: '1px solid rgba(106, 75, 134, 0.10)',
+                          transition: 'all 0.2s ease',
                         }}
-                        onMouseOver={(e) =>
-                          (e.currentTarget.style.backgroundColor = '#EBEBEB')
-                        }
-                        onMouseOut={(e) =>
-                          (e.currentTarget.style.backgroundColor = '#F5F5F5')
-                        }
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.borderColor = '#9CCB9A';
+                          e.currentTarget.style.background = '#F6FBF6';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.borderColor =
+                            'rgba(106, 75, 134, 0.10)';
+                          e.currentTarget.style.background = '#FFFFFF';
+                        }}
                       >
-                        <FileText size={18} color="#C8102E" />
+                        <div
+                          className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                          style={{ background: 'rgba(156, 203, 154, 0.25)' }}
+                        >
+                          <FileText size={18} color="#5A8D62" />
+                        </div>
                         <span
-                          className="text-sm font-medium"
+                          className="text-sm font-semibold flex-1"
                           style={{
-                            color: '#0B0B0B',
-                            fontFamily: 'Roboto, sans-serif',
+                            color: '#3B2A52',
+                            fontFamily: 'Inter, sans-serif',
                           }}
                         >
                           {d.label}
                         </span>
                         <ExternalLink
                           size={14}
-                          color="#999"
-                          className="ml-auto flex-shrink-0"
+                          color="#6A4B86"
+                          className="flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                         />
                       </a>
                     ))}
@@ -287,32 +352,32 @@ const ProjectDetail = () => {
             {/* Supporting Work */}
             {supportingWork.length > 0 && (
               <>
-                <Separator />
+                <SectionDivider />
                 <div>
-                  <h2
-                    className="text-2xl font-bold mb-6"
-                    style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Poppins, sans-serif',
-                    }}
-                  >
-                    Supporting Work
-                  </h2>
+                  <div className="flex items-center gap-2 mb-5">
+                    <span
+                      className="inline-block w-6 h-[2px] rounded-full"
+                      style={{ background: '#9CCB9A' }}
+                    />
+                    <p
+                      className="text-xs font-semibold tracking-[0.22em] uppercase"
+                      style={{ color: '#6A4B86', fontFamily: 'Inter, sans-serif' }}
+                    >
+                      Supporting Work
+                    </p>
+                  </div>
                   <ul className="space-y-3 pl-1">
                     {supportingWork.map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2.5"
-                      >
+                      <li key={i} className="flex items-start gap-2.5">
                         <span
                           className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                          style={{ backgroundColor: '#C8102E' }}
+                          style={{ background: '#6A4B86' }}
                         />
                         <span
-                          className="text-base"
+                          className="text-[15px] leading-relaxed"
                           style={{
-                            color: '#444',
-                            fontFamily: 'Roboto, sans-serif',
+                            color: '#4A3A66',
+                            fontFamily: 'Inter, sans-serif',
                           }}
                         >
                           {item}
@@ -324,43 +389,54 @@ const ProjectDetail = () => {
               </>
             )}
 
-            {/* Media Section — Photo Gallery */}
+            {/* Photo Gallery */}
             {imageMedia.length > 0 && (
               <>
-                <Separator />
+                <SectionDivider />
                 <div>
-                  <h2
-                    className="text-2xl font-bold mb-6"
-                    style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Poppins, sans-serif',
-                    }}
-                  >
-                    Photo Gallery
-                  </h2>
+                  <div className="flex items-center gap-2 mb-5">
+                    <span
+                      className="inline-block w-6 h-[2px] rounded-full"
+                      style={{ background: '#9CCB9A' }}
+                    />
+                    <p
+                      className="text-xs font-semibold tracking-[0.22em] uppercase"
+                      style={{ color: '#6A4B86', fontFamily: 'Inter, sans-serif' }}
+                    >
+                      Photo Gallery
+                    </p>
+                  </div>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {imageMedia.map((item, i) => (
                       <div
                         key={i}
                         data-testid={`gallery-image-${i}`}
-                        className="relative group cursor-pointer rounded-lg overflow-hidden aspect-square"
+                        className="relative group cursor-pointer rounded-2xl overflow-hidden aspect-square"
                         onClick={() => openLightbox(i)}
+                        style={{
+                          background: '#D2B7F1',
+                          border: '1px solid rgba(106, 75, 134, 0.08)',
+                        }}
                       >
                         <img
                           src={item.url}
                           alt={item.title}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
                         />
                         <div
                           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
                           style={{
-                            background: 'linear-gradient(to top, rgba(11,11,11,0.7) 0%, transparent 50%)',
+                            background:
+                              'linear-gradient(to top, rgba(59,42,82,0.78) 0%, transparent 55%)',
                           }}
                         >
                           <p
                             className="p-3 text-xs font-medium"
-                            style={{ color: '#FFFFFF', fontFamily: 'Roboto, sans-serif' }}
+                            style={{
+                              color: '#F1E9FB',
+                              fontFamily: 'Inter, sans-serif',
+                            }}
                           >
                             {item.title}
                           </p>
@@ -372,27 +448,33 @@ const ProjectDetail = () => {
               </>
             )}
 
-            {/* Media Section — Videos */}
+            {/* Videos */}
             {(youtubeMedia.length > 0 || nativeVideoMedia.length > 0) && (
               <>
-                <Separator />
+                <SectionDivider />
                 <div>
-                  <h2
-                    className="text-2xl font-bold mb-6"
-                    style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Poppins, sans-serif',
-                    }}
-                  >
-                    Video
-                  </h2>
+                  <div className="flex items-center gap-2 mb-5">
+                    <span
+                      className="inline-block w-6 h-[2px] rounded-full"
+                      style={{ background: '#9CCB9A' }}
+                    />
+                    <p
+                      className="text-xs font-semibold tracking-[0.22em] uppercase"
+                      style={{ color: '#6A4B86', fontFamily: 'Inter, sans-serif' }}
+                    >
+                      Video
+                    </p>
+                  </div>
                   <div className="space-y-6">
                     {nativeVideoMedia.map((item, i) => (
                       <div
                         key={`native-${i}`}
                         data-testid={`native-video-${i}`}
-                        className="rounded-xl overflow-hidden"
-                        style={{ backgroundColor: '#0B0B0B' }}
+                        className="rounded-2xl overflow-hidden"
+                        style={{
+                          background: '#3B2A52',
+                          border: '1px solid rgba(106, 75, 134, 0.15)',
+                        }}
                       >
                         <div className="aspect-video">
                           <video
@@ -407,8 +489,8 @@ const ProjectDetail = () => {
                           <p
                             className="text-sm font-medium"
                             style={{
-                              color: '#FFFFFF',
-                              fontFamily: 'Roboto, sans-serif',
+                              color: '#F1E9FB',
+                              fontFamily: 'Inter, sans-serif',
                             }}
                           >
                             {item.title}
@@ -419,8 +501,11 @@ const ProjectDetail = () => {
                     {youtubeMedia.map((item, i) => (
                       <div
                         key={`yt-${i}`}
-                        className="rounded-xl overflow-hidden"
-                        style={{ backgroundColor: '#0B0B0B' }}
+                        className="rounded-2xl overflow-hidden"
+                        style={{
+                          background: '#3B2A52',
+                          border: '1px solid rgba(106, 75, 134, 0.15)',
+                        }}
                       >
                         <div className="aspect-video">
                           <iframe
@@ -435,8 +520,8 @@ const ProjectDetail = () => {
                           <p
                             className="text-sm font-medium"
                             style={{
-                              color: '#FFFFFF',
-                              fontFamily: 'Roboto, sans-serif',
+                              color: '#F1E9FB',
+                              fontFamily: 'Inter, sans-serif',
                             }}
                           >
                             {item.title}
@@ -449,27 +534,33 @@ const ProjectDetail = () => {
               </>
             )}
 
-            {/* Instagram Reels */}
+            {/* Instagram */}
             {instagramMedia.length > 0 && (
               <>
-                <Separator />
+                <SectionDivider />
                 <div>
-                  <h2
-                    className="text-2xl font-bold mb-6"
-                    style={{
-                      color: '#0B0B0B',
-                      fontFamily: 'Poppins, sans-serif',
-                    }}
-                  >
-                    Social Media Content
-                  </h2>
+                  <div className="flex items-center gap-2 mb-5">
+                    <span
+                      className="inline-block w-6 h-[2px] rounded-full"
+                      style={{ background: '#9CCB9A' }}
+                    />
+                    <p
+                      className="text-xs font-semibold tracking-[0.22em] uppercase"
+                      style={{ color: '#6A4B86', fontFamily: 'Inter, sans-serif' }}
+                    >
+                      Social Media Content
+                    </p>
+                  </div>
                   <div className="grid md:grid-cols-2 gap-4">
                     {instagramMedia.map((item, i) => (
                       <div
                         key={`ig-${i}`}
                         data-testid={`instagram-reel-${i}`}
-                        className="rounded-xl overflow-hidden border"
-                        style={{ borderColor: '#E5E5E5' }}
+                        className="rounded-2xl overflow-hidden"
+                        style={{
+                          border: '1px solid rgba(106, 75, 134, 0.14)',
+                          background: '#FFFFFF',
+                        }}
                       >
                         <div style={{ height: '480px' }}>
                           <iframe
@@ -483,10 +574,16 @@ const ProjectDetail = () => {
                           />
                         </div>
                         {item.link && (
-                          <div className="p-3 flex items-center justify-between" style={{ backgroundColor: '#FAFAFA' }}>
+                          <div
+                            className="p-3 flex items-center justify-between"
+                            style={{ background: '#F1E9FB' }}
+                          >
                             <p
-                              className="text-xs"
-                              style={{ color: '#555', fontFamily: 'Roboto, sans-serif' }}
+                              className="text-xs font-medium"
+                              style={{
+                                color: '#6A4B86',
+                                fontFamily: 'Inter, sans-serif',
+                              }}
                             >
                               {item.title}
                             </p>
@@ -494,21 +591,20 @@ const ProjectDetail = () => {
                               href={item.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-full"
+                              className="flex items-center gap-1 text-xs font-semibold px-3 py-1.5 rounded-full"
                               style={{
-                                color: '#C8102E',
-                                backgroundColor: '#FFF',
-                                border: '1px solid #E5E5E5',
+                                color: '#FFFFFF',
+                                background: '#6A4B86',
+                                border: '1px solid #6A4B86',
+                                fontFamily: 'Inter, sans-serif',
                                 transition: 'all 0.2s ease',
                                 whiteSpace: 'nowrap',
                               }}
                               onMouseOver={(e) => {
-                                e.currentTarget.style.backgroundColor = '#C8102E';
-                                e.currentTarget.style.color = '#FFF';
+                                e.currentTarget.style.background = '#553A6E';
                               }}
                               onMouseOut={(e) => {
-                                e.currentTarget.style.backgroundColor = '#FFF';
-                                e.currentTarget.style.color = '#C8102E';
+                                e.currentTarget.style.background = '#6A4B86';
                               }}
                             >
                               View on Instagram <ExternalLink size={10} />
@@ -525,72 +621,86 @@ const ProjectDetail = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <Card className="border-0 shadow-sm rounded-xl sticky top-24">
-              <CardContent className="p-6">
+            <div
+              className="rounded-3xl sticky top-24"
+              style={{
+                background: '#FFFFFF',
+                border: '1px solid rgba(106, 75, 134, 0.10)',
+                boxShadow:
+                  '0 1px 2px rgba(106, 75, 134, 0.04), 0 24px 48px -28px rgba(106, 75, 134, 0.25)',
+              }}
+            >
+              <div className="p-6">
                 <h3
                   className="text-lg font-semibold mb-4"
                   style={{
-                    color: '#0B0B0B',
-                    fontFamily: 'Poppins, sans-serif',
+                    color: '#3B2A52',
+                    fontFamily: "'Fraunces', serif",
                   }}
                 >
                   Skills Demonstrated
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {project.skills.map((skill, i) => (
-                    <Badge
+                    <span
                       key={i}
-                      variant="secondary"
-                      className="text-xs font-medium"
+                      className="text-xs font-medium px-3 py-1.5 rounded-full"
                       style={{
-                        backgroundColor: '#F5F5F5',
-                        color: '#0B0B0B',
+                        background: '#F1E9FB',
+                        color: '#6A4B86',
+                        border: '1px solid rgba(106, 75, 134, 0.14)',
+                        fontFamily: 'Inter, sans-serif',
                       }}
                     >
                       {skill}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
 
-                {/* Tools Used */}
                 {project.tools && project.tools.length > 0 && (
                   <>
-                    <Separator className="my-6" />
+                    <div
+                      className="my-6"
+                      style={{ borderTop: '1px solid rgba(106, 75, 134, 0.10)' }}
+                    />
                     <h3
                       className="text-lg font-semibold mb-4"
                       style={{
-                        color: '#0B0B0B',
-                        fontFamily: 'Poppins, sans-serif',
+                        color: '#3B2A52',
+                        fontFamily: "'Fraunces', serif",
                       }}
                     >
                       Tools Used
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {project.tools.map((tool, i) => (
-                        <Badge
+                        <span
                           key={i}
-                          variant="outline"
-                          className="text-xs font-medium"
+                          className="inline-flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-full"
                           style={{
-                            borderColor: '#E0E0E0',
-                            color: '#555',
+                            background: 'rgba(156, 203, 154, 0.22)',
+                            color: '#3F6446',
+                            border: '1px solid rgba(90, 141, 98, 0.25)',
+                            fontFamily: 'Inter, sans-serif',
                           }}
                         >
-                          <Wrench size={10} className="mr-1" />
-                          {tool}
-                        </Badge>
+                          <Wrench size={10} /> {tool}
+                        </span>
                       ))}
                     </div>
                   </>
                 )}
 
-                <Separator className="my-6" />
+                <div
+                  className="my-6"
+                  style={{ borderTop: '1px solid rgba(106, 75, 134, 0.10)' }}
+                />
 
                 <h3
                   className="text-lg font-semibold mb-3"
                   style={{
-                    color: '#0B0B0B',
-                    fontFamily: 'Poppins, sans-serif',
+                    color: '#3B2A52',
+                    fontFamily: "'Fraunces', serif",
                   }}
                 >
                   Project Info
@@ -598,19 +708,19 @@ const ProjectDetail = () => {
                 <div className="space-y-3">
                   <div>
                     <span
-                      className="text-xs uppercase tracking-wider"
+                      className="text-[10px] uppercase tracking-[0.18em] font-semibold"
                       style={{
-                        color: '#999',
-                        fontFamily: 'Roboto, sans-serif',
+                        color: '#9583B0',
+                        fontFamily: 'Inter, sans-serif',
                       }}
                     >
                       Category
                     </span>
                     <p
-                      className="text-sm font-medium mt-0.5"
+                      className="text-sm font-semibold mt-0.5"
                       style={{
-                        color: '#0B0B0B',
-                        fontFamily: 'Roboto, sans-serif',
+                        color: '#3B2A52',
+                        fontFamily: 'Inter, sans-serif',
                       }}
                     >
                       {project.category}
@@ -618,27 +728,27 @@ const ProjectDetail = () => {
                   </div>
                   <div>
                     <span
-                      className="text-xs uppercase tracking-wider"
+                      className="text-[10px] uppercase tracking-[0.18em] font-semibold"
                       style={{
-                        color: '#999',
-                        fontFamily: 'Roboto, sans-serif',
+                        color: '#9583B0',
+                        fontFamily: 'Inter, sans-serif',
                       }}
                     >
                       Role
                     </span>
                     <p
-                      className="text-sm font-medium mt-0.5"
+                      className="text-sm font-semibold mt-0.5"
                       style={{
-                        color: '#0B0B0B',
-                        fontFamily: 'Roboto, sans-serif',
+                        color: '#3B2A52',
+                        fontFamily: 'Inter, sans-serif',
                       }}
                     >
                       {project.role}
                     </p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -648,34 +758,40 @@ const ProjectDetail = () => {
         <div
           data-testid="lightbox-modal"
           className="fixed inset-0 z-50 flex items-center justify-center"
-          style={{ backgroundColor: 'rgba(0,0,0,0.92)' }}
+          style={{ background: 'rgba(59, 42, 82, 0.94)' }}
           onClick={closeLightbox}
         >
-          {/* Close button */}
           <button
             data-testid="lightbox-close"
             onClick={closeLightbox}
-            className="absolute top-6 right-6 p-2 rounded-full transition-colors duration-200"
-            style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
-            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)')}
-            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')}
+            className="absolute top-6 right-6 p-2 rounded-full"
+            style={{
+              background: 'rgba(241, 233, 251, 0.12)',
+              transition: 'background 0.2s ease',
+            }}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.background = 'rgba(241, 233, 251, 0.24)')
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.background = 'rgba(241, 233, 251, 0.12)')
+            }
           >
-            <X size={24} color="#FFFFFF" />
+            <X size={24} color="#F1E9FB" />
           </button>
-
-          {/* Previous button */}
           <button
             data-testid="lightbox-prev"
             onClick={(e) => { e.stopPropagation(); prevImage(); }}
-            className="absolute left-4 md:left-8 p-2 rounded-full transition-colors duration-200"
-            style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
-            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)')}
-            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')}
+            className="absolute left-4 md:left-8 p-2 rounded-full"
+            style={{ background: 'rgba(241, 233, 251, 0.12)' }}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.background = 'rgba(241, 233, 251, 0.24)')
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.background = 'rgba(241, 233, 251, 0.12)')
+            }
           >
-            <ChevronLeft size={28} color="#FFFFFF" />
+            <ChevronLeft size={28} color="#F1E9FB" />
           </button>
-
-          {/* Image */}
           <div
             className="max-w-5xl max-h-[85vh] px-16"
             onClick={(e) => e.stopPropagation()}
@@ -683,30 +799,35 @@ const ProjectDetail = () => {
             <img
               src={imageMedia[lightboxIndex].url}
               alt={imageMedia[lightboxIndex].title}
-              className="max-w-full max-h-[80vh] object-contain rounded-lg"
+              className="max-w-full max-h-[80vh] object-contain rounded-xl"
               style={{ margin: '0 auto', display: 'block' }}
             />
             <p
               className="text-center mt-4 text-sm"
-              style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'Roboto, sans-serif' }}
+              style={{
+                color: 'rgba(241,233,251,0.85)',
+                fontFamily: 'Inter, sans-serif',
+              }}
             >
               {imageMedia[lightboxIndex].title}
-              <span style={{ color: 'rgba(255,255,255,0.4)' }}>
+              <span style={{ color: 'rgba(241,233,251,0.5)' }}>
                 {' '}— {lightboxIndex + 1} / {imageMedia.length}
               </span>
             </p>
           </div>
-
-          {/* Next button */}
           <button
             data-testid="lightbox-next"
             onClick={(e) => { e.stopPropagation(); nextImage(); }}
-            className="absolute right-4 md:right-8 p-2 rounded-full transition-colors duration-200"
-            style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
-            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)')}
-            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')}
+            className="absolute right-4 md:right-8 p-2 rounded-full"
+            style={{ background: 'rgba(241, 233, 251, 0.12)' }}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.background = 'rgba(241, 233, 251, 0.24)')
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.background = 'rgba(241, 233, 251, 0.12)')
+            }
           >
-            <ChevronRight size={28} color="#FFFFFF" />
+            <ChevronRight size={28} color="#F1E9FB" />
           </button>
         </div>
       )}

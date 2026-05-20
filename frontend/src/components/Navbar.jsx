@@ -3,29 +3,54 @@ import { Menu, X, Download } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { personalInfo } from '../data/mock';
 
+const Monogram = ({ size = 36 }) => (
+  <span
+    aria-hidden="true"
+    style={{
+      width: size,
+      height: size,
+      borderRadius: '50%',
+      background: '#F1E9FB',
+      color: '#6A4B86',
+      border: '1.5px solid rgba(106, 75, 134, 0.32)',
+      boxShadow: '0 10px 24px -16px rgba(106, 75, 134, 0.55)',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: "'Instrument Serif', 'Playfair Display', serif",
+      fontSize: size * 0.42,
+      letterSpacing: '0.02em',
+      flexShrink: 0,
+    }}
+  >
+    TM
+  </span>
+);
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [showPhotoModal, setShowPhotoModal] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   const navLinks = [
     { label: 'About', href: '#about' },
-    { label: 'Work', href: '#work' },
+    { label: 'Media Production', href: '#work' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Resume', href: '#resume' },
     { label: 'Contact', href: '#contact' },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const isProjectPage = location.pathname.startsWith('/project/');
-  const showDarkText = isScrolled || isProjectPage;
+  const elevated = isScrolled || isProjectPage;
 
   const handleNavClick = (href) => {
     setIsMobileMenuOpen(false);
@@ -52,95 +77,91 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          showDarkText
-            ? 'bg-white/95 backdrop-blur-md shadow-sm'
-            : 'bg-transparent'
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        style={{
+          background: elevated
+            ? 'rgba(251, 247, 242, 0.94)'
+            : 'rgba(251, 247, 242, 0.65)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          borderBottom: elevated
+            ? '1px solid rgba(47, 42, 46, 0.08)'
+            : '1px solid transparent',
+          boxShadow: elevated
+            ? '0 1px 24px -16px rgba(47, 42, 46, 0.25)'
+            : 'none',
+        }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Left: Profile photo + Name */}
+            {/* Left: monogram + name */}
             <div className="flex items-center gap-3">
               <button
-                onClick={() => setShowPhotoModal(true)}
-                className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0"
-                style={{
-                  boxShadow: showDarkText
-                    ? '0 0 0 2px rgba(11,11,11,0.1)'
-                    : '0 0 0 2px rgba(255,255,255,0.25)',
-                  transition: 'transform 0.2s ease',
-                }}
+                onClick={handleLogoClick}
+                aria-label="Home"
+                className="flex items-center gap-3"
+                style={{ transition: 'transform 0.2s ease' }}
                 onMouseOver={(e) =>
-                  (e.currentTarget.style.transform = 'scale(1.05)')
+                  (e.currentTarget.style.transform = 'translateY(-1px)')
                 }
                 onMouseOut={(e) =>
-                  (e.currentTarget.style.transform = 'scale(1)')
+                  (e.currentTarget.style.transform = 'translateY(0)')
                 }
               >
-                <img
-                  src={personalInfo.profilePhoto}
-                  alt="Tasneem Monib"
-                  className="w-full h-full object-cover"
-                />
-              </button>
-              <button
-                onClick={handleLogoClick}
-                className="text-lg font-semibold tracking-tight transition-colors duration-200"
-                style={{
-                  color: showDarkText ? '#0B0B0B' : '#FFFFFF',
-                  fontFamily: 'Poppins, sans-serif',
-                }}
-              >
-                Tasneem Monib
+                <Monogram size={36} />
+                <span
+                  className="text-base lg:text-lg tracking-tight"
+                  style={{
+                    color: '#2F2A2E',
+                    fontFamily:
+                      "'Instrument Serif', 'Playfair Display', Georgia, serif",
+                    fontWeight: 500,
+                    letterSpacing: '0.01em',
+                  }}
+                >
+                  Tasneem Monib
+                </span>
               </button>
             </div>
 
-            {/* Right: Nav links + Resume download */}
-            <div className="hidden md:flex items-center gap-8">
+            {/* Right: Nav links + Resume */}
+            <div className="hidden md:flex items-center gap-6 lg:gap-7">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-sm font-medium transition-colors duration-200 hover:opacity-70"
+                  className="text-sm font-medium relative group"
                   style={{
-                    color: showDarkText ? '#0B0B0B' : '#FFFFFF',
-                    fontFamily: 'Roboto, sans-serif',
+                    color: '#2F2A2E',
+                    fontFamily: 'Inter, sans-serif',
                   }}
                 >
                   {link.label}
+                  <span
+                    className="absolute left-0 -bottom-1 h-[2px] w-0 group-hover:w-full transition-all duration-300"
+                    style={{ background: '#9CCB9A', borderRadius: '2px' }}
+                  />
                 </button>
               ))}
               <a
                 href={personalInfo.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-4 py-2 rounded-md text-xs font-medium"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold"
                 style={{
-                  backgroundColor: showDarkText
-                    ? '#0B0B0B'
-                    : 'rgba(255,255,255,0.15)',
-                  color: showDarkText
-                    ? '#FFFFFF'
-                    : 'rgba(255,255,255,0.9)',
-                  fontFamily: 'Roboto, sans-serif',
+                  background: '#2F2A2E',
+                  color: '#FBF7F2',
+                  fontFamily: 'Inter, sans-serif',
+                  letterSpacing: '0.04em',
                   transition: 'background-color 0.2s ease, transform 0.2s ease',
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.02)';
-                  if (showDarkText) {
-                    e.currentTarget.style.backgroundColor = '#222';
-                  } else {
-                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.25)';
-                  }
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+                  e.currentTarget.style.backgroundColor = '#5A8D62';
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.transform = 'scale(1)';
-                  if (showDarkText) {
-                    e.currentTarget.style.backgroundColor = '#0B0B0B';
-                  } else {
-                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.15)';
-                  }
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.backgroundColor = '#2F2A2E';
                 }}
               >
                 <Download size={12} />
@@ -152,11 +173,12 @@ const Navbar = () => {
             <button
               className="md:hidden p-1"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X size={24} color={showDarkText ? '#0B0B0B' : '#FFFFFF'} />
+                <X size={24} color="#2F2A2E" />
               ) : (
-                <Menu size={24} color={showDarkText ? '#0B0B0B' : '#FFFFFF'} />
+                <Menu size={24} color="#2F2A2E" />
               )}
             </button>
           </div>
@@ -165,12 +187,11 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
-            isMobileMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+            isMobileMenuOpen ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'
           }`}
           style={{
-            backgroundColor: showDarkText
-              ? '#FFFFFF'
-              : 'rgba(11,11,11,0.95)',
+            backgroundColor: '#FBF7F2',
+            borderTop: '1px solid rgba(47, 42, 46, 0.08)',
           }}
         >
           <div className="px-6 py-4 space-y-1">
@@ -178,10 +199,10 @@ const Navbar = () => {
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
-                className="block w-full text-left text-sm font-medium py-3 transition-colors duration-200"
+                className="block w-full text-left text-sm font-medium py-3"
                 style={{
-                  color: showDarkText ? '#0B0B0B' : '#FFFFFF',
-                  fontFamily: 'Roboto, sans-serif',
+                  color: '#2F2A2E',
+                  fontFamily: 'Inter, sans-serif',
                 }}
               >
                 {link.label}
@@ -191,10 +212,10 @@ const Navbar = () => {
               href={personalInfo.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-medium py-3"
+              className="flex items-center gap-2 text-sm font-semibold py-3"
               style={{
-                color: '#C8102E',
-                fontFamily: 'Roboto, sans-serif',
+                color: '#2F2A2E',
+                fontFamily: 'Inter, sans-serif',
               }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -203,55 +224,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
-      {/* Profile Photo Modal */}
-      {showPhotoModal && (
-        <div
-          className="fixed inset-0 z-[60] flex items-center justify-center p-6"
-          style={{ backgroundColor: 'rgba(0,0,0,0.85)' }}
-          onClick={() => setShowPhotoModal(false)}
-        >
-          <div
-            className="relative max-w-sm w-full"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setShowPhotoModal(false)}
-              className="absolute -top-10 right-0 text-white/70 hover:text-white text-sm font-medium"
-              style={{ fontFamily: 'Roboto, sans-serif' }}
-            >
-              Close
-            </button>
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={personalInfo.profilePhoto}
-                alt="Tasneem Monib"
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <p
-                className="text-lg font-semibold"
-                style={{
-                  color: '#FFFFFF',
-                  fontFamily: 'Poppins, sans-serif',
-                }}
-              >
-                Tasneem Monib
-              </p>
-              <p
-                className="text-sm"
-                style={{
-                  color: 'rgba(255,255,255,0.6)',
-                  fontFamily: 'Roboto, sans-serif',
-                }}
-              >
-                Marketing Communications
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };
