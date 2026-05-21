@@ -36,6 +36,7 @@ const Navbar = () => {
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Media Production', href: '#work' },
+    { label: 'Marketing & Research', href: '#marketing' },
     { label: 'Experience', href: '#experience' },
     { label: 'Resume', href: '#resume' },
     { label: 'Contact', href: '#contact' },
