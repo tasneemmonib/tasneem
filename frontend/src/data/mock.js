@@ -444,7 +444,7 @@ export const projects = [
     deliverables: [
       {
         type: "pdf",
-        label: "Gulf Coast Foodways Research Paper",
+        label: "Gulf Coast Foodways Research Presentation",
         url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/uc8m34cb_Monib-Tasneem_Gulf%20Coast%20Foodways.pdf",
       },
     ],
