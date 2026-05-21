@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { mediaGallery } from '../data/mock';
 
@@ -28,7 +29,7 @@ const MediaGallery = ({ heading = true }) => {
     };
   }, [lightboxIndex]);
 
-  return (
+  const grid = (
     <div id="gallery">
       {heading && (
         <div className="mb-8 lg:mb-10">
@@ -122,83 +123,169 @@ const MediaGallery = ({ heading = true }) => {
         ))}
       </div>
 
-      {lightboxIndex !== null && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center"
-          style={{
-            background: 'rgba(20, 16, 22, 0.92)',
-            backdropFilter: 'blur(4px)',
-          }}
-          onClick={close}
-        >
-          <button
-            className="absolute top-5 right-5 w-10 h-10 rounded-full flex items-center justify-center"
-            style={{
-              background: 'rgba(251, 247, 242, 0.12)',
-              color: '#FBF7F2',
-            }}
-            onClick={(e) => {
-              e.stopPropagation();
-              close();
-            }}
-            aria-label="Close"
-          >
-            <X size={20} />
-          </button>
-          <button
-            className="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center"
-            style={{
-              background: 'rgba(251, 247, 242, 0.12)',
-              color: '#FBF7F2',
-            }}
-            onClick={(e) => {
-              e.stopPropagation();
-              prev();
-            }}
-            aria-label="Previous"
-          >
-            <ChevronLeft size={22} />
-          </button>
-          <button
-            className="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center"
-            style={{
-              background: 'rgba(251, 247, 242, 0.12)',
-              color: '#FBF7F2',
-            }}
-            onClick={(e) => {
-              e.stopPropagation();
-              next();
-            }}
-            aria-label="Next"
-          >
-            <ChevronRight size={22} />
-          </button>
-          <div
-            className="max-w-[92vw] max-h-[88vh] flex flex-col items-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img
-              src={mediaGallery[lightboxIndex].src}
-              alt={mediaGallery[lightboxIndex].caption}
-              style={{
-                maxWidth: '92vw',
-                maxHeight: '80vh',
-                objectFit: 'contain',
-                borderRadius: 8,
-                boxShadow: '0 30px 80px -20px rgba(0,0,0,0.6)',
-              }}
-            />
-            <p
-              className="mt-4 text-xs tracking-[0.22em] uppercase"
-              style={{ color: 'rgba(251, 247, 242, 0.8)', fontFamily: 'Inter, sans-serif' }}
-            >
-              {mediaGallery[lightboxIndex].caption} · {lightboxIndex + 1}/
-              {mediaGallery.length}
-            </p>
-          </div>
-        </div>
-      )}
     </div>
+  );
+
+  const lightbox =
+    lightboxIndex !== null && typeof document !== 'undefined'
+      ? createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Photo viewer"
+            onClick={close}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 2147483600,
+              background: 'rgba(15, 12, 17, 0.96)',
+              backdropFilter: 'blur(4px)',
+              WebkitBackdropFilter: 'blur(4px)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '24px',
+            }}
+          >
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                close();
+              }}
+              aria-label="Close"
+              style={{
+                position: 'fixed',
+                top: 20,
+                right: 20,
+                width: 44,
+                height: 44,
+                borderRadius: 9999,
+                background: 'rgba(255, 255, 255, 0.95)',
+                color: '#2F2A2E',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1px solid rgba(0,0,0,0.08)',
+                boxShadow: '0 6px 20px rgba(0,0,0,0.4)',
+                cursor: 'pointer',
+                zIndex: 2,
+              }}
+            >
+              <X size={22} strokeWidth={2.25} />
+            </button>
+
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                prev();
+              }}
+              aria-label="Previous photo"
+              style={{
+                position: 'fixed',
+                left: 20,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                width: 52,
+                height: 52,
+                borderRadius: 9999,
+                background: 'rgba(255, 255, 255, 0.95)',
+                color: '#2F2A2E',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1px solid rgba(0,0,0,0.08)',
+                boxShadow: '0 6px 20px rgba(0,0,0,0.4)',
+                cursor: 'pointer',
+                zIndex: 2,
+              }}
+            >
+              <ChevronLeft size={26} strokeWidth={2.25} />
+            </button>
+
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                next();
+              }}
+              aria-label="Next photo"
+              style={{
+                position: 'fixed',
+                right: 20,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                width: 52,
+                height: 52,
+                borderRadius: 9999,
+                background: 'rgba(255, 255, 255, 0.95)',
+                color: '#2F2A2E',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1px solid rgba(0,0,0,0.08)',
+                boxShadow: '0 6px 20px rgba(0,0,0,0.4)',
+                cursor: 'pointer',
+                zIndex: 2,
+              }}
+            >
+              <ChevronRight size={26} strokeWidth={2.25} />
+            </button>
+
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                maxWidth: '92vw',
+                maxHeight: '88vh',
+                zIndex: 1,
+              }}
+            >
+              <img
+                src={mediaGallery[lightboxIndex].src}
+                alt={mediaGallery[lightboxIndex].caption}
+                style={{
+                  display: 'block',
+                  maxWidth: 'min(92vw, 1400px)',
+                  maxHeight: '80vh',
+                  width: 'auto',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  borderRadius: 8,
+                  boxShadow: '0 30px 80px -20px rgba(0,0,0,0.7)',
+                  background: '#0F0C11',
+                }}
+              />
+              <p
+                style={{
+                  marginTop: 16,
+                  fontSize: 12,
+                  letterSpacing: '0.22em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(251, 247, 242, 0.85)',
+                  fontFamily: 'Inter, sans-serif',
+                  textAlign: 'center',
+                }}
+              >
+                {mediaGallery[lightboxIndex].caption} · {lightboxIndex + 1}/
+                {mediaGallery.length}
+              </p>
+            </div>
+          </div>,
+          document.body
+        )
+      : null;
+
+  return (
+    <>
+      {grid}
+      {lightbox}
+    </>
   );
 };
 
