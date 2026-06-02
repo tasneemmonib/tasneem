@@ -10,8 +10,7 @@ export const personalInfo = {
     "I produce documentary, sports, and brand stories, and build the marketing that carries them. Based in Houston, working at the intersection of media production and marketing communications.",
   email: "tasneemmonib@gmail.com",
   linkedin: "https://linkedin.com/in/tasneemmonib",
-  resumeUrl:
-    "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/6eqlbgf1_Tasneem_Monib_Resume.pdf",
+  resumeUrl: `${PUBLIC}/Tasneem_Monib_Resume.pdf`,
   profilePhoto:
     "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/ram015gf_Screenshot%202026-03-21%20at%203.56.46%E2%80%AFPM.png",
   aboutBio: [
