@@ -67,7 +67,7 @@ const HomePage = () => {
                 textTransform: 'uppercase',
               }}
             >
-              Tasneem Monib — Houston, TX
+              Tasneem Monib · Houston, TX
             </p>
 
             <h1

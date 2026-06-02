@@ -7,7 +7,7 @@ export const personalInfo = {
   name: "Tasneem Monib",
   title: "Multimedia Storyteller & Marketing Creative",
   subtitle:
-    "I produce documentary, sports, and brand stories — and build the marketing that carries them. Based in Houston, working at the intersection of media production and marketing communications.",
+    "I produce documentary, sports, and brand stories, and build the marketing that carries them. Based in Houston, working at the intersection of media production and marketing communications.",
   email: "tasneemmonib@gmail.com",
   linkedin: "https://linkedin.com/in/tasneemmonib",
   resumeUrl:
@@ -15,10 +15,10 @@ export const personalInfo = {
   profilePhoto:
     "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/ram015gf_Screenshot%202026-03-21%20at%203.56.46%E2%80%AFPM.png",
   aboutBio: [
-    "I'm a multimedia storyteller and marketing-minded creative producer based in Houston. My work lives where media production meets marketing strategy — directing documentary shorts, producing sports and culture coverage, and building the campaigns and content that bring those stories to an audience.",
+    "I'm a multimedia storyteller and marketing-minded creative producer based in Houston. My work lives where media production meets marketing strategy: directing documentary shorts, producing sports and culture coverage, and building the campaigns and content that bring those stories to an audience.",
     "I've directed a documentary for the Houston Museum of Natural Science as part of an official collaboration, produced a community documentary for the Fifth Ward Library through UH's ShastaDocs series, and led sports media coverage as Sports Head Editor at CoogTV. Alongside production work, I've supported marketing communications for a pediatric medical practice and gameday marketing for University of Houston Athletics.",
-    "I care about stories that sit at the intersection of sports, culture, and community — and about the marketing instincts that make those stories land. I'm equally at home on a shoot, in an edit bay, or building out a campaign deck.",
-    "Open to opportunities across media production, creative producing, and marketing communications — particularly in sports, culture, lifestyle, and brand storytelling.",
+    "I care about stories that sit at the intersection of sports, culture, and community, and about the marketing instincts that make those stories land. I'm equally at home on a shoot, in an edit bay, or building out a campaign deck.",
+    "Open to opportunities across media production, creative producing, and marketing communications, particularly in sports, culture, lifestyle, and brand storytelling.",
   ],
 };
 
@@ -40,7 +40,7 @@ export const experience = [
     period: "2024 – Present",
     track: "Media Production",
     summary:
-      "Lead sports video production — covering live games, producing highlight packages, and delivering promotional content on tight turnaround. Manage the full post-production workflow from raw footage to broadcast-ready cut for multi-platform distribution.",
+      "Lead sports video production, covering live games, producing highlight packages, and delivering promotional content on tight turnaround. Manage the full post-production workflow from raw footage to broadcast-ready cut for multi-platform distribution.",
   },
   {
     company: "Houston Museum of Natural Science",
@@ -56,7 +56,7 @@ export const experience = [
     period: "2025",
     track: "Media Production",
     summary:
-      "Directed a documentary on the Fifth Ward Library through UH CoogTV's ShastaDocs series — owned the story from research and interviews through post-production and broadcast delivery.",
+      "Directed a documentary on the Fifth Ward Library through UH CoogTV's ShastaDocs series, owning the story from research and interviews through post-production and broadcast delivery.",
   },
   {
     company: "Springtime Pediatrics",
@@ -64,7 +64,7 @@ export const experience = [
     period: "2023 – Present",
     track: "Marketing",
     summary:
-      "Supported marketing communications and community outreach for a growing pediatric practice — short-form social video, patient-facing collateral, ribbon-cuttings and grand opening events, and physician referral visits.",
+      "Supported marketing communications and community outreach for a growing pediatric practice: short-form social video, patient-facing collateral, ribbon-cuttings and grand opening events, and physician referral visits.",
   },
   {
     company: "University of Houston Athletics",
@@ -80,7 +80,7 @@ export const experience = [
     period: "2023 – 2024",
     track: "Marketing",
     summary:
-      "Wrote and contributed editorial coverage for UH's student newspaper across campus, culture, and community topics — sharpening editorial voice and reporting instincts.",
+      "Wrote and contributed editorial coverage for UH's student newspaper across campus, culture, and community topics, sharpening editorial voice and reporting instincts.",
   },
   {
     company: "United Sports & Entertainment · Battleground 2K24",
@@ -88,7 +88,7 @@ export const experience = [
     period: "2024",
     track: "Marketing",
     summary:
-      "Supported logistics and media coordination for a multi-day sports and entertainment event — prepared teleprompter speech summaries, ran media check-in and credentialing, and coordinated staff logistics across venues.",
+      "Supported logistics and media coordination for a multi-day sports and entertainment event: prepared teleprompter speech summaries, ran media check-in and credentialing, and coordinated staff logistics across venues.",
   },
 ];
 
@@ -97,10 +97,10 @@ export const education = {
   degree: "BBA in Marketing, Minor in Journalism",
   gpa: "3.7",
   dates: "Aug 2022 – May 2026",
-  studyAbroad: "University of Granada, Spain — Spring 2024",
+  studyAbroad: "University of Granada, Spain (Spring 2024)",
 };
 
-export const honors = ["REACH Scholar", "Dean's List — All Semesters"];
+export const honors = ["REACH Scholar", "Dean's List (All Semesters)"];
 
 export const categories = [
   "All",
@@ -117,7 +117,7 @@ export const featuredWork = {
     title: "Houston Museum of Natural Science",
     subtitle: "Documentary · Official Collaboration",
     summary:
-      "An official collaboration with the Houston Museum of Natural Science — directed and produced as a short documentary piece for the museum's digital channels. The project sits at the intersection of cultural institution and visual storytelling, treating museum subject matter with cinematic care.",
+      "An official collaboration with the Houston Museum of Natural Science, directed and produced as a short documentary piece for the museum's digital channels. The project sits at the intersection of cultural institution and visual storytelling, treating museum subject matter with cinematic care.",
     role: "Director & Producer",
     year: "2026",
     collaborator: "Houston Museum of Natural Science",
@@ -128,31 +128,31 @@ export const featuredWork = {
   },
 };
 
-// Short-form editing work — three MP4s under public/media-videos/
+// Short-form editing work: three MP4s under public/media-videos/
 export const videoWork = [
   {
     id: "houston-fb-x-dracula",
     title: "UH Football × Dracula",
     description:
-      "A cinematic edit pairing UH Football gameday footage with a Dracula score — built to showcase pacing, color, and rhythm in sports storytelling.",
+      "A cinematic edit pairing UH Football gameday footage with a Dracula score, built to showcase pacing, color, and rhythm in sports storytelling.",
     src: `${PUBLIC}/media-videos/houston-fb-x-dracula.mp4`,
     poster: `${PUBLIC}/media-gallery/DSCF3531.jpg`,
     tags: ["Sports", "Cinematic Edit", "Color"],
   },
   {
     id: "nyc-wes-anderson",
-    title: "NYC — Wes Anderson",
+    title: "NYC · Wes Anderson",
     description:
-      "A New York City travel edit cut in the Wes Anderson style — symmetrical framing, deliberate composition, and pastel-driven color grading.",
+      "A New York City travel edit cut in the Wes Anderson style: symmetrical framing, deliberate composition, and pastel-driven color grading.",
     src: `${PUBLIC}/media-videos/nyc-wes-anderson.mp4`,
     poster: videoPoster("nyc-wes-anderson-poster.jpg"),
     tags: ["Travel", "Stylized Edit", "Color"],
   },
   {
     id: "nyc-passin-me-by",
-    title: "NYC — Passin' Me By",
+    title: "NYC · Passin' Me By",
     description:
-      "A New York travel piece cut to The Pharcyde's 'Passin' Me By' — rhythmic editing, soft motion, and an editorial mood.",
+      "A New York travel piece cut to The Pharcyde's 'Passin' Me By': rhythmic editing, soft motion, and an editorial mood.",
     src: `${PUBLIC}/media-videos/nyc-passin-me-by.mp4`,
     poster: videoPoster("nyc-passin-me-by-poster.jpg"),
     tags: ["Travel", "Music-Driven Edit"],
@@ -162,7 +162,7 @@ export const videoWork = [
 export const projects = [
   {
     id: "hmns-documentary",
-    title: "Houston Museum of Natural Science — Documentary Collaboration",
+    title: "Houston Museum of Natural Science · Documentary Collaboration",
     category: "Media Production",
     tags: ["Documentary", "Brand Collaboration", "Direction"],
     image: `${PUBLIC}/media-gallery/HMNS-Thumbnail.jpg`,
@@ -192,7 +192,7 @@ export const projects = [
         type: "instagram",
         url: "https://www.instagram.com/reel/DXZ5d2qkd0E/embed/",
         link: "https://www.instagram.com/reel/DXZ5d2qkd0E/",
-        title: "HMNS Documentary — Collaboration Reel",
+        title: "HMNS Documentary · Collaboration Reel",
       },
     ],
     socialLink: "https://www.instagram.com/reel/DXZ5d2qkd0E/",
@@ -228,7 +228,7 @@ export const projects = [
         type: "youtube",
         url: "https://www.youtube.com/embed/mTX2G7go8Cs",
         link: "https://youtu.be/mTX2G7go8Cs?si=5O-bw-ndusPsNTLI",
-        title: "5th Ward Library | ShastaDocs — Directed by Tasneem Monib",
+        title: "5th Ward Library | ShastaDocs · Directed by Tasneem Monib",
       },
     ],
   },
@@ -244,7 +244,7 @@ export const projects = [
     contributions: [
       "Produced highlight packages and storytelling cuts around UH Basketball's tournament run for broadcast and digital distribution",
       "Coordinated post-production turnaround on tight deadline windows tied to live game schedules",
-      "Supported press conference operations at Battleground 2K24 — teleprompter speech summaries, media check-in, and credentialing",
+      "Supported press conference operations at Battleground 2K24: teleprompter speech summaries, media check-in, and credentialing",
       "Built the narrative around player and team storylines rather than purely score-driven coverage",
     ],
     skills: [
@@ -272,7 +272,7 @@ export const projects = [
   },
   {
     id: "sports-marketing-operations",
-    title: "Sports Media & Marketing — UH Athletics + CoogTV",
+    title: "Sports Media & Marketing · UH Athletics + CoogTV",
     category: "Media Production",
     tags: ["Sports Media", "Video Production", "Gameday Marketing"],
     image: gallery("DSCF3531.jpg"),
@@ -280,7 +280,7 @@ export const projects = [
       "Sports media production, gameday marketing, and event operations across University of Houston Athletics, CoogTV, and a multi-day national sports/entertainment event. Work spans covering live games, producing highlight packages, on-field promotions, fan engagement activations, and media coordination.",
     role: "Sports Head Editor (CoogTV) · Marketing & Gameday Operations (UH Athletics) · Event Operations (Battleground 2K24)",
     contributions: [
-      "Led end-to-end sports video production at UH CoogTV — covering live games, producing highlight packages, and delivering promotional content on tight turnaround",
+      "Led end-to-end sports video production at UH CoogTV, covering live games, producing highlight packages, and delivering promotional content on tight turnaround",
       "Managed complete post-production workflow from raw footage through final cut, ensuring broadcast-ready delivery for multi-platform digital distribution",
       "Executed gameday marketing operations for UH Baseball including on-field promotions, fan engagement activations, and halftime coordination",
       "Prepared teleprompter-ready speech summaries and media scripts for press conference speakers at Battleground 2K24",
@@ -305,27 +305,27 @@ export const projects = [
       {
         type: "image",
         url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/612o9jhh_IMG_6880.jpeg",
-        title: "UH Baseball — Gameday Fan Engagement at Schaefer Park",
+        title: "UH Baseball · Gameday Fan Engagement at Schaefer Park",
       },
       {
         type: "image",
         url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/tv90cx4m_IMG_0238.JPEG",
-        title: "UH Basketball — Game Action at Fertitta Center",
+        title: "UH Basketball · Game Action at Fertitta Center",
       },
       {
         type: "image",
         url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/yck7oeeq_DSCF3531.JPG",
-        title: "UH Football — Gameday at TDECU Stadium",
+        title: "UH Football · Gameday at TDECU Stadium",
       },
       {
         type: "video",
         url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/cqrw4faw_Sequence%2006_1.MP4",
-        title: "UH Football — Game Highlights",
+        title: "UH Football · Game Highlights",
       },
       {
         type: "video",
         url: "https://customer-assets.emergentagent.com/job_5cc4b4b6-e90a-44f5-98bd-311296ba1c1a/artifacts/qqgy5frm_uh%20hofstra%20touch%20the%20sky.MP4",
-        title: "UH Basketball vs. Hofstra — Game Highlights",
+        title: "UH Basketball vs. Hofstra · Game Highlights",
       },
     ],
   },
@@ -337,11 +337,11 @@ export const projects = [
     image:
       "https://images.pexels.com/photos/5998457/pexels-photo-5998457.jpeg?auto=compress&cs=tinysrgb&w=1200",
     overview:
-      "Supported marketing communications for a growing pediatric medical practice — social media, marketing collateral, community outreach events, and referral relationship initiatives. Contributed to patient engagement, brand visibility, and local awareness across the Houston area.",
+      "Supported marketing communications for a growing pediatric medical practice: social media, marketing collateral, community outreach events, and referral relationship initiatives. Contributed to patient engagement, brand visibility, and local awareness across the Houston area.",
     role: "Marketing Communications Coordinator",
     contributions: [
       "Coordinated community events including educational classes, ribbon-cutting ceremonies, and grand opening activations to drive local brand awareness",
-      "Designed patient-facing marketing collateral — flyers, signage, rack cards, and digital graphics — for outreach and acquisition campaigns",
+      "Designed patient-facing marketing collateral (flyers, signage, rack cards, and digital graphics) for outreach and acquisition campaigns",
       "Filmed and edited short-form video content for social media platforms to increase practice visibility and audience engagement",
       "Drafted and edited promotional communications supporting patient acquisition and retention goals",
       "Accompanied outreach visits to specialist offices to strengthen physician referral relationships",
@@ -367,13 +367,13 @@ export const projects = [
         type: "instagram",
         url: "https://www.instagram.com/reel/DNOA_UmyFdE/embed/",
         link: "https://www.instagram.com/reel/DNOA_UmyFdE/",
-        title: "Springtime Pediatrics — Social Media Reel",
+        title: "Springtime Pediatrics · Social Media Reel",
       },
       {
         type: "instagram",
         url: "https://www.instagram.com/reel/DLnBLgMNtCc/embed/",
         link: "https://www.instagram.com/reel/DLnBLgMNtCc/",
-        title: "Springtime Pediatrics — Social Media Reel",
+        title: "Springtime Pediatrics · Social Media Reel",
       },
     ],
     socialLink: "https://www.instagram.com/springtimepediatrics",
@@ -419,7 +419,7 @@ export const projects = [
   },
   {
     id: "reach-research",
-    title: "REACH Research — Gulf Coast Foodways",
+    title: "REACH Research · Gulf Coast Foodways",
     category: "Research & Leadership",
     tags: ["Research", "Qualitative Analysis"],
     image:
@@ -483,7 +483,7 @@ export const projects = [
   },
   {
     id: "denmark-market-analysis",
-    title: "International Market Analysis — Denmark",
+    title: "International Market Analysis · Denmark",
     category: "Marketing Strategy",
     tags: ["Marketing Strategy", "Market Research"],
     image:
@@ -508,7 +508,7 @@ export const projects = [
     deliverables: [
       {
         type: "pdf",
-        label: "Country Analysis Report — Denmark",
+        label: "Country Analysis Report · Denmark",
         url: "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/dndupe8u_Country%20Analysis%20%28Denmark%29.pdf",
       },
     ],
@@ -519,10 +519,10 @@ export const projects = [
   },
 ];
 
-// Media Gallery — curated mix from uploaded photography.
+// Media Gallery: curated mix from uploaded photography.
 // `feature: true` items render at a larger size (mosaic mix).
 export const mediaGallery = [
-  { src: gallery("DSCF0212.jpg"), caption: "Graduation Portrait", feature: true },
+  { src: gallery("DSCF5310.jpg"), caption: "Fashion Editorial", feature: true },
   { src: gallery("021826_WBB_TCU_TMonib-4.jpg"), caption: "UH Women's Basketball" },
   { src: gallery("021826_WBB_TCU_TMonib-5.jpg"), caption: "UH Women's Basketball" },
   { src: gallery("DSCF5634.jpg"), caption: "Architecture" },
@@ -553,12 +553,12 @@ export const mediaGallery = [
   { src: gallery("DSCF0739.jpg"), caption: "UH Basketball" },
   { src: gallery("DSCF1085.jpg"), caption: "Editorial" },
   { src: gallery("DSCF1117.jpg"), caption: "City" },
-  // Newly added — 20 additional frames
+  // Newly added: 20 additional frames
   { src: gallery("DSCF4419.jpg"), caption: "Fashion Editorial" },
-  { src: gallery("DSCF5310.jpg"), caption: "Fashion Editorial", feature: true },
+  { src: gallery("DSCF0212.jpg"), caption: "Graduation Portrait", feature: true },
   { src: gallery("DSCF5580.jpg"), caption: "UH Football" },
   { src: gallery("DSCF5739.jpg"), caption: "UH Basketball" },
-  { src: gallery("DSCF6003.jpg"), caption: "Motorcycle — City" },
+  { src: gallery("DSCF6003.jpg"), caption: "Motorcycle, City" },
   { src: gallery("DSCF6063.jpg"), caption: "Graduation Portrait" },
   { src: gallery("DSCF6160.jpg"), caption: "Graduation Portrait" },
   { src: gallery("DSCF6367.jpg"), caption: "Graduation Portrait" },
@@ -568,7 +568,7 @@ export const mediaGallery = [
   { src: gallery("IMG_0326.jpg"), caption: "UH Basketball" },
   { src: gallery("IMG_735.jpg"), caption: "UH Track", feature: true },
   { src: gallery("IMG_6893.jpg"), caption: "UH Basketball" },
-  { src: gallery("IMG_6966.jpg"), caption: "UH Basketball — Coach Sampson", feature: true },
+  { src: gallery("IMG_6966.jpg"), caption: "UH Basketball, Coach Sampson", feature: true },
   { src: gallery("IMG_9898.jpg"), caption: "UH Basketball" },
   { src: gallery("Untitled-5.jpg"), caption: "UH Baseball" },
   { src: gallery("Untitled-13.jpg"), caption: "UH Baseball" },

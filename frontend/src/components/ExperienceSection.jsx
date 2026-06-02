@@ -71,7 +71,7 @@ const ExperienceSection = () => {
               className="text-sm md:text-base max-w-md"
               style={{ color: '#5A4F58', fontFamily: 'Inter, sans-serif' }}
             >
-              Media production and marketing communications — built in parallel
+              Media production and marketing communications, built in parallel
               across athletics, healthcare, and cultural institutions.
             </p>
           </div>

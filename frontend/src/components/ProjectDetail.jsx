@@ -811,7 +811,7 @@ const ProjectDetail = () => {
             >
               {imageMedia[lightboxIndex].title}
               <span style={{ color: 'rgba(241,233,251,0.5)' }}>
-                {' '}— {lightboxIndex + 1} / {imageMedia.length}
+                {' '}· {lightboxIndex + 1} / {imageMedia.length}
               </span>
             </p>
           </div>

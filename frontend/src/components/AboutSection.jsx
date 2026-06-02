@@ -220,7 +220,7 @@ const AboutSection = () => {
                       fontFamily: 'Inter, sans-serif',
                     }}
                   >
-                    University of Granada, Spain — Study Abroad (Spring 2024)
+                    University of Granada, Spain · Study Abroad (Spring 2024)
                   </p>
                 </div>
 
