@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowUpRight, Instagram, ExternalLink, Play } from 'lucide-react';
 import { projects, featuredWork, videoWork } from '../data/mock';
 import { useNavigate } from 'react-router-dom';
@@ -28,7 +28,6 @@ const useInstagramEmbeds = () => {
 const WorkSection = () => {
   const navigate = useNavigate();
   const sectionRef = useRef(null);
-  const [hmnsPlaying, setHmnsPlaying] = useState(false);
   useInstagramEmbeds();
 
   const fifthWard = projects.find((p) => p.id === 'fifth-ward-documentary');
@@ -304,8 +303,11 @@ const WorkSection = () => {
                   className="lg:col-span-7 p-6 md:p-8 lg:p-10 flex flex-col items-center justify-center gap-6"
                   style={{ background: '#F1E9FB' }}
                 >
-                  {/* Top HMNS video - plays inline on the site (click to play) */}
-                  <div
+                  {/* Official project thumbnail - gives the project a polished poster */}
+                  <a
+                    href={featuredWork.hmns.reelUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block w-full max-w-[540px] rounded-2xl overflow-hidden relative group"
                     style={{
                       background: '#FFFFFF',
@@ -314,114 +316,92 @@ const WorkSection = () => {
                         '0 24px 48px -28px rgba(47, 42, 46, 0.22)',
                       aspectRatio: '16 / 9',
                     }}
+                    aria-label="Open HMNS Reel on Instagram"
                   >
-                    {hmnsPlaying ? (
-                      <iframe
-                        src={`${featuredWork.hmns.reelUrl}embed/`}
-                        title="HMNS documentary reel"
-                        className="w-full h-full"
-                        style={{ border: 0 }}
-                        allow="autoplay; encrypted-media; clipboard-write"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={() => setHmnsPlaying(true)}
-                        className="block w-full h-full relative"
-                        style={{ background: 'transparent', border: 0, padding: 0, cursor: 'pointer' }}
-                        aria-label="Play HMNS documentary reel"
+                    <img
+                      src={featuredWork.hmns.poster}
+                      alt="Houston Museum of Natural Science documentary thumbnail"
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                    <div
+                      className="absolute inset-0 flex items-center justify-center"
+                      style={{
+                        background:
+                          'linear-gradient(180deg, rgba(47,42,46,0.05), rgba(47,42,46,0.45))',
+                        transition: 'background 0.25s ease',
+                      }}
+                    >
+                      <span
+                        className="w-16 h-16 rounded-full flex items-center justify-center"
+                        style={{
+                          background: 'rgba(251, 247, 242, 0.94)',
+                          color: '#2F2A2E',
+                          boxShadow: '0 12px 24px -10px rgba(47,42,46,0.45)',
+                        }}
                       >
-                        <img
-                          src={featuredWork.hmns.poster}
-                          alt="Houston Museum of Natural Science documentary thumbnail"
-                          loading="lazy"
-                          className="w-full h-full object-cover"
-                        />
-                        <div
-                          className="absolute inset-0 flex items-center justify-center"
-                          style={{
-                            background:
-                              'linear-gradient(180deg, rgba(47,42,46,0.05), rgba(47,42,46,0.45))',
-                            transition: 'background 0.25s ease',
-                          }}
-                        >
-                          <span
-                            className="w-16 h-16 rounded-full flex items-center justify-center"
-                            style={{
-                              background: 'rgba(251, 247, 242, 0.94)',
-                              color: '#2F2A2E',
-                              boxShadow: '0 12px 24px -10px rgba(47,42,46,0.45)',
-                            }}
-                          >
-                            <Play size={22} />
-                          </span>
-                        </div>
-                        <span
-                          className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
-                          style={{
-                            background: 'rgba(251, 247, 242, 0.92)',
-                            color: '#2F2A2E',
-                            fontFamily: 'Inter, sans-serif',
-                            fontSize: '10px',
-                            fontWeight: 700,
-                            letterSpacing: '0.18em',
-                            textTransform: 'uppercase',
-                          }}
-                        >
-                          <Instagram size={11} /> HMNS Collaboration
-                        </span>
-                      </button>
-                    )}
-                  </div>
+                        <Play size={22} />
+                      </span>
+                    </div>
+                    <span
+                      className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
+                      style={{
+                        background: 'rgba(251, 247, 242, 0.92)',
+                        color: '#2F2A2E',
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '10px',
+                        fontWeight: 700,
+                        letterSpacing: '0.18em',
+                        textTransform: 'uppercase',
+                      }}
+                    >
+                      <Instagram size={11} /> HMNS Collaboration
+                    </span>
+                  </a>
 
-                  {/* Full Instagram post - links out to the Instagram post */}
+                  {/* Instagram Reel embed */}
                   <div className="w-full max-w-[540px]">
-                    <a
-                      href={featuredWork.hmns.reelUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-4 rounded-2xl p-5"
+                    <div
+                      className="rounded-2xl overflow-hidden"
                       style={{
                         background: '#FFFFFF',
                         border: '1px solid rgba(106, 75, 134, 0.18)',
                         boxShadow:
                           '0 24px 48px -28px rgba(47, 42, 46, 0.22)',
-                        textDecoration: 'none',
                       }}
-                      aria-label="View the full HMNS post on Instagram"
                     >
-                      <span
-                        className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
-                        style={{
-                          background: 'rgba(156, 203, 154, 0.22)',
-                          color: '#3F6446',
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: featuredWork.hmns.embedHtml,
                         }}
+                      />
+                      <noscript>
+                        <a
+                          href={featuredWork.hmns.reelUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Watch the HMNS documentary on Instagram
+                        </a>
+                      </noscript>
+                    </div>
+                    <p
+                      className="text-[11px] tracking-[0.22em] uppercase mt-4 text-center"
+                      style={{
+                        color: '#5A4F58',
+                        fontFamily: 'Inter, sans-serif',
+                      }}
+                    >
+                      <a
+                        href={featuredWork.hmns.reelUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5"
+                        style={{ color: '#5A4F58' }}
                       >
-                        <Instagram size={20} />
-                      </span>
-                      <span className="flex-1">
-                        <span
-                          className="block text-sm font-semibold"
-                          style={{
-                            color: '#2F2A2E',
-                            fontFamily: 'Inter, sans-serif',
-                          }}
-                        >
-                          View the full post on Instagram
-                        </span>
-                        <span
-                          className="block text-[11px] tracking-[0.18em] uppercase mt-1"
-                          style={{
-                            color: '#8A7F88',
-                            fontFamily: 'Inter, sans-serif',
-                          }}
-                        >
-                          HMNS Collaboration Reel
-                        </span>
-                      </span>
-                      <ExternalLink size={16} style={{ color: '#6A4B86' }} />
-                    </a>
+                        View original Reel <ExternalLink size={11} />
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
