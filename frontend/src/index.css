@@ -22,7 +22,7 @@ code {
 
 @layer base {
     :root {
-        /* Brand palette — softer, lighter, camera-editorial */
+        /* Brand palette - softer, lighter, camera-editorial */
         --tm-cream: #FBF7F2;          /* paper / base */
         --tm-cream-2: #F4EEE6;        /* warm card */
         --tm-lavender-bg: #F4ECFB;    /* soft lavender wash */
@@ -100,7 +100,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Custom scrollbar — soft cream tinted */
+/* Custom scrollbar - soft cream tinted */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -190,7 +190,7 @@ html {
         0 22px 40px -18px rgba(47, 42, 46, 0.18);
 }
 
-/* Subtle paper texture — fine noise via tiny svg, layered tone-on-tone */
+/* Subtle paper texture - fine noise via tiny svg, layered tone-on-tone */
 .tm-paper {
     background-color: #FBF7F2;
     background-image:
@@ -230,7 +230,7 @@ html {
     border-color: rgba(106, 75, 134, 0.18);
 }
 
-/* Viewfinder corner brackets — used by hero / cards */
+/* Viewfinder corner brackets - used by hero / cards */
 .tm-corner {
     position: absolute;
     width: 22px;
@@ -245,7 +245,7 @@ html {
 .tm-corner.bl { bottom: 10px; left: 10px; border-bottom-width: 2px; border-left-width: 2px; }
 .tm-corner.br { bottom: 10px; right: 10px; border-bottom-width: 2px; border-right-width: 2px; }
 
-/* Film strip — used as a slim decorative band */
+/* Film strip - used as a slim decorative band */
 .tm-filmstrip {
     height: 22px;
     background:

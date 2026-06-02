@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { mediaGallery } from '../data/mock';
 
-// Renders just the gallery grid + lightbox — no outer section wrapper, so it
+// Renders just the gallery grid + lightbox - no outer section wrapper, so it
 // can be embedded inside the Media Production section.
 const MediaGallery = ({ heading = true }) => {
   const [lightboxIndex, setLightboxIndex] = useState(null);

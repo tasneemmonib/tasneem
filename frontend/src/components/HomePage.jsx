@@ -16,7 +16,7 @@ const HomePage = () => {
       className="relative overflow-hidden pt-32 lg:pt-40 pb-24 lg:pb-32"
       style={{ color: '#2F2A2E', background: '#FBF7F2' }}
     >
-      {/* Soft lavender wash — kept, no gradient noise */}
+      {/* Soft lavender wash - kept, no gradient noise */}
       <div
         aria-hidden="true"
         className="absolute top-32 right-[-12%] w-[560px] h-[560px] rounded-full opacity-50"
@@ -54,7 +54,7 @@ const HomePage = () => {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left — Editorial type */}
+          {/* Left - Editorial type */}
           <div className="lg:col-span-7 order-2 lg:order-1">
             <p
               className="mb-6"
@@ -205,7 +205,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Right — Editorial portrait card */}
+          {/* Right - Editorial portrait card */}
           <div className="lg:col-span-5 order-1 lg:order-2">
             <div className="relative w-[280px] sm:w-[340px] lg:w-[420px] mx-auto lg:ml-auto">
               {/* Lavender backplate offset */}

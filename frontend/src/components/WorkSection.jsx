@@ -76,7 +76,7 @@ const WorkSection = () => {
 
   return (
     <>
-      {/* MEDIA PRODUCTION — parent section */}
+      {/* MEDIA PRODUCTION - parent section */}
       <section
         id="work"
         className="py-24 lg:py-32 relative overflow-hidden"
@@ -114,7 +114,7 @@ const WorkSection = () => {
               </p>
             </div>
 
-            {/* In-section subnav — anchors to sub-sections */}
+            {/* In-section subnav - anchors to sub-sections */}
             <div className="mt-8 flex flex-wrap gap-2">
               {subnav.map((s) => (
                 <button
@@ -147,7 +147,7 @@ const WorkSection = () => {
             </div>
           </div>
 
-          {/* DOCUMENTARY WORK — sub-section */}
+          {/* DOCUMENTARY WORK - sub-section */}
           <div id="documentary" className="mb-20 lg:mb-24">
             <div className="mb-8 lg:mb-10">
               <p
@@ -170,7 +170,7 @@ const WorkSection = () => {
               </h3>
             </div>
 
-            {/* HMNS HERO — official collaboration */}
+            {/* HMNS HERO - official collaboration */}
             <article
               className="rounded-[24px] overflow-hidden mb-8 lg:mb-10"
               style={{
@@ -181,7 +181,7 @@ const WorkSection = () => {
               }}
             >
               <div className="grid lg:grid-cols-12">
-                {/* Left — Editorial copy */}
+                {/* Left - Editorial copy */}
                 <div className="lg:col-span-5 p-8 md:p-10 lg:p-12 flex flex-col justify-center">
                   <span
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full self-start mb-5"
@@ -299,12 +299,12 @@ const WorkSection = () => {
                   </div>
                 </div>
 
-                {/* Right — HMNS poster + Instagram Reel embed */}
+                {/* Right - HMNS poster + Instagram Reel embed */}
                 <div
                   className="lg:col-span-7 p-6 md:p-8 lg:p-10 flex flex-col items-center justify-center gap-6"
                   style={{ background: '#F1E9FB' }}
                 >
-                  {/* Top HMNS video — plays inline on the site (click to play) */}
+                  {/* Top HMNS video - plays inline on the site (click to play) */}
                   <div
                     className="block w-full max-w-[540px] rounded-2xl overflow-hidden relative group"
                     style={{
@@ -375,7 +375,7 @@ const WorkSection = () => {
                     )}
                   </div>
 
-                  {/* Full Instagram post — links out to the Instagram post */}
+                  {/* Full Instagram post - links out to the Instagram post */}
                   <div className="w-full max-w-[540px]">
                     <a
                       href={featuredWork.hmns.reelUrl}
@@ -427,7 +427,7 @@ const WorkSection = () => {
               </div>
             </article>
 
-            {/* Fifth Ward + March Madness — secondary documentary cards */}
+            {/* Fifth Ward + March Madness - secondary documentary cards */}
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
               {fifthWard && (
                 <DocumentaryProjectCard
@@ -444,7 +444,7 @@ const WorkSection = () => {
             </div>
           </div>
 
-          {/* VIDEO EDITING — sub-section */}
+          {/* VIDEO EDITING - sub-section */}
           <div id="video" className="mb-20 lg:mb-24">
             <div className="mb-8 lg:mb-10">
               <p
@@ -484,7 +484,7 @@ const WorkSection = () => {
             </div>
           </div>
 
-          {/* SPORTS MEDIA — sub-section */}
+          {/* SPORTS MEDIA - sub-section */}
           {sportsMedia && (
             <div id="sports-media" className="mb-20 lg:mb-24">
               <div className="mb-8 lg:mb-10">
@@ -516,7 +516,7 @@ const WorkSection = () => {
             </div>
           )}
 
-          {/* MEDIA GALLERY — sub-section, embedded inside Media Production */}
+          {/* MEDIA GALLERY - sub-section, embedded inside Media Production */}
           <MediaGallery heading />
         </div>
       </section>

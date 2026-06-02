@@ -58,7 +58,7 @@ const AboutSection = () => {
       <div className="py-24 lg:py-32" ref={sectionRef}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 fade-section">
           <div className="grid lg:grid-cols-5 gap-14 lg:gap-20">
-            {/* Left Column — About + Core Capabilities */}
+            {/* Left Column - About + Core Capabilities */}
             <div className="lg:col-span-3">
               <p
                 className="text-xs font-semibold tracking-[0.32em] uppercase mb-5"
@@ -151,7 +151,7 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Right Column — Education + Honors */}
+            {/* Right Column - Education + Honors */}
             <div className="lg:col-span-2">
               <div
                 className="p-6 lg:p-8 rounded-3xl"

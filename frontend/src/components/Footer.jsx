@@ -38,7 +38,7 @@ const Footer = () => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14 lg:py-16">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          {/* Left — monogram + name */}
+          {/* Left - monogram + name */}
           <div className="flex items-center gap-4">
             <Monogram size={48} />
             <div>
