@@ -9,6 +9,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Wrench,
+  Play,
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { projects } from '../data/mock';
@@ -20,6 +21,7 @@ const ProjectDetail = () => {
   const sectionRef = useRef(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [activeDriveVideos, setActiveDriveVideos] = useState({});
 
   const imageMedia = project ? project.media.filter((m) => m.type === 'image') : [];
   const youtubeMedia = project ? project.media.filter((m) => m.type === 'youtube') : [];
@@ -512,22 +514,56 @@ const ProjectDetail = () => {
                           border: '1px solid rgba(106, 75, 134, 0.15)',
                         }}
                       >
-                        {item.poster && (
-                          <img
-                            src={item.poster}
-                            alt={`${item.title} thumbnail`}
-                            className="w-full aspect-video object-cover"
-                            loading="lazy"
-                          />
-                        )}
-                        <div className="aspect-video">
-                          <iframe
-                            src={item.url}
-                            title={item.title}
-                            className="w-full h-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          />
+                        <div className="relative aspect-video">
+                          {item.poster && !activeDriveVideos[i] ? (
+                            <button
+                              type="button"
+                              data-testid={`drive-video-poster-${i}`}
+                              onClick={() =>
+                                setActiveDriveVideos((prev) => ({
+                                  ...prev,
+                                  [i]: true,
+                                }))
+                              }
+                              className="group absolute inset-0 w-full h-full cursor-pointer"
+                              aria-label={`Play ${item.title}`}
+                            >
+                              <img
+                                src={item.poster}
+                                alt={`${item.title} thumbnail`}
+                                className="w-full h-full object-cover"
+                                loading="lazy"
+                              />
+                              <span
+                                className="absolute inset-0 flex items-center justify-center transition-colors"
+                                style={{ background: 'rgba(59, 42, 82, 0.28)' }}
+                              >
+                                <span
+                                  className="flex items-center justify-center w-16 h-16 rounded-full transition-transform group-hover:scale-110"
+                                  style={{
+                                    background: 'rgba(241, 233, 251, 0.95)',
+                                    boxShadow:
+                                      '0 8px 24px -6px rgba(59, 42, 82, 0.55)',
+                                  }}
+                                >
+                                  <Play
+                                    size={26}
+                                    color="#6A4B86"
+                                    fill="#6A4B86"
+                                    className="ml-1"
+                                  />
+                                </span>
+                              </span>
+                            </button>
+                          ) : (
+                            <iframe
+                              src={item.url}
+                              title={item.title}
+                              className="w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          )}
                         </div>
                         <div className="p-4 flex items-center justify-between gap-3">
                           <p
