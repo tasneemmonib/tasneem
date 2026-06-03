@@ -512,6 +512,14 @@ const ProjectDetail = () => {
                           border: '1px solid rgba(106, 75, 134, 0.15)',
                         }}
                       >
+                        {item.poster && (
+                          <img
+                            src={item.poster}
+                            alt={`${item.title} thumbnail`}
+                            className="w-full aspect-video object-cover"
+                            loading="lazy"
+                          />
+                        )}
                         <div className="aspect-video">
                           <iframe
                             src={item.url}

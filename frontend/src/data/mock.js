@@ -274,8 +274,8 @@ export const projects = [
     title: "Houston's History: Cougar Football",
     category: "Media Production",
     tags: ["Documentary", "Sports Documentary", "Storytelling"],
-    image: gallery("Houston-History-Cougar-Football-Thumbnail-18min.jpg"),
-    imagePosition: "center 35%",
+    image: gallery("Houston-History-Cougar-Football-Thumbnail.jpg"),
+    imagePosition: "center top",
     overview:
       "A documentary segment on Houston Cougar football history and culture, produced collaboratively with the larger production team.",
     role: "Producer, Assistant Editor, and Assistant Writer",
@@ -299,6 +299,7 @@ export const projects = [
         type: "drive",
         url: "https://drive.google.com/file/d/1B9R5yPEpWy_CXLee2oKdcTxn3YbHfFkD/preview",
         link: "https://drive.google.com/file/d/1B9R5yPEpWy_CXLee2oKdcTxn3YbHfFkD/view?usp=sharing&t=1053.809",
+        poster: gallery("Houston-History-Cougar-Football-Thumbnail-18min.jpg"),
         title: "Houston's History: Cougar Football",
       },
     ],
