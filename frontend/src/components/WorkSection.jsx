@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Instagram, ExternalLink, Play } from 'lucide-react';
 import { projects, featuredWork, videoWork } from '../data/mock';
 import { useNavigate } from 'react-router-dom';
@@ -565,6 +565,7 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
   const youtube = project.media?.find((m) => m.type === 'youtube');
   const instagram = project.media?.find((m) => m.type === 'instagram');
   const drive = project.media?.find((m) => m.type === 'drive');
+  const [playing, setPlaying] = useState(false);
 
   return (
     <article
@@ -580,44 +581,85 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
         className="relative overflow-hidden"
         style={{ background: '#F1E9FB', aspectRatio: '16 / 9' }}
       >
-        <a
-          href={
-            youtube?.link ||
-            instagram?.link ||
-            drive?.link ||
-            project.socialLink ||
-            '#'
-          }
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full h-full group"
-          aria-label={`Open ${project.title}`}
-        >
-          <img
-            src={project.image}
-            alt={`${project.title} thumbnail`}
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        {drive && playing ? (
+          <iframe
+            src={drive.url}
+            title={drive.title || project.title}
+            className="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
           />
-          <div
-            className="absolute inset-0 flex items-center justify-center"
-            style={{
-              background:
-                'linear-gradient(180deg, rgba(47,42,46,0.02), rgba(47,42,46,0.36))',
-            }}
+        ) : drive ? (
+          <button
+            type="button"
+            onClick={() => setPlaying(true)}
+            className="block w-full h-full group"
+            aria-label={`Play ${project.title}`}
           >
-            <span
-              className="w-14 h-14 rounded-full flex items-center justify-center"
+            <img
+              src={project.image}
+              alt={`${project.title} thumbnail`}
+              loading="lazy"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+            <div
+              className="absolute inset-0 flex items-center justify-center"
               style={{
-                background: 'rgba(251, 247, 242, 0.94)',
-                color: '#2F2A2E',
-                boxShadow: '0 12px 24px -10px rgba(47,42,46,0.45)',
+                background:
+                  'linear-gradient(180deg, rgba(47,42,46,0.02), rgba(47,42,46,0.36))',
               }}
             >
-              {instagram ? <Instagram size={20} /> : <Play size={20} />}
-            </span>
-          </div>
-        </a>
+              <span
+                className="w-14 h-14 rounded-full flex items-center justify-center"
+                style={{
+                  background: 'rgba(251, 247, 242, 0.94)',
+                  color: '#2F2A2E',
+                  boxShadow: '0 12px 24px -10px rgba(47,42,46,0.45)',
+                }}
+              >
+                <Play size={20} />
+              </span>
+            </div>
+          </button>
+        ) : (
+          <a
+            href={
+              youtube?.link ||
+              instagram?.link ||
+              project.socialLink ||
+              '#'
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-full group"
+            aria-label={`Open ${project.title}`}
+          >
+            <img
+              src={project.image}
+              alt={`${project.title} thumbnail`}
+              loading="lazy"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{
+                background:
+                  'linear-gradient(180deg, rgba(47,42,46,0.02), rgba(47,42,46,0.36))',
+              }}
+            >
+              <span
+                className="w-14 h-14 rounded-full flex items-center justify-center"
+                style={{
+                  background: 'rgba(251, 247, 242, 0.94)',
+                  color: '#2F2A2E',
+                  boxShadow: '0 12px 24px -10px rgba(47,42,46,0.45)',
+                }}
+              >
+                {instagram ? <Instagram size={20} /> : <Play size={20} />}
+              </span>
+            </div>
+          </a>
+        )}
       </div>
 
       <div className="p-6 lg:p-7">
@@ -676,10 +718,8 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
             </a>
           )}
           {drive && (
-            <a
-              href={drive.link}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setPlaying(true)}
               className="inline-flex items-center gap-2 h-10 px-4 rounded-full text-xs font-semibold"
               style={{
                 backgroundColor: '#2F2A2E',
@@ -689,7 +729,25 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
                 textTransform: 'uppercase',
               }}
             >
-              <Play size={13} /> Watch Documentary
+              <Play size={13} /> Play Documentary
+            </button>
+          )}
+          {drive && (
+            <a
+              href={drive.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 h-10 px-4 rounded-full text-xs font-semibold"
+              style={{
+                backgroundColor: 'transparent',
+                color: '#2F2A2E',
+                border: '1.5px solid #2F2A2E',
+                fontFamily: 'Inter, sans-serif',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
+              }}
+            >
+              <ExternalLink size={13} /> Open in Drive
             </a>
           )}
           <button
