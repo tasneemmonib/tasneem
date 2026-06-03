@@ -23,6 +23,7 @@ const ProjectDetail = () => {
 
   const imageMedia = project ? project.media.filter((m) => m.type === 'image') : [];
   const youtubeMedia = project ? project.media.filter((m) => m.type === 'youtube') : [];
+  const driveMedia = project ? project.media.filter((m) => m.type === 'drive') : [];
   const nativeVideoMedia = project ? project.media.filter((m) => m.type === 'video') : [];
   const instagramMedia = project ? project.media.filter((m) => m.type === 'instagram') : [];
 
@@ -449,7 +450,9 @@ const ProjectDetail = () => {
             )}
 
             {/* Videos */}
-            {(youtubeMedia.length > 0 || nativeVideoMedia.length > 0) && (
+            {(youtubeMedia.length > 0 ||
+              nativeVideoMedia.length > 0 ||
+              driveMedia.length > 0) && (
               <>
                 <SectionDivider />
                 <div>
@@ -495,6 +498,53 @@ const ProjectDetail = () => {
                           >
                             {item.title}
                           </p>
+                        </div>
+                      </div>
+                    ))}
+                    {driveMedia.map((item, i) => (
+                      <div
+                        key={`drive-${i}`}
+                        data-testid={`drive-video-${i}`}
+                        className="rounded-2xl overflow-hidden"
+                        style={{
+                          background: '#3B2A52',
+                          border: '1px solid rgba(106, 75, 134, 0.15)',
+                        }}
+                      >
+                        <div className="aspect-video">
+                          <iframe
+                            src={item.url}
+                            title={item.title}
+                            className="w-full h-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
+                        <div className="p-4 flex items-center justify-between gap-3">
+                          <p
+                            className="text-sm font-medium"
+                            style={{
+                              color: '#F1E9FB',
+                              fontFamily: 'Inter, sans-serif',
+                            }}
+                          >
+                            {item.title}
+                          </p>
+                          {item.link && (
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-1 text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap"
+                              style={{
+                                color: '#2F2A2E',
+                                background: '#F1E9FB',
+                                fontFamily: 'Inter, sans-serif',
+                              }}
+                            >
+                              Open in Drive <ExternalLink size={12} />
+                            </a>
+                          )}
                         </div>
                       </div>
                     ))}

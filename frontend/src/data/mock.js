@@ -270,6 +270,40 @@ export const projects = [
     socialLink: "https://www.instagram.com/reel/DXVUaBbkcjl/",
   },
   {
+    id: "houston-history-cougar-football",
+    title: "Houston's History: Cougar Football",
+    category: "Media Production",
+    tags: ["Documentary", "Sports Documentary", "Storytelling"],
+    image: gallery("Houston-History-Cougar-Football-Thumbnail.jpg"),
+    overview:
+      "A documentary segment on Houston Cougar football history and culture.",
+    role: "Director & Editor",
+    contributions: [
+      "Directed and edited a documentary segment on Houston Cougar football history and culture",
+      "Built the narrative around the program's history and the culture around the team",
+      "Handled the full edit from raw footage through final delivery",
+    ],
+    skills: [
+      "Documentary Direction",
+      "Sports Documentary",
+      "Video Editing",
+      "Storytelling",
+    ],
+    tools: ["Adobe Premiere Pro"],
+    deliverables: [],
+    supportingWork: [],
+    media: [
+      {
+        type: "drive",
+        url: "https://drive.google.com/file/d/1B9R5yPEpWy_CXLee2oKdcTxn3YbHfFkD/preview",
+        link: "https://drive.google.com/file/d/1B9R5yPEpWy_CXLee2oKdcTxn3YbHfFkD/view?usp=sharing&t=1053.809",
+        title: "Houston's History: Cougar Football",
+      },
+    ],
+    socialLink:
+      "https://drive.google.com/file/d/1B9R5yPEpWy_CXLee2oKdcTxn3YbHfFkD/view?usp=sharing&t=1053.809",
+  },
+  {
     id: "sports-marketing-operations",
     title: "Sports Media & Marketing · UH Athletics + CoogTV",
     category: "Media Production",

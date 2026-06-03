@@ -34,6 +34,9 @@ const WorkSection = () => {
   const marchMadness = projects.find(
     (p) => p.id === 'march-madness-storytelling'
   );
+  const cougarFootball = projects.find(
+    (p) => p.id === 'houston-history-cougar-football'
+  );
   const sportsMedia = projects.find(
     (p) => p.id === 'sports-marketing-operations'
   );
@@ -421,6 +424,12 @@ const WorkSection = () => {
                   onClick={() => handleProjectClick(marchMadness.id)}
                 />
               )}
+              {cougarFootball && (
+                <DocumentaryProjectCard
+                  project={cougarFootball}
+                  onClick={() => handleProjectClick(cougarFootball.id)}
+                />
+              )}
             </div>
           </div>
 
@@ -555,6 +564,7 @@ const WorkSection = () => {
 const DocumentaryProjectCard = ({ project, onClick }) => {
   const youtube = project.media?.find((m) => m.type === 'youtube');
   const instagram = project.media?.find((m) => m.type === 'instagram');
+  const drive = project.media?.find((m) => m.type === 'drive');
 
   return (
     <article
@@ -571,7 +581,13 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
         style={{ background: '#F1E9FB', aspectRatio: '16 / 9' }}
       >
         <a
-          href={youtube?.link || instagram?.link || project.socialLink || '#'}
+          href={
+            youtube?.link ||
+            instagram?.link ||
+            drive?.link ||
+            project.socialLink ||
+            '#'
+          }
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full h-full group"
@@ -657,6 +673,23 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
               }}
             >
               <Instagram size={13} /> Watch Reel
+            </a>
+          )}
+          {drive && (
+            <a
+              href={drive.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 h-10 px-4 rounded-full text-xs font-semibold"
+              style={{
+                backgroundColor: '#2F2A2E',
+                color: '#FBF7F2',
+                fontFamily: 'Inter, sans-serif',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
+              }}
+            >
+              <Play size={13} /> Watch Documentary
             </a>
           )}
           <button
