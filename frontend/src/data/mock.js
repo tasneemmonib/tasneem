@@ -296,15 +296,15 @@ export const projects = [
     supportingWork: [],
     media: [
       {
-        type: "drive",
-        url: "https://drive.google.com/file/d/1B9R5yPEpWy_CXLee2oKdcTxn3YbHfFkD/preview",
-        link: "https://drive.google.com/file/d/1B9R5yPEpWy_CXLee2oKdcTxn3YbHfFkD/view?usp=sharing&t=1053.809",
+        type: "youtube",
+        url: "https://www.youtube.com/embed/w2kv8GzsPHA",
+        link: "https://youtu.be/w2kv8GzsPHA?si=HDyG2nvyCbxVVngc",
         poster: gallery("Houston-History-Cougar-Football-Thumbnail-18min.jpg"),
         title: "Houston's History: Cougar Football",
       },
     ],
     socialLink:
-      "https://drive.google.com/file/d/1B9R5yPEpWy_CXLee2oKdcTxn3YbHfFkD/view?usp=sharing&t=1053.809",
+      "https://youtu.be/w2kv8GzsPHA?si=HDyG2nvyCbxVVngc",
   },
   {
     id: "sports-marketing-operations",

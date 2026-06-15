@@ -565,6 +565,7 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
   const youtube = project.media?.find((m) => m.type === 'youtube');
   const instagram = project.media?.find((m) => m.type === 'instagram');
   const drive = project.media?.find((m) => m.type === 'drive');
+  const playable = (drive || (youtube && youtube.poster)) || null;
   const [playing, setPlaying] = useState(false);
 
   return (
@@ -581,15 +582,15 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
         className="relative overflow-hidden"
         style={{ background: '#F1E9FB', aspectRatio: '16 / 9' }}
       >
-        {drive && playing ? (
+        {playable && playing ? (
           <iframe
-            src={drive.url}
-            title={drive.title || project.title}
+            src={playable.url}
+            title={playable.title || project.title}
             className="w-full h-full"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
-        ) : drive ? (
+        ) : playable ? (
           <button
             type="button"
             onClick={() => setPlaying(true)}
@@ -717,7 +718,7 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
               <Instagram size={13} /> Watch Reel
             </a>
           )}
-          {drive && (
+          {playable && (
             <button
               onClick={() => setPlaying(true)}
               className="inline-flex items-center gap-2 h-10 px-4 rounded-full text-xs font-semibold"
@@ -732,9 +733,9 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
               <Play size={13} /> Play Documentary
             </button>
           )}
-          {drive && (
+          {playable && playable.link && (
             <a
-              href={drive.link}
+              href={playable.link}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 h-10 px-4 rounded-full text-xs font-semibold"
@@ -747,7 +748,7 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
                 textTransform: 'uppercase',
               }}
             >
-              <ExternalLink size={13} /> Open in Drive
+              <ExternalLink size={13} /> Watch on YouTube
             </a>
           )}
           <button
