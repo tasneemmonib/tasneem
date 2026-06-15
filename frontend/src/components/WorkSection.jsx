@@ -565,7 +565,11 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
   const youtube = project.media?.find((m) => m.type === 'youtube');
   const instagram = project.media?.find((m) => m.type === 'instagram');
   const drive = project.media?.find((m) => m.type === 'drive');
-  const playable = (drive || (youtube && youtube.poster)) || null;
+  const playable = drive || (youtube && youtube.poster ? youtube : null);
+  const playableSrc =
+    playable && playable.type === 'youtube'
+      ? `${playable.url}?autoplay=1`
+      : playable?.url;
   const [playing, setPlaying] = useState(false);
 
   return (
@@ -584,7 +588,7 @@ const DocumentaryProjectCard = ({ project, onClick }) => {
       >
         {playable && playing ? (
           <iframe
-            src={playable.url}
+            src={playableSrc}
             title={playable.title || project.title}
             className="w-full h-full"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
