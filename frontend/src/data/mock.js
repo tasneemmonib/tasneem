@@ -34,12 +34,12 @@ export const capabilities = [
 
 export const experience = [
   {
-    company: "University of Houston · CoogTV",
-    role: "Sports Head Editor",
-    period: "2024 – Present",
-    track: "Media Production",
+    company: "Risala Foundation | Houston, TX",
+    role: "Social Media Content Creator",
+    period: "Mar 2026 – Present",
+    track: "Marketing",
     summary:
-      "Lead sports video production, covering live games, producing highlight packages, and delivering promotional content on tight turnaround. Manage the full post-production workflow from raw footage to broadcast-ready cut for multi-platform distribution.",
+      "Film and edit short-form video content of community events for distribution across social media platforms. Capture event photography to support visual storytelling and platform engagement. Produce and publish real-time Instagram Stories coverage during live events to drive audience engagement. Collaborate with organization leadership to align content with brand voice and community outreach goals.",
   },
   {
     company: "Houston Museum of Natural Science",
@@ -58,20 +58,12 @@ export const experience = [
       "Directed a documentary on the Fifth Ward Library through UH CoogTV's ShastaDocs series, owning the story from research and interviews through post-production and broadcast delivery.",
   },
   {
-    company: "Springtime Pediatrics",
-    role: "Marketing Communications Coordinator",
-    period: "2023 – Present",
-    track: "Marketing",
+    company: "University of Houston · CoogTV",
+    role: "Sports Head Editor",
+    period: "2024 – Present",
+    track: "Media Production",
     summary:
-      "Supported marketing communications and community outreach for a growing pediatric practice: short-form social video, patient-facing collateral, ribbon-cuttings and grand opening events, and physician referral visits.",
-  },
-  {
-    company: "Risala Foundation | Houston, TX",
-    role: "Social Media Content Creator",
-    period: "Mar 2026 – Present",
-    track: "Marketing",
-    summary:
-      "Film and edit short-form video content of community events for distribution across social media platforms. Capture event photography to support visual storytelling and platform engagement. Produce and publish real-time Instagram Stories coverage during live events to drive audience engagement. Collaborate with organization leadership to align content with brand voice and community outreach goals.",
+      "Lead sports video production, covering live games, producing highlight packages, and delivering promotional content on tight turnaround. Manage the full post-production workflow from raw footage to broadcast-ready cut for multi-platform distribution.",
   },
   {
     company: "University of Houston Athletics",
@@ -82,20 +74,28 @@ export const experience = [
       "Executed gameday marketing for UH Baseball and other athletics events including on-field promotions, fan engagement activations, and halftime coordination.",
   },
   {
-    company: "The Cougar (UH Student Newspaper)",
-    role: "Photographer",
-    period: "2023 – 2024",
-    track: "Marketing",
-    summary:
-      "Photographed campus, culture, and community assignments for UH's student newspaper and wrote captions to support visual storytelling and coverage context.",
-  },
-  {
     company: "United Sports & Entertainment · Battleground 2K24",
     role: "Event Operations Intern",
     period: "2024",
     track: "Marketing",
     summary:
       "Supported logistics and media coordination for a multi-day sports and entertainment event: prepared teleprompter speech summaries, ran media check-in and credentialing, and coordinated staff logistics on site.",
+  },
+  {
+    company: "Springtime Pediatrics",
+    role: "Marketing Communications Coordinator",
+    period: "2023 – Present",
+    track: "Marketing",
+    summary:
+      "Supported marketing communications and community outreach for a growing pediatric practice: short-form social video, patient-facing collateral, ribbon-cuttings and grand opening events, and physician referral visits.",
+  },
+  {
+    company: "The Cougar (UH Student Newspaper)",
+    role: "Photographer",
+    period: "2023 – 2024",
+    track: "Marketing",
+    summary:
+      "Photographed UH sports assignments for The Cougar and wrote captions to support visual storytelling and game coverage context.",
   },
 ];
 
