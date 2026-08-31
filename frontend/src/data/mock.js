@@ -15,7 +15,7 @@ export const personalInfo = {
     "https://customer-assets.emergentagent.com/job_marketing-pro-131/artifacts/ram015gf_Screenshot%202026-03-21%20at%203.56.46%E2%80%AFPM.png",
   aboutBio: [
     "I'm a multimedia storyteller and marketing-minded creative producer based in Houston. My work lives where media production meets marketing strategy: directing documentary shorts, producing sports and culture coverage, and building the campaigns and content that bring those stories to an audience.",
-    "I've directed a documentary for the Houston Museum of Natural Science as part of an official collaboration, produced a community documentary for the Fifth Ward Library through UH's ShastaDocs series, and led sports media coverage as Sports Head Editor at CoogTV. Alongside production work, I've supported marketing communications for a pediatric medical practice and gameday marketing for University of Houston Athletics.",
+    "I've produced a documentary for the Houston Museum of Natural Science as part of an official collaboration and directed a community documentary for the Fifth Ward Library through UH's ShastaDocs series. Alongside production work, I've supported marketing communications for a pediatric medical practice and gameday marketing for University of Houston Athletics.",
     "I care about stories that sit at the intersection of sports, culture, and community, and about the marketing instincts that make those stories land. I'm equally at home on a shoot, in an edit bay, or building out a campaign deck.",
     "Open to opportunities across media production, creative producing, and marketing communications, particularly in sports, culture, lifestyle, and brand storytelling.",
   ],
@@ -66,6 +66,14 @@ export const experience = [
       "Supported marketing communications and community outreach for a growing pediatric practice: short-form social video, patient-facing collateral, ribbon-cuttings and grand opening events, and physician referral visits.",
   },
   {
+    company: "Risala Foundation | Houston, TX",
+    role: "Social Media Content Creator",
+    period: "Mar 2026 – Present",
+    track: "Marketing",
+    summary:
+      "Film and edit short-form video content of community events for distribution across social media platforms. Capture event photography to support visual storytelling and platform engagement. Produce and publish real-time Instagram Stories coverage during live events to drive audience engagement. Collaborate with organization leadership to align content with brand voice and community outreach goals.",
+  },
+  {
     company: "University of Houston Athletics",
     role: "Marketing & Gameday Operations",
     period: "2024 – 2025",
@@ -75,11 +83,11 @@ export const experience = [
   },
   {
     company: "The Cougar (UH Student Newspaper)",
-    role: "Contributor",
+    role: "Photographer",
     period: "2023 – 2024",
     track: "Marketing",
     summary:
-      "Wrote and contributed editorial coverage for UH's student newspaper across campus, culture, and community topics, sharpening editorial voice and reporting instincts.",
+      "Photographed campus, culture, and community assignments for UH's student newspaper and wrote captions to support visual storytelling and coverage context.",
   },
   {
     company: "United Sports & Entertainment · Battleground 2K24",
@@ -87,7 +95,7 @@ export const experience = [
     period: "2024",
     track: "Marketing",
     summary:
-      "Supported logistics and media coordination for a multi-day sports and entertainment event: prepared teleprompter speech summaries, ran media check-in and credentialing, and coordinated staff logistics across venues.",
+      "Supported logistics and media coordination for a multi-day sports and entertainment event: prepared teleprompter speech summaries, ran media check-in and credentialing, and coordinated staff logistics on site.",
   },
 ];
 
